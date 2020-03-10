@@ -1,0 +1,11 @@
+.ImproveBtn {
+    border: 1px #afafaf solid;
+    background: transparent;
+    width: 40%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: #afafaf;
+    text-transform: uppercase;
+    margin: .5rem;
+    border-radius: 3px;
+}

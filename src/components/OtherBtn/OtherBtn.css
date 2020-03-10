@@ -1,0 +1,12 @@
+.OtherBtn {
+    border: 1px #afafaf solid;
+    background: transparent;
+    width: 85%;
+    height: "25%";
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: #afafaf;
+    text-transform: uppercase;
+    margin: .5rem;
+    border-radius: 3px;
+}

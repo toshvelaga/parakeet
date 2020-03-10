@@ -1,0 +1,29 @@
+.emailInput {
+    width: 80%;
+    height: 6.5vh;
+    padding: .1rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    border: 1px gray solid;
+    font-size: large;
+    padding-left: 1rem;
+    border-radius: 5px;
+}
+
+input:focus { 
+    outline: none !important;
+    border: 2px #0378d8 solid;
+}
+
+.emailButton {
+    background-color: #0378d8; 
+    border: none;
+    color: white;
+    width: 85%;
+    padding: 13px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
