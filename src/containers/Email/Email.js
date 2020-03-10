@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ParakeetHeader from '../../../src/components/ParakeetHeader/ParakeetHeader'
 import './Email.css'
+import axios from 'axios'
+import firebaseURL from '../../assets/urls'
 
 import { withRouter } from 'react-router-dom';
 
@@ -14,7 +16,12 @@ class Email extends Component {
     }
 
     onSubmit = () => {
-        this.props.history.push("/Rating");
+        const email = { email: this.state.value }
+        const url = 'https://feedback-9ac15.firebaseio.com/'
+        axios.post(firebaseURL + '/reviewers.json', email)
+        .then(response => console.log(response))
+        .catch(error => console.log(error))
+            .then(this.props.history.push("/Rating"));
     }
 
     render() { 
