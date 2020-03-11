@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
 import ImproveBtn from '../../components/ImproveBtn/ImproveBtn';
 import Otherbtn from '../../components/OtherBtn/OtherBtn';
+import './FeedbackBtns.css'
 
 class FeedbackBtns extends Component {
-    state = {  }
+    state = { color: 'red' }
+
+    handleTrigger = (color) => {
+        this.setState({ color: color })
+    }
+
     render() { 
         return (<>
             <div>
-                <ImproveBtn name="Food"/>
-                <ImproveBtn name="Service"/>
+                <button className="feedbackBtn">Food</button>
+                <button className="feedbackBtn">Service</button>
             </div>
 
             <div>
-                <ImproveBtn name="Pricing"/>
-                <ImproveBtn name="Ambience"/>
+                <button className="feedbackBtn">Pricing</button>
+                <button className="feedbackBtn">Ambience</button>
             </div>
 
             <div>
-                <ImproveBtn name="Cleanliness"/>
-                <ImproveBtn name="Plating"/>
+                <button className="feedbackBtn">Cleanliness</button>
+                <button className="feedbackBtn">Plating</button>
             </div>
             <Otherbtn />
         </>);

@@ -11,7 +11,9 @@ class Greatfeedback extends Component {
         return (<>
         <ParakeetHeader />
         <Greatmessage />
-        <FeedbackBtns />
+
+        <FeedbackBtns/>
+
         <div style={{width: '85%', display: 'inline-block'}}>
         <div style={{marginTop: '14.5rem', display: 'flex', justifyContent: 'space-between'}}>
         <NavButton name="BACK" />
