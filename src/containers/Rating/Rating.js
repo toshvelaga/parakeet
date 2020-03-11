@@ -24,9 +24,15 @@ class Rating extends Component {
             .catch(error => console.log(error))
 
         if (this.state.rating >= 4) {
-            this.props.history.push("/great")
+            this.props.history.push({
+                pathname: "/great",
+                state: { reviewType: 'great'}
+            })
         } else {
-            this.props.history.push("/bad")
+            this.props.history.push({
+                pathname: "/bad",
+                state: { reviewType: 'bad'}
+            })
         }
     }
 

@@ -7,8 +7,12 @@ import Otherbtn from '../../components/OtherBtn/OtherBtn';
 import Textarea from '../Textarea/Textarea';
 
 class Greatfeedback extends Component {
-    state = {  }
+    constructor(props) {
+        super(props);
+        this.state = { };
+    }
     render() { 
+
         return (<>
         <ParakeetHeader />
         <Greatmessage />

@@ -11,8 +11,7 @@ class Negativefeedback extends Component {
     state = {  }
 
     render() { 
-        console.log(this.props.location)
-
+        
         return (<>
         <ParakeetHeader />
         <Sorrymessage />
