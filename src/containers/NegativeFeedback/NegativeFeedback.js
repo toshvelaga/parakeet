@@ -5,14 +5,35 @@ import ParakeetHeader from '../../components/ParakeetHeader/ParakeetHeader';
 import FeedbackBtns from '../FeedbackBtns/FeedbackBtns';
 import RadioBtn from '../RadioBtn/RadioBtn';
 import NavButton from '../../components/NavButton/NavButton'
+import Otherbtn from '../../components/OtherBtn/OtherBtn';
 
 class Negativefeedback extends Component {
     state = {  }
+
     render() { 
+        console.log(this.props.location)
+
         return (<>
         <ParakeetHeader />
         <Sorrymessage />
-        <FeedbackBtns />
+
+        <div>
+            <FeedbackBtns name="Food" />
+            <FeedbackBtns name="Service" />
+        </div>
+
+        <div>
+            <FeedbackBtns name="Pricing" />
+            <FeedbackBtns name="Ambience" />
+        </div>
+
+        <div>
+            <FeedbackBtns name="Cleanliness" />
+            <FeedbackBtns name="Plating" />
+        </div>
+
+        <Otherbtn />
+
         <div style={{float: 'left', width: '80%'}}>
         <RadioBtn />
         </div>

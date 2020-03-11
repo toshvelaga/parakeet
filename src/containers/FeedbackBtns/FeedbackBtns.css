@@ -9,3 +9,14 @@
     margin: .5rem;
     border-radius: 3px;
 }
+
+.greatSelected {
+    background: #0378d8; 
+    width: 40%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: white;
+    text-transform: uppercase;
+    margin: .5rem;
+    border-radius: 3px;
+}

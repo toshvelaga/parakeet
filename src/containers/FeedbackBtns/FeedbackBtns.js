@@ -1,33 +1,26 @@
 import React, { Component } from 'react';
-import ImproveBtn from '../../components/ImproveBtn/ImproveBtn';
 import Otherbtn from '../../components/OtherBtn/OtherBtn';
 import './FeedbackBtns.css'
 
-class FeedbackBtns extends Component {
-    state = { color: 'red' }
+// toggle SO: https://stackoverflow.com/questions/42630473/react-toggle-class-onclick
 
-    handleTrigger = (color) => {
-        this.setState({ color: color })
+class FeedbackBtns extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { 
+            className: 'feedbackBtn',
+            active: 'false' };
     }
 
+    toggleClass = () => {
+        const currentState = this.state.active;
+        this.setState({ active: !currentState });
+    };
+
     render() { 
-        return (<>
-            <div>
-                <button className="feedbackBtn">Food</button>
-                <button className="feedbackBtn">Service</button>
-            </div>
-
-            <div>
-                <button className="feedbackBtn">Pricing</button>
-                <button className="feedbackBtn">Ambience</button>
-            </div>
-
-            <div>
-                <button className="feedbackBtn">Cleanliness</button>
-                <button className="feedbackBtn">Plating</button>
-            </div>
-            <Otherbtn />
-        </>);
+        return ( 
+            <button onClick={this.toggleClass} className={this.state.active ? 'feedbackBtn' : 'greatSelected'}>{this.props.name}</button>
+        );
     }
 }
  
