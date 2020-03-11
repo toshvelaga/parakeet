@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import ParakeetHeader from '../../../src/components/ParakeetHeader/ParakeetHeader'
 import StarRatingComponent from 'react-star-rating-component';
 import './Rating.css'
+import axios from 'axios'
+import firebaseURL from '../../assets/urls'
+
+import { withRouter } from 'react-router-dom';
 
 // documentation: https://www.npmjs.com/package/react-star-rating-component
 // Additional docs for half-star implementation: https://github.com/voronianski/react-star-rating-component/blob/master/example/index.js
@@ -11,6 +15,19 @@ class Rating extends Component {
 
     onStarClick(nextValue, prevValue, name) {
         this.setState({rating: nextValue});
+    }
+
+    onSubmit = () => {
+        const rating = { rating: this.state.rating }
+        axios.post(firebaseURL + '/reviewers.json', rating)
+            .then(response => console.log(response))
+            .catch(error => console.log(error))
+
+        if (this.state.rating >= 4) {
+            this.props.history.push("/great")
+        } else {
+            this.props.history.push("/bad")
+        }
     }
 
     render() { 
@@ -28,8 +45,10 @@ class Rating extends Component {
                 onStarClick={this.onStarClick.bind(this)}
                 />
             </div>
+
+            <button style={{marginTop: '2rem'}} onClick={this.onSubmit} className="emailButton">Submit</button>
         </>);
     }
 }
  
-export default Rating;
+export default withRouter(Rating);

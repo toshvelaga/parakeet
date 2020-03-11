@@ -17,7 +17,6 @@ class Email extends Component {
 
     onSubmit = () => {
         const email = { email: this.state.value }
-        const url = 'https://feedback-9ac15.firebaseio.com/'
         axios.post(firebaseURL + '/reviewers.json', email)
         .then(response => console.log(response))
         .catch(error => console.log(error))
