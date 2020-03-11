@@ -5,7 +5,7 @@ import ParakeetHeader from '../../components/ParakeetHeader/ParakeetHeader';
 import FeedbackBtns from '../FeedbackBtns/FeedbackBtns';
 import RadioBtn from '../RadioBtn/RadioBtn';
 import NavButton from '../../components/NavButton/NavButton'
-import Otherbtn from '../../components/OtherBtn/OtherBtn';
+import Otherbtn from '../OtherBtn/OtherBtn'
 
 class Negativefeedback extends Component {
     state = {  }
@@ -34,13 +34,14 @@ class Negativefeedback extends Component {
         <Otherbtn />
 
         <div style={{float: 'left', width: '80%'}}>
-        <RadioBtn />
+            <RadioBtn />
         </div>
+
         <div style={{width: '85%', display: 'inline-block'}}>
-        <div style={{marginTop: '11.5rem', display: 'flex', justifyContent: 'space-between'}}>
-        <NavButton name="BACK" />
-        <NavButton name="SUBMIT" />
-        </div>
+            <div style={{marginTop: '11.5rem', display: 'flex', justifyContent: 'space-between'}}>
+                <NavButton name="BACK" />
+                <NavButton name="SUBMIT" />
+            </div>
         </div>
         </>);
     }
