@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 // import './Textarea.css'
 
-import {MDCTextField} from '@material/textfield';
+import TextField from '@material-ui/core/TextField';
 
-// Need to add more CSS and styling (possibly use bootstrap)
-// Material io documentation: https://material.io/develop/web/components/input-controls/text-field/
+// Need to change color of the textinput on click
+// SO answer: https://stackoverflow.com/questions/56803234/reactjs-material-ui-textfield-change-color-label-and-underline-activity-field-in
+
 
 class Textarea extends Component {
     constructor(props) {
@@ -13,22 +14,22 @@ class Textarea extends Component {
     }
 
     render() { 
-        return (<>
-     
-            <label class="mdc-text-field mdc-text-field--textarea">
-                <div class="mdc-text-field-character-counter">0 / 140</div>
-                <textarea class="mdc-text-field__input" aria-labelledby="my-label-id" rows="8" cols="40" maxlength="140"></textarea>
-                <div class="mdc-notched-outline">
-                    <div class="mdc-notched-outline__leading"></div>
-                    <div class="mdc-notched-outline__notch">
-                    <span class="mdc-floating-label" id="my-label-id">Textarea Label</span>
-                    </div>
-                    <div class="mdc-notched-outline__trailing"></div>
-                </div>
-            </label>
-        
-            {/* <textarea className="textarea" placeholder={this.props.placeholder} style={{resize: 'none'}} /> */}
-        </>);
+
+    const style = {
+        width: '85%'
+    } 
+    return (<>
+        <TextField style={style}
+            id="filled-dense-multiline"
+            label={this.props.label}
+            margin="dense"
+            variant="filled"
+            multiline
+            rowsMax="6"
+            rows="6"
+            color="primary"
+        />
+    </>);
     }
 }
  

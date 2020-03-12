@@ -31,7 +31,7 @@ class Otherbtn extends Component {
 
         return (<>
             {button}
-            <Textarea />
+            <Textarea label="We'd love to hear your feedback!" />
             </>
         );
     }
