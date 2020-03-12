@@ -3,7 +3,7 @@ import NavButton from '../../components/NavButton/NavButton';
 import ParakeetHeader from '../../../src/components/ParakeetHeader/ParakeetHeader';
 import Greatmessage from '../../components/GreatMessage/GreatMessage';
 import FeedbackBtns from '../FeedbackBtns/FeedbackBtns';
-import Textarea from '../Textarea/Textarea';
+// import Textarea from '../Textarea/Textarea';
 import Otherbtn from '../OtherBtn/OtherBtn';
 
 class Greatfeedback extends Component {

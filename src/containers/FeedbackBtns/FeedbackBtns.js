@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Otherbtn from '../../components/OtherBtn/OtherBtn';
 import './FeedbackBtns.css'
 
 import { withRouter } from 'react-router-dom';
