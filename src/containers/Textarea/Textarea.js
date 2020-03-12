@@ -10,7 +10,7 @@ import TextField from '@material-ui/core/TextField';
 class Textarea extends Component {
     constructor(props) {
     super(props)
-        this.state = {  }
+        this.state = { show: 'false' }
     }
 
     render() { 
