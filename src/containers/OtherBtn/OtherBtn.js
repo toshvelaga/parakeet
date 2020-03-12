@@ -23,7 +23,7 @@ class Otherbtn extends Component {
         let button;
 
         if (reviewType == 'great') {
-            button = <button onClick={this.toggleClass} className={this.state.active ? 'OtherBtn' : 'blueOtherBtn'}>Other</button>
+            button = <button onClick={this.toggleClass} className={this.state.active ? 'OtherBtn' : 'blueOtherBtn'}>Other</button> 
         } 
         if (reviewType == 'bad') {
             button = <button onClick={this.toggleClass} className={this.state.active ? 'OtherBtn' : 'redOtherBtn'}>Other</button>
@@ -31,7 +31,6 @@ class Otherbtn extends Component {
 
         return (<>
             {button}
-            <Textarea label="We'd love to hear your feedback!" />
             </>
         );
     }

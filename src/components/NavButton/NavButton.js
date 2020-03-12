@@ -16,7 +16,7 @@ const styles = {
 }
 
 const NavButton = (props) => {
-    return (<button style={styles}>
+    return (<button onClick={props.click} style={styles}>
         {props.name}
     </button>);
 }

@@ -27,7 +27,7 @@ class Textarea extends Component {
             multiline
             rowsMax="6"
             rows="6"
-            color="primary"
+            color={this.props.color}
         />
     </>);
     }

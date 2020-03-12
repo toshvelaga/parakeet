@@ -6,9 +6,23 @@ import FeedbackBtns from '../FeedbackBtns/FeedbackBtns';
 import RadioBtn from '../RadioBtn/RadioBtn';
 import NavButton from '../../components/NavButton/NavButton'
 import Otherbtn from '../OtherBtn/OtherBtn'
+import Textarea from '../Textarea/Textarea';
+
+import { withRouter } from 'react-router'; 
 
 class Negativefeedback extends Component {
-    state = {  }
+    constructor(props) {
+        super(props);
+        this.state = { }
+    }
+
+    onBack = () => {
+        this.props.history.push("/rating")
+    }
+
+    onSubmit = () => {
+        this.props.history.push("/thanks")
+    }
 
     render() { 
         
@@ -32,19 +46,23 @@ class Negativefeedback extends Component {
         </div>
 
         <Otherbtn />
+        
+        <div style={{marginTop: '1rem'}}>
+        <Textarea label="Please tell us how we can do better" color="secondary"/>
+        </div>
 
         <div style={{float: 'left', width: '80%'}}>
             <RadioBtn />
         </div>
-
+        
         <div style={{width: '85%', display: 'inline-block'}}>
-            <div style={{marginTop: '11.5rem', display: 'flex', justifyContent: 'space-between'}}>
-                <NavButton name="BACK" />
-                <NavButton name="SUBMIT" />
+            <div style={{marginTop: '1rem', display: 'flex', justifyContent: 'space-between'}}>
+                <NavButton name="BACK" click={this.onBack} />
+                <NavButton name="SUBMIT" click={this.onSubmit} />
             </div>
         </div>
         </>);
     }
 }
  
-export default Negativefeedback;
+export default withRouter(Negativefeedback);

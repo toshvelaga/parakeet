@@ -14,7 +14,7 @@ class RadioBtn extends Component {
         <FormGroup aria-label="position" row>
           <FormControlLabel
             value="end"
-            control={<Checkbox color="primary" />}
+            control={<Checkbox color="secondary" />}
             label={<Typography style={{ color: '#afafaf' }}>Send directly to manager</Typography>}
             labelPlacement="end"
           />
