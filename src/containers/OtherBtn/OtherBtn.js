@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './OtherBtn.css'
 import Textarea from '../Textarea/Textarea'
 
+import store from '../../store/store'
+
 class Otherbtn extends Component {
     constructor(props) {
         super(props);
         this.state = { 
             className: 'OtherBtn',
             active: 'false',
-            reviewType: 'great',
         };
     }
 
@@ -19,7 +20,7 @@ class Otherbtn extends Component {
 
     render() { 
 
-        const reviewType = this.state.reviewType;
+        const reviewType = store.getState().reviewType;
         let button;
 
         if (reviewType == 'great') {

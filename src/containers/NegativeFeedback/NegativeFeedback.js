@@ -13,7 +13,6 @@ import { withRouter } from 'react-router';
 class Negativefeedback extends Component {
     constructor(props) {
         super(props);
-        this.state = { reviewType: this.props.location.state.reviewType }
     }
 
     onBack = () => {
@@ -26,9 +25,6 @@ class Negativefeedback extends Component {
 
     render() { 
         console.log(this.state)
-
-        // gets bad after route is directed. 
-        {console.log(this.props.location.state.reviewType)}
 
         return (<>
             <ParakeetHeader />

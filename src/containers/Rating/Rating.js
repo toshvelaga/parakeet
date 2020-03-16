@@ -15,7 +15,7 @@ import { btnColor } from '../../store/actions'
 
 function mapDispatchToProps(dispatch) {
     return {
-        btnColor: reviewType => dispatch(btnColor(reviewType))
+        btnColor: (reviewType )=> dispatch(btnColor(reviewType))
     };
 }
 
@@ -34,13 +34,12 @@ class ConnectedRating extends Component {
 
         if (this.state.rating >= 4) {
             this.props.history.push({
-                pathname: "/great",
-                state: { reviewType: 'great'}
+                pathname: "/great"
             })
         
         } else {
             
-            const reviewType = 'bad';
+            let reviewType;
             this.props.btnColor(reviewType);
             console.log(reviewType)
             console.log(this.props.btnColor(reviewType)
@@ -48,7 +47,6 @@ class ConnectedRating extends Component {
 
             this.props.history.push({
                 pathname: "/bad",
-                state: { reviewType: 'bad'}
             })
         }
     }
