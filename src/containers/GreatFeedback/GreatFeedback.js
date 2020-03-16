@@ -32,7 +32,7 @@ class Greatfeedback extends Component {
             <FeedbackBtns name="Food" />
             <FeedbackBtns name="Service" />
         </div>
-
+            
         <div>
             <FeedbackBtns name="Pricing" />
             <FeedbackBtns name="Ambience" />
@@ -48,14 +48,14 @@ class Greatfeedback extends Component {
         <div style={{marginTop: '1rem'}}>
         <Textarea label="We'd love to hear your feedback!"/>
         </div>
-
+        
         <div style={{width: '85%', display: 'inline-block'}}>
         <div style={{marginTop: '2rem', display: 'flex', justifyContent: 'space-between'}}>
         <NavButton name="BACK" click={this.onBack} />
         <NavButton name="SUBMIT" click={this.onSubmit}/>
         </div>
         </div>
-
+        
         </>);
     }
 }
