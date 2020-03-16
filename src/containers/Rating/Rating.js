@@ -5,12 +5,21 @@ import './Rating.css'
 import axios from 'axios'
 import firebaseURL from '../../assets/urls'
 
+import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom';
+import color from '@material-ui/core/colors/amber';
+import { btnColor } from '../../store/actions'
 
 // documentation: https://www.npmjs.com/package/react-star-rating-component
 // Additional docs for half-star implementation: https://github.com/voronianski/react-star-rating-component/blob/master/example/index.js
 
-class Rating extends Component {
+function mapDispatchToProps(dispatch) {
+    return {
+        btnColor: reviewType => dispatch(btnColor(reviewType))
+    };
+}
+
+class ConnectedRating extends Component {
     state = { rating: 5 }
 
     onStarClick(nextValue, prevValue, name) {
@@ -28,7 +37,15 @@ class Rating extends Component {
                 pathname: "/great",
                 state: { reviewType: 'great'}
             })
+        
         } else {
+            
+            const reviewType = 'bad';
+            this.props.btnColor(reviewType);
+            console.log(reviewType)
+            console.log(this.props.btnColor(reviewType)
+            )
+
             this.props.history.push({
                 pathname: "/bad",
                 state: { reviewType: 'bad'}
@@ -56,5 +73,10 @@ class Rating extends Component {
         </>);
     }
 }
+
+const Rating = connect(
+    null,
+    mapDispatchToProps
+  )(ConnectedRating);
  
 export default withRouter(Rating);

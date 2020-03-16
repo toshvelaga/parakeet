@@ -9,7 +9,7 @@ const initialState = {
   function rootReducer(state = initialState, action) {
     if (action.type === BTN_COLOR) {
       return Object.assign({}, state, {
-      articles: state.articles.concat(action.payload)
+      reviewType: 'bad'
       });
     }
     return state;
