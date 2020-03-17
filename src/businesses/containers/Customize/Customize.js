@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import Navbar from '../components/Navbar'
+import Navbar from '../../components/Navbar/Navbar'
 
-class Analytics extends Component {
+class Customize extends Component {
     state = {  }
     render() { 
         return (
         <div>
             <Navbar />
-            <h2>poop</h2>
+            <h2>Customize</h2>
         </div>);
     }
 }
  
-export default Analytics;
+export default Customize;

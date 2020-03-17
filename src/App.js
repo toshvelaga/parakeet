@@ -1,6 +1,15 @@
 import React from 'react';
 import './App.css';
 
+// React Router imports
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 // Consumer imports
 
 import Email from './consumer/containers/Email/Email'
@@ -11,14 +20,9 @@ import Thanks from './consumer/containers/Thanks/Thanks';
 
 // Business imports
 
-import Analytics from '../src/businesses/containers/Analytics'
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import Analytics from './businesses/containers/Analytics/Analytics'
+import Feed from './businesses/containers/Feed/Feed';
+import Customize from './businesses/containers/Customize/Customize';
 
 function App() {
   return (
@@ -44,6 +48,14 @@ function App() {
 
           <Route path="/analytics">
             <Analytics />
+          </Route>
+
+          <Route path="/feed">
+            <Feed />
+          </Route>
+
+          <Route path="/customize">
+            <Customize />
           </Route>
 
           <Route path="/">
