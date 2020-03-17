@@ -1,25 +1,25 @@
-[debug] [2020-03-17T05:59:18.681Z] ----------------------------------------------------------------------
-[debug] [2020-03-17T05:59:18.683Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] [2020-03-17T05:59:18.683Z] CLI Version:   7.15.1
-[debug] [2020-03-17T05:59:18.683Z] Platform:      darwin
-[debug] [2020-03-17T05:59:18.683Z] Node Version:  v10.16.3
-[debug] [2020-03-17T05:59:18.683Z] Time:          Mon Mar 16 2020 22:59:18 GMT-0700 (Pacific Daylight Time)
-[debug] [2020-03-17T05:59:18.684Z] ----------------------------------------------------------------------
-[debug] [2020-03-17T05:59:18.684Z] 
-[debug] [2020-03-17T05:59:18.691Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-03-17T05:59:18.691Z] > authorizing via signed-in user
-[debug] [2020-03-17T05:59:18.691Z] [iam] checking project spot-f43fe for permissions ["firebase.projects.get"]
-[debug] [2020-03-17T05:59:18.693Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/spot-f43fe:testIamPermissions  
+[debug] [2020-03-17T23:31:52.201Z] ----------------------------------------------------------------------
+[debug] [2020-03-17T23:31:52.203Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-03-17T23:31:52.203Z] CLI Version:   7.15.1
+[debug] [2020-03-17T23:31:52.203Z] Platform:      darwin
+[debug] [2020-03-17T23:31:52.203Z] Node Version:  v10.16.3
+[debug] [2020-03-17T23:31:52.204Z] Time:          Tue Mar 17 2020 16:31:52 GMT-0700 (Pacific Daylight Time)
+[debug] [2020-03-17T23:31:52.204Z] ----------------------------------------------------------------------
+[debug] [2020-03-17T23:31:52.204Z] 
+[debug] [2020-03-17T23:31:52.213Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-17T23:31:52.213Z] > authorizing via signed-in user
+[debug] [2020-03-17T23:31:52.213Z] [iam] checking project feedback-9ac15 for permissions ["firebase.projects.get"]
+[debug] [2020-03-17T23:31:52.215Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/feedback-9ac15:testIamPermissions  
 
-[debug] [2020-03-17T05:59:19.022Z] <<< HTTP RESPONSE 200
-[debug] [2020-03-17T05:59:19.024Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/spot-f43fe  
+[debug] [2020-03-17T23:31:52.557Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-17T23:31:52.559Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/feedback-9ac15  
  
-[debug] [2020-03-17T05:59:19.211Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-17T23:31:52.770Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/Users/ericeng/Parakeet/parakeet'...
 [info] 
-[debug] [2020-03-17T05:59:19.214Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/spot-f43fe/webApps/-/config  
+[debug] [2020-03-17T23:31:52.772Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/feedback-9ac15/webApps/-/config  
  
-[debug] [2020-03-17T05:59:19.710Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-17T23:31:53.157Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: build
 [info] ✔  hosting: Local server: http://localhost:5000
