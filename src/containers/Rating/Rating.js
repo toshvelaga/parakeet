@@ -15,7 +15,7 @@ import { btnColor } from '../../store/actions'
 
 function mapDispatchToProps(dispatch) {
     return {
-        btnColor: (reviewType )=> dispatch(btnColor(reviewType))
+        btnColor: (reviewType) => dispatch(btnColor(reviewType))
     };
 }
 

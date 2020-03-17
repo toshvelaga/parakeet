@@ -9,14 +9,17 @@ import TextField from '@material-ui/core/TextField';
 class Textarea extends Component {
     constructor(props) {
     super(props)
-        this.state = { show: 'false' }
+        this.state = { 
+            show: 'false',
+            value: '' }
     }
 
     render() { 
 
     const style = {
-        width: '85%'
+        width: '85%',
     } 
+
     return (<>
         <TextField style={style}
             id="filled-dense-multiline"
