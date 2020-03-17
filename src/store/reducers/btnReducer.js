@@ -1,10 +1,10 @@
-import { BTN_COLOR } from '../action-types'
+import { BTN_COLOR } from '../constants/action-types'
 
 const initialState = {
     reviewType: 'great',
   };
   
-  function btnReducer(state = initialState, action) {
+const btnReducer = (state = initialState, action) => {
     if (action.type === BTN_COLOR) {
       return Object.assign({}, state, {
       reviewType: 'bad'

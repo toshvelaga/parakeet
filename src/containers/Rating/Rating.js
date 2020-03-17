@@ -8,7 +8,7 @@ import firebaseURL from '../../assets/urls'
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom';
 import color from '@material-ui/core/colors/amber';
-import { btnColor } from '../../store/actions'
+import { btnColor } from '../../store/actions/actions'
 
 // documentation: https://www.npmjs.com/package/react-star-rating-component
 // Additional docs for half-star implementation: https://github.com/voronianski/react-star-rating-component/blob/master/example/index.js

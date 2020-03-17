@@ -1,4 +1,4 @@
-import { TEXTAREA_TOGGLE } from '../action-types'
+import { TEXTAREA_TOGGLE } from '../constants/action-types'
 
 const initialState = {
     show: 'false',
