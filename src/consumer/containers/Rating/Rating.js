@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import ParakeetHeader from '../../../src/components/ParakeetHeader/ParakeetHeader'
+import ParakeetHeader from '../../components/ParakeetHeader/ParakeetHeader'
 import StarRatingComponent from 'react-star-rating-component';
 import './Rating.css'
 import axios from 'axios'
-import firebaseURL from '../../assets/urls'
+import firebaseURL from '../../../assets/urls'
 
 import { withRouter } from 'react-router-dom';
 
