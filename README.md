@@ -94,6 +94,22 @@ const firebaseConfig = {
 
 ## Firebase Security Database Rules
 
+### Standard
+
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write;
+    }
+  }
+}
+
+```
+
+### Read Write for All
+
 ```
 // Allow read/write access to all users under any conditions
 // Warning: **NEVER** use this rule set in production; it allows
