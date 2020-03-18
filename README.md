@@ -1,5 +1,5 @@
 
-# Spot
+# Parakeet
 QR code app for users to leave reviews at restaurants and collect rewards.
 
 ## Parakeet Summary
@@ -25,13 +25,13 @@ https://trello.com/b/Izbdyppk/spot-mvp
 
 ```firebase serve``` to test your dev instance locally at http://localhost:5000/
 
-```firebase deploy``` to deploy app to firebase server at https://spot-f43fe.firebaseapp.com/ or https://spot-f43fe.firebaseapp.com/
+```firebase deploy``` to deploy app to firebase server at https://spot-f43fe.firebaseapp.com/ or "https://feedback-9ac15.firebaseio.com"
 
 ## Project Firebase Console
 
 https://console.firebase.google.com/u/2/project/spot-f43fe/overview
 
-## Documentation 
+## Cloud Firestore
 
 Cloud Firestore for reading and writing data:
 
@@ -47,7 +47,7 @@ https://firebase.google.com/docs/firestore/
 
 ## Project Config
 
-Staging
+Staging - Spot
 ```
 const firebaseConfig = {
   apiKey: "AIzaSyCoxNUQY1HgEBT_Gj4wt73zRJOpRJrdQH4",
@@ -61,7 +61,7 @@ const firebaseConfig = {
 };
 ```
 
-Default
+Default - Feedback
 
 ```
 const firebaseConfig = {
@@ -76,7 +76,7 @@ const firebaseConfig = {
 };
 ```
 
-Production
+Production - Spotvue
 ```
 const firebaseConfig = {
   apiKey: "AIzaSyCxf0jvqQhrIk67yLBGbGRIV8IbVuR4hDE",
@@ -90,7 +90,7 @@ const firebaseConfig = {
 };
 ```
 
-##Firebase Security Database Rules
+## Firebase Security Database Rules
 
 ```
 // Allow read/write access to all users under any conditions
