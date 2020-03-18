@@ -3,28 +3,11 @@ import ParakeetHeader from '../../components/ParakeetHeader/ParakeetHeader'
 import './Email.css'
 import axios from 'axios'
 import firebaseURL from '../../../assets/urls'
-
 import { withRouter } from 'react-router-dom';
+import firebase from '../../../assets/init'
 
 
-const firebase = require("firebase");
-// Required for side-effects
-require("firebase/firestore");
-
-
-// Initialize Cloud Firestore through Firebase
-firebase.initializeApp({
-  // apiKey: '### FIREBASE API KEY ###',
-  // authDomain: '### FIREBASE AUTH DOMAIN ###',
-  // projectId: '### CLOUD FIRESTORE PROJECT ID ###'
-
-  apiKey: 'AIzaSyDPoVhmh6ABuI2DJU7SkVwUuk0uiXXBknI',
-  authDomain: 'feedback-9ac15.firebaseapp.com',
-  projectId: 'feedback-9ac15'
-});
-
-var db = firebase.firestore();
-
+let db = firebase.firestore();
 
 // todo: need to add email validation
 
