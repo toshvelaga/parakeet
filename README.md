@@ -8,10 +8,7 @@ https://docs.google.com/document/d/1sqc-CRj6KMgcFMMrjJoKsm28HoNYheImF92kH5gRjQs/
 ## Design v1
 https://xd.adobe.com/view/541548dd-2672-4e63-488b-a532dd783f2d-2224/
 
-## Product Features
-https://docs.google.com/document/d/1SjK_QLIswoo3N_cXRSYju8SWYBZZ0B9ZtTw_1W8usNk/
-
-## Task List
+## Task List & Product Features
 
 https://trello.com/b/Izbdyppk/spot-mvp
 
@@ -29,6 +26,7 @@ https://trello.com/b/Izbdyppk/spot-mvp
 
 ## Project Firebase Console
 
+https://console.firebase.google.com/u/2/project/feedback-9ac15/overview
 https://console.firebase.google.com/u/2/project/spot-f43fe/overview
 
 ## Cloud Firestore
