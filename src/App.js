@@ -27,30 +27,7 @@ import Feed from './businesses/containers/Feed/Feed';
 import Customize from './businesses/containers/Customize/Customize';
 
 function App() {
-  return (
-<<<<<<< HEAD
-      <div className="App">
-      <Router>
-        <Switch>
-            <Route path="/bad">
-              <Negativefeedback />
-            </Route>
-            <Route path="/great">
-              <Greatfeedback />
-            </Route>
-            <Route path="/rating">
-            <Rating />
-            </Route>
-            <Route path="/thanks">
-            <Thanks />
-            </Route>
-            <Route path="/">
-              <Email />
-            </Route>
-          </Switch>
-      </Router>
-      </div>
-=======
+  return (   
     <div className="App">
     <Router>
       <Switch>
@@ -90,7 +67,6 @@ function App() {
         </Switch>
     </Router>
     </div>
->>>>>>> master
   );
 }
 
