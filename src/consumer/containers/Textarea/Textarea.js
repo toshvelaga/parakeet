@@ -9,16 +9,26 @@ import TextField from '@material-ui/core/TextField';
 class Textarea extends Component {
     constructor(props) {
     super(props)
-        this.state = { show: 'false' }
+        this.state = { 
+            show: 'false',
+            value: '',
+        }
+    }
+
+    onChangeHander = (e) => {
+        this.setState({value: e.target.value})
     }
 
     render() { 
-
+    console.log(this.state.value)
+    
     const style = {
         width: '85%'
     } 
     return (<>
         <TextField style={style}
+            value={this.state.value}
+            onChange={this.onChangeHander}
             id="filled-dense-multiline"
             label={this.props.label}
             margin="dense"

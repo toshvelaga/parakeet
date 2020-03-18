@@ -1,3 +1,181 @@
+
+# Parakeet
+QR code app for users to leave reviews at restaurants and collect rewards.
+
+## Parakeet Summary
+https://docs.google.com/document/d/1sqc-CRj6KMgcFMMrjJoKsm28HoNYheImF92kH5gRjQs/edit?usp=sharing
+
+## Design v1
+https://xd.adobe.com/view/541548dd-2672-4e63-488b-a532dd783f2d-2224/
+
+## Task List & Product Features
+
+https://trello.com/b/Izbdyppk/spot-mvp
+
+## Setup Dev Environment
+
+```npm init```
+
+```npm install --save firebase``` to install firebase to the web app
+
+```firebase login``` to login to the firebase project
+
+```firebase serve``` to test your dev instance locally at http://localhost:5000/
+
+```firebase deploy``` to deploy app to firebase server at https://spot-f43fe.firebaseapp.com/ or "https://feedback-9ac15.firebaseio.com"
+
+```npm run build && firebase serve``` to compile react files into src and public files into build and then serve to view changes
+
+
+## Project Firebase Console
+
+https://console.firebase.google.com/u/2/project/feedback-9ac15/overview
+
+https://console.firebase.google.com/u/2/project/spot-f43fe/overview
+
+## Cloud Firestore
+
+Cloud Firestore for reading and writing data:
+
+https://firebase.google.com/docs/firestore/
+
+## Cloud Functions
+
+```firebase login```
+
+```firebase init functions```
+
+```firebase deploy --only functions```
+
+```npm i -S cors``` must be used to enable CORS
+
+## Deployment
+
+```firebase use --add``` to add another project to web app
+
+```firebase use staging``` to use Spot environment
+
+```firebase use default``` to use feedback environment
+
+## Project Config
+
+### Staging - Spot
+```
+const firebaseConfig = {
+  apiKey: "AIzaSyCoxNUQY1HgEBT_Gj4wt73zRJOpRJrdQH4",
+  authDomain: "spot-f43fe.firebaseapp.com",
+  databaseURL: "https://spot-f43fe.firebaseio.com",
+  projectId: "spot-f43fe",
+  storageBucket: "spot-f43fe.appspot.com",
+  messagingSenderId: "818173559737",
+  appId: "1:818173559737:web:9a17477c137f0a2fccac68",
+  measurementId: "G-ZCG4509038"
+};
+```
+
+### Default - Feedback
+
+```
+const firebaseConfig = {
+  apiKey: "AIzaSyDPoVhmh6ABuI2DJU7SkVwUuk0uiXXBknI",
+  authDomain: "feedback-9ac15.firebaseapp.com",
+  databaseURL: "https://feedback-9ac15.firebaseio.com",
+  projectId: "feedback-9ac15",
+  storageBucket: "feedback-9ac15.appspot.com",
+  messagingSenderId: "863851276653",
+  appId: "1:863851276653:web:dba487e0edb8094de49264",
+  measurementId: "G-2DMDTT8Q6Z"
+};
+```
+
+### Production - Spotvue
+```
+const firebaseConfig = {
+  apiKey: "AIzaSyCxf0jvqQhrIk67yLBGbGRIV8IbVuR4hDE",
+  authDomain: "spotvue-f9d5d.firebaseapp.com",
+  databaseURL: "https://spotvue-f9d5d.firebaseio.com",
+  projectId: "spotvue-f9d5d",
+  storageBucket: "spotvue-f9d5d.appspot.com",
+  messagingSenderId: "28438992980",
+  appId: "1:28438992980:web:1e1073ac0ac364f7ca35c1",
+  measurementId: "G-QJ6BCT9PVQ"
+};
+```
+
+## Firebase Security Database Rules
+
+### Standard
+
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write;
+    }
+  }
+}
+
+```
+
+### Read Write for All
+
+```
+// Allow read/write access to all users under any conditions
+// Warning: **NEVER** use this rule set in production; it allows
+// anyone to overwrite your entire database.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
+```
+
+## Git Workflow
+
+1. Create your own dev branch off the ```HEAD``` of master branch 
+    
+    ```git branch -a``` to view all remote branches
+    
+    ```git fetch``` to fetch remote branches
+
+    ```git checkout --track origin/<branch_name>``` to check out of the remote branch
+
+2. Pull request to master branch based on your dev branch
+
+3. Scrum master reviews the pull request to merge into master branch OR if you are confident you can merge your own pull request but make sure there are no errors. 
+
+4. Always check master branch to be sure it is clean and working at end of the day.
+
+Notes: 
+
+To delete a remote branch: ```git push <remote_name> --delete <branch_name>```
+
+To delete a local branch: ```git branch -D <branch_name>```
+
+## Design
+
+Foundation: https://foundation.zurb.com/sites/docs/
+
+## Libraries
+
+QR Code: https://davidshimjs.github.io/qrcodejs/
+
+## Hosting
+
+www.bluehost.com
+
+
+
+
+
+
+
+
+## React Stuff
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
