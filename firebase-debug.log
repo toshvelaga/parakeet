@@ -1,0 +1,40 @@
+[debug] [2020-03-18T03:37:09.625Z] ----------------------------------------------------------------------
+[debug] [2020-03-18T03:37:09.627Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-03-18T03:37:09.627Z] CLI Version:   7.15.1
+[debug] [2020-03-18T03:37:09.627Z] Platform:      darwin
+[debug] [2020-03-18T03:37:09.627Z] Node Version:  v10.16.3
+[debug] [2020-03-18T03:37:09.628Z] Time:          Tue Mar 17 2020 20:37:09 GMT-0700 (Pacific Daylight Time)
+[debug] [2020-03-18T03:37:09.628Z] ----------------------------------------------------------------------
+[debug] [2020-03-18T03:37:09.628Z] 
+[debug] [2020-03-18T03:37:09.635Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-18T03:37:09.636Z] > authorizing via signed-in user
+[debug] [2020-03-18T03:37:09.636Z] [iam] checking project feedback-9ac15 for permissions ["firebase.projects.get"]
+[debug] [2020-03-18T03:37:09.638Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/feedback-9ac15:testIamPermissions  
+
+[debug] [2020-03-18T03:37:09.971Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-18T03:37:09.973Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/feedback-9ac15  
+ 
+[debug] [2020-03-18T03:37:10.163Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/ericeng/Parakeet/parakeet'...
+[info] 
+[debug] [2020-03-18T03:37:10.168Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/feedback-9ac15/webApps/-/config  
+ 
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "10"
+[info] ✔  functions: functions emulator started at http://localhost:5001
+[debug] [2020-03-18T03:37:10.694Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/Users/ericeng/Parakeet/parakeet/functions" for Cloud Functions...
+[debug] [2020-03-18T03:37:10.737Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-18T03:37:10.737Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-03-18T03:37:10.737Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-18T03:37:10.738Z] [worker-~diagnostic~-cf00e6ad-f070-4e76-8479-7d0a24fda106]: Assigning socketPath: /var/folders/fg/x01g73ns59g09txqyf30djf80000gn/T/fire_emu_28008.sock
+[debug] [2020-03-18T03:37:10.739Z] [worker-~diagnostic~-cf00e6ad-f070-4e76-8479-7d0a24fda106]: BUSY
+[info] i  hosting: Serving hosting files from: build
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-03-18T03:37:11.051Z] [runtime-status] [28008] Functions runtime initialized. {"cwd":"/Users/ericeng/Parakeet/parakeet/functions","node_version":"10.16.3"}
+[debug] [2020-03-18T03:37:11.053Z] [runtime-status] [28008] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-18T03:37:11.056Z] [runtime-status] [28008] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.10.0","resolution":"/Users/ericeng/Parakeet/parakeet/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-03-18T03:37:11.057Z] [runtime-status] [28008] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/ericeng/Parakeet/parakeet/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-18T03:37:11.057Z] [runtime-status] [28008] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/ericeng/Parakeet/parakeet/functions/node_modules/firebase-functions/lib/index.js"}
+[info] ✔  functions[helloWorld]: http function initialized (http://localhost:5001/feedback-9ac15/us-central1/helloWorld).
+[debug] [2020-03-18T03:37:11.104Z] [worker-~diagnostic~-cf00e6ad-f070-4e76-8479-7d0a24fda106]: IDLE
