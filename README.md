@@ -24,6 +24,9 @@ https://trello.com/b/Izbdyppk/spot-mvp
 
 ```firebase deploy``` to deploy app to firebase server at https://spot-f43fe.firebaseapp.com/ or "https://feedback-9ac15.firebaseio.com"
 
+```npm run build && firebase serve``` to compile react files into src and public files into build and then serve to view changes
+
+
 ## Project Firebase Console
 
 https://console.firebase.google.com/u/2/project/feedback-9ac15/overview
@@ -45,7 +48,7 @@ https://firebase.google.com/docs/firestore/
 
 ## Project Config
 
-Staging - Spot
+### Staging - Spot
 ```
 const firebaseConfig = {
   apiKey: "AIzaSyCoxNUQY1HgEBT_Gj4wt73zRJOpRJrdQH4",
@@ -59,7 +62,7 @@ const firebaseConfig = {
 };
 ```
 
-Default - Feedback
+### Default - Feedback
 
 ```
 const firebaseConfig = {
@@ -74,7 +77,7 @@ const firebaseConfig = {
 };
 ```
 
-Production - Spotvue
+### Production - Spotvue
 ```
 const firebaseConfig = {
   apiKey: "AIzaSyCxf0jvqQhrIk67yLBGbGRIV8IbVuR4hDE",
