@@ -1,14 +1,12 @@
-import { TEXTAREA_TOGGLE } from '../constants/action-types'
+import { TEXTAREA_VALUE } from '../constants/action-types'
 
 const initialState = {
-    show: 'false',
+    value: '',
   };
   
   function textareaReducer(state = initialState, action) {
-    if (action.type === TEXTAREA_TOGGLE) {
-      return Object.assign({}, state, {
-      show: 'true'
-      });
+    if (action.type === TEXTAREA_VALUE) {
+      return {...initialState, value: 'text'};
     }
     return state;
   }

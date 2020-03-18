@@ -1,5 +1,5 @@
 // src/js/constants/action-types.js
 
-export const TEXTAREA_TOGGLE = "TEXTAREA_TOGGLE";
+export const TEXTAREA_VALUE = "TEXTAREA_VALUE";
 
-export const BTN_COLOR = "BTN_COLOR";
+export const BAD_REVIEW = "BAD_REVIEW";

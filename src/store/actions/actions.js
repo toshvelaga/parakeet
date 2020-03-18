@@ -1,11 +1,11 @@
 // src/js/actions/index.js
 
-import { BTN_COLOR, TEXTAREA_TOGGLE } from '../constants/action-types'
+import { BAD_REVIEW, TEXTAREA_VALUE } from '../constants/action-types'
 
 export const btnColor = () => {
-    return { type: BTN_COLOR }
+    return { type: BAD_REVIEW }
 };
 
-export const textareaToggle = () => {
-    return { type: TEXTAREA_TOGGLE }
+export const textareaValue = () => {
+    return { type: TEXTAREA_VALUE }
 }

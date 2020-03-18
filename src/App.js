@@ -16,15 +16,8 @@ import {
   Link
 } from "react-router-dom";
 
-// importing redux
-
-import { Provider } from 'react-redux'
-import store from './store/store'
-
 function App() {
   return (
-    <Provider store={store}>
-
       <div className="App">
       <Router>
         <Switch>
@@ -46,8 +39,6 @@ function App() {
           </Switch>
       </Router>
       </div>
-
-    </Provider>
   );
 }
 
