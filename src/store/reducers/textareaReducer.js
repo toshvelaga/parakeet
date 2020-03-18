@@ -5,9 +5,11 @@ const initialState = {
   };
   
   const textareaReducer = (state = initialState, action) => {
+      console.log('reducer', action)
       switch (action.type) {
         case 'TEXTAREA_CHANGE':
           return {...initialState, textValue: action.text };
+          console.log(initialState.textValue)
         default:
           return state;
       }

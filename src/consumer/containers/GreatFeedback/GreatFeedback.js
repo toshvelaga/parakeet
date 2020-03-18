@@ -8,6 +8,8 @@ import Otherbtn from '../OtherBtn/OtherBtn';
 
 import { withRouter } from 'react-router'; 
 
+import store from '../../../store/store'
+
 class Greatfeedback extends Component {
     constructor(props) {
         super(props);
@@ -22,7 +24,10 @@ class Greatfeedback extends Component {
         this.props.history.push("/thanks")
     }
 
+
     render() { 
+
+
 
         return (<>
         <ParakeetHeader />
@@ -59,5 +64,8 @@ class Greatfeedback extends Component {
         </>);
     }
 }
- 
+
+store.subscribe( () => { console.log(store.getState().textareaReducer.textValue) }
+)
+
 export default withRouter(Greatfeedback);
