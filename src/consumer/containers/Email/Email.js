@@ -4,23 +4,9 @@ import './Email.css'
 import axios from 'axios'
 import firebaseURL from '../../../assets/urls'
 import { withRouter } from 'react-router-dom';
+import firebase from '../../../assets/init'
 
 // firestore documentation: https://firebase.google.com/docs/firestore/query-data/get-data
-
-const firebase = require("firebase");
-// Required for side-effects
-require("firebase/firestore");
-
-// Initialize Cloud Firestore through Firebase
-firebase.initializeApp({
-  // apiKey: '### FIREBASE API KEY ###',
-  // authDomain: '### FIREBASE AUTH DOMAIN ###',
-  // projectId: '### CLOUD FIRESTORE PROJECT ID ###'
-
-  apiKey: 'AIzaSyDPoVhmh6ABuI2DJU7SkVwUuk0uiXXBknI',
-  authDomain: 'feedback-9ac15.firebaseapp.com',
-  projectId: 'feedback-9ac15'
-});
 
 let db = firebase.firestore();
 
