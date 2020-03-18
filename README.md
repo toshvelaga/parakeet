@@ -30,6 +30,7 @@ https://trello.com/b/Izbdyppk/spot-mvp
 ## Project Firebase Console
 
 https://console.firebase.google.com/u/2/project/feedback-9ac15/overview
+
 https://console.firebase.google.com/u/2/project/spot-f43fe/overview
 
 ## Cloud Firestore
