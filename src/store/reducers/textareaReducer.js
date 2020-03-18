@@ -1,14 +1,17 @@
 import { TEXTAREA_VALUE } from '../constants/action-types'
 
 const initialState = {
-    value: '',
+    textValue: '',
   };
   
-  function textareaReducer(state = initialState, action) {
-    if (action.type === TEXTAREA_VALUE) {
-      return {...initialState, value: 'text'};
-    }
-    return state;
-  }
-  
+  const textareaReducer = (state = initialState, action) => {
+      console.log('reducer', action)
+      switch (action.type) {
+        case 'INPUT_CHANGE':
+          return {...initialState, textValue: action.text };
+        default:
+          return state;
+      }
+}
+
   export default textareaReducer;
