@@ -59,7 +59,7 @@ class Email extends Component {
         return (<div>
             <ParakeetHeader />
             <input value={this.state.value} onChange={this.InputHandler} className="emailInput" type="email" id="email" name="email" placeholder="Enter your email"></input>
-            <button onClick={this.onSubmit2} className="emailButton">Submit foo</button>
+            <button onClick={this.onSubmit} className="emailButton">Submit</button>
         </div>);
     }
 }
