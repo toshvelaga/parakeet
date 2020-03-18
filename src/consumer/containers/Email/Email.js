@@ -54,12 +54,21 @@ class Email extends Component {
 
     }
 
+    emailCloudFunction = () => {
+        // const email = { email: this.state.value }
+        axios.post('https://us-central1-feedback-9ac15.cloudfunctions.net/helloWorld')
+        .then(response => console.log(response))
+        .catch(error => console.log(error))
+    }
+
     render() { 
         {console.log(this.state.value)}
         return (<div>
             <ParakeetHeader />
             <input value={this.state.value} onChange={this.InputHandler} className="emailInput" type="email" id="email" name="email" placeholder="Enter your email"></input>
-            <button onClick={this.onSubmit} className="emailButton">Submit</button>
+            //<button onClick={this.onSubmit} className="emailButton">Submit</button>
+            <button onClick={this.emailCloudFunction} className="emailButton">Submit</button>
+
         </div>);
     }
 }
