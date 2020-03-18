@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 
 // importing store into component
 
-import store from '../../store/store'
+import store from '../../../store/store'
 
 class FeedbackBtns extends Component {
     constructor(props) {

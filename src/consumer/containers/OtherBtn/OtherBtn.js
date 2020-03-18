@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './OtherBtn.css'
 import Textarea from '../Textarea/Textarea'
 
-import store from '../../store/store'
+import store from '../../../store/store'
 
 class Otherbtn extends Component {
     constructor(props) {
@@ -20,7 +20,7 @@ class Otherbtn extends Component {
 
     render() { 
 
-        const reviewType = store.getState().reviewType;
+        const reviewType = store.getState().btnReducer.reviewType;
         let button;
 
         if (reviewType == 'great') {
