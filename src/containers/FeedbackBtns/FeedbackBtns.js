@@ -25,7 +25,7 @@ class FeedbackBtns extends Component {
 
     render() { 
         
-        const reviewType = store.getState().reviewType;
+        const reviewType = store.getState().btnReducer.reviewType;
         console.log(reviewType)
         let button;
 
