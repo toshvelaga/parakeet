@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavButton from '../../components/NavButton/NavButton';
-import ParakeetHeader from '../../../src/components/ParakeetHeader/ParakeetHeader';
+import ParakeetHeader from '../../components/ParakeetHeader/ParakeetHeader';
 import Greatmessage from '../../components/GreatMessage/GreatMessage';
 import FeedbackBtns from '../FeedbackBtns/FeedbackBtns';
 import Textarea from '../Textarea/Textarea';

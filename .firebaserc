@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "feedback-9ac15"
+    "default": "feedback-9ac15",
+    "staging": "spot-f43fe"
   }
 }
