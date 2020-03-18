@@ -5,13 +5,16 @@ import { withRouter } from 'react-router-dom';
 
 // toggle SO: https://stackoverflow.com/questions/42630473/react-toggle-class-onclick
 
+// importing store into component
+
+import store from '../../../store/store'
+
 class FeedbackBtns extends Component {
     constructor(props) {
         super(props);
         this.state = { 
             className: 'feedbackBtn',
             active: 'false',
-            reviewType: 'great',
         };
     }
 
@@ -21,8 +24,8 @@ class FeedbackBtns extends Component {
     };
 
     render() { 
-        // console.log(this.props.location.pathname)
-        const reviewType = this.state.reviewType;
+        
+        const reviewType = store.getState().btnReducer.reviewType;
         let button;
 
         if (reviewType == 'great') {

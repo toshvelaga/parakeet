@@ -3,6 +3,8 @@ import './App.css';
 
 // React Router imports
 
+// importing routes 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,6 +28,7 @@ import Customize from './businesses/containers/Customize/Customize';
 
 function App() {
   return (
+
     <div className="App">
     <Router>
       <Switch>

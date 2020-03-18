@@ -13,7 +13,6 @@ import { withRouter } from 'react-router';
 class Negativefeedback extends Component {
     constructor(props) {
         super(props);
-        this.state = { }
     }
 
     onBack = () => {
@@ -25,10 +24,10 @@ class Negativefeedback extends Component {
     }
 
     render() { 
-        
+
         return (<>
-        <ParakeetHeader />
-        <Sorrymessage />
+            <ParakeetHeader />
+            <Sorrymessage />
 
         <div>
             <FeedbackBtns name="Food" />
@@ -39,18 +38,18 @@ class Negativefeedback extends Component {
             <FeedbackBtns name="Pricing" />
             <FeedbackBtns name="Ambience" />
         </div>
-
+        
         <div>
             <FeedbackBtns name="Cleanliness" />
             <FeedbackBtns name="Plating" />
         </div>
-
+            
         <Otherbtn />
-        
+            
         <div style={{marginTop: '1rem'}}>
-        <Textarea label="Please tell us how we can do better" color="secondary"/>
+            <Textarea label="Please tell us how we can do better" color="secondary"/>
         </div>
-
+        
         <div style={{float: 'left', width: '80%'}}>
             <RadioBtn />
         </div>

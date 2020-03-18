@@ -23,8 +23,9 @@ class Textarea extends Component {
     console.log(this.state.value)
     
     const style = {
-        width: '85%'
+        width: '85%',
     } 
+
     return (<>
         <TextField style={style}
             value={this.state.value}

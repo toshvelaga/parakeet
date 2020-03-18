@@ -6,6 +6,8 @@ import axios from 'axios'
 import firebaseURL from '../../../assets/urls'
 
 import { withRouter } from 'react-router-dom';
+import color from '@material-ui/core/colors/amber';
+import store from '../../../store/store'
 
 // documentation: https://www.npmjs.com/package/react-star-rating-component
 // Additional docs for half-star implementation: https://github.com/voronianski/react-star-rating-component/blob/master/example/index.js
@@ -25,13 +27,15 @@ class Rating extends Component {
 
         if (this.state.rating >= 4) {
             this.props.history.push({
-                pathname: "/great",
-                state: { reviewType: 'great'}
+                pathname: "/great"
             })
+        
         } else {
+
+            store.dispatch({type: 'BAD_REVIEW'})
+            
             this.props.history.push({
                 pathname: "/bad",
-                state: { reviewType: 'bad'}
             })
         }
     }
