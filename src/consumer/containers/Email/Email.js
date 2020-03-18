@@ -6,6 +6,7 @@ import firebaseURL from '../../../assets/urls'
 import { withRouter } from 'react-router-dom';
 import firebase from '../../../assets/init'
 
+// firestore documentation: https://firebase.google.com/docs/firestore/query-data/get-data
 
 let db = firebase.firestore();
 
