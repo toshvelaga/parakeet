@@ -25,41 +25,49 @@ class Negativefeedback extends Component {
 
     render() { 
 
+        const outerDivStyle = {width: '85%', display: 'inline-block'}
+        const innerDivStyle = {display: 'flex', justifyContent: 'space-between'}
+
         return (<>
             <ParakeetHeader />
+
+            <div style={{width: '85%'}}>
             <Sorrymessage />
-
-        <div>
-            <FeedbackBtns name="Food" />
-            <FeedbackBtns name="Service" />
-        </div>
-
-        <div>
-            <FeedbackBtns name="Pricing" />
-            <FeedbackBtns name="Ambience" />
-        </div>
-        
-        <div>
-            <FeedbackBtns name="Cleanliness" />
-            <FeedbackBtns name="Plating" />
-        </div>
-            
-        <Otherbtn />
-            
-        <div style={{marginTop: '1rem'}}>
-            <Textarea label="Please tell us how we can do better" color="secondary"/>
-        </div>
-        
-        <div style={{float: 'left', width: '80%'}}>
-            <RadioBtn />
-        </div>
-        
-        <div style={{width: '85%', display: 'inline-block'}}>
-            <div style={{marginTop: '1rem', display: 'flex', justifyContent: 'space-between'}}>
-                <NavButton name="BACK" click={this.onBack} />
-                <NavButton name="SUBMIT" click={this.onSubmit} />
             </div>
-        </div>
+
+            <div style={outerDivStyle}>
+            <div style={innerDivStyle}>
+                <FeedbackBtns name="Food" />
+                <FeedbackBtns name="Service" />
+            </div>
+
+            <div style={innerDivStyle}>
+                <FeedbackBtns name="Pricing" />
+                <FeedbackBtns name="Ambience" />
+            </div>
+            
+            <div style={innerDivStyle}>
+                <FeedbackBtns name="Cleanliness" />
+                <FeedbackBtns name="Plating" />
+            </div>
+            </div>
+                
+            <Otherbtn />
+                
+            <div style={{marginTop: '1rem'}}>
+                <Textarea label="Please tell us how we can do better" color="secondary"/>
+            </div>
+            
+            <div style={{ width: '85%'}}>
+                <RadioBtn />
+            </div>
+            
+            <div style={{width: '85%', display: 'inline-block'}}>
+                <div style={{marginTop: '1rem', display: 'flex', justifyContent: 'space-between'}}>
+                    <NavButton name="BACK" click={this.onBack} />
+                    <NavButton name="SUBMIT" click={this.onSubmit} />
+                </div>
+            </div>
         </>);
     }
 }
