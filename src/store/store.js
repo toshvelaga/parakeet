@@ -9,4 +9,6 @@ const store = createStore(
     rootReducer 
 );
 
+console.log(rootReducer)
+
 export default store;

@@ -8,6 +8,8 @@ import Otherbtn from '../OtherBtn/OtherBtn';
 
 import { withRouter } from 'react-router'; 
 
+import store from '../../../store/store'
+
 class Greatfeedback extends Component {
     constructor(props) {
         super(props);
@@ -24,23 +26,30 @@ class Greatfeedback extends Component {
 
     render() { 
 
+        const outerDivStyle = {width: '85%', display: 'inline-block'}
+        const innerDivStyle = {display: 'flex', justifyContent: 'space-between'}
+
         return (<>
         <ParakeetHeader />
+        <div style={{width: '85%'}}>
         <Greatmessage />
+        </div>
         
-        <div>
+        <div style={outerDivStyle}>
+        <div style={innerDivStyle}>
             <FeedbackBtns name="Food" />
             <FeedbackBtns name="Service" />
         </div>
             
-        <div>
+        <div style={innerDivStyle}>
             <FeedbackBtns name="Pricing" />
             <FeedbackBtns name="Ambience" />
         </div>
 
-        <div>
+        <div style={innerDivStyle}>
             <FeedbackBtns name="Cleanliness" />
             <FeedbackBtns name="Plating" />
+        </div>
         </div>
 
         <Otherbtn />
@@ -49,8 +58,8 @@ class Greatfeedback extends Component {
         <Textarea label="We'd love to hear your feedback!"/>
         </div>
         
-        <div style={{width: '85%', display: 'inline-block'}}>
-        <div style={{marginTop: '2rem', display: 'flex', justifyContent: 'space-between'}}>
+        <div style={outerDivStyle}>
+        <div style={{...innerDivStyle, marginTop: '2rem'}}>
         <NavButton name="BACK" click={this.onBack} />
         <NavButton name="SUBMIT" click={this.onSubmit}/>
         </div>
@@ -59,5 +68,8 @@ class Greatfeedback extends Component {
         </>);
     }
 }
- 
+
+store.subscribe( () => { console.log(store.getState().textareaReducer.textValue) }
+)
+
 export default withRouter(Greatfeedback);

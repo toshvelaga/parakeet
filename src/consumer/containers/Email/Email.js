@@ -65,6 +65,7 @@ class Email extends Component {
         {console.log(this.state.value)}
         return (<div>
             <ParakeetHeader />
+
             <input value={this.state.value} onChange={this.InputHandler} className="emailInput" type="email" id="email" name="email" placeholder="Enter your email"></input>
             //<button onClick={this.onSubmit} className="emailButton">Submit</button>
             <button onClick={this.emailCloudFunction} className="emailButton">Submit</button>
