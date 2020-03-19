@@ -1,33 +1,33 @@
 .feedbackBtn {
     border: 1px #afafaf solid;
     background: transparent;
-    width: 40%;
+    width: 48%;
     padding-top: 1rem;
     padding-bottom: 1rem;
     color: #afafaf;
     text-transform: uppercase;
-    margin: .5rem;
+    margin-top: .8rem;
     border-radius: 3px;
 }
 
 .greatSelected {
     background: #0378d8; 
-    width: 40%;
+    width: 48%;
     padding-top: 1rem;
     padding-bottom: 1rem;
     color: white;
     text-transform: uppercase;
-    margin: .5rem;
+    margin-top: .8rem;
     border-radius: 3px;
 }
 
 .badSelected {
     background: #fb7171; 
-    width: 40%;
+    width: 48%;
     padding-top: 1rem;
     padding-bottom: 1rem;
     color: white;
     text-transform: uppercase;
-    margin: .5rem;
+    margin-top: .8rem;
     border-radius: 3px;
 }

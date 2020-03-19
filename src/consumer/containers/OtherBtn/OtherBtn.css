@@ -7,7 +7,7 @@
     padding-bottom: 1rem;
     color: #afafaf;
     text-transform: uppercase;
-    margin: .5rem;
+    margin-top: .8rem;
     border-radius: 3px;
 }
 
@@ -20,7 +20,7 @@
     padding-bottom: 1rem;
     color: white;
     text-transform: uppercase;
-    margin: .5rem;
+    margin-top: .8rem;
     border-radius: 3px;    
 }
 
@@ -33,6 +33,6 @@
     padding-bottom: 1rem;
     color: white;
     text-transform: uppercase;
-    margin: .5rem;
+    margin-top: .8rem;
     border-radius: 3px;    
 }

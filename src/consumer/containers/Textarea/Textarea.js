@@ -20,11 +20,13 @@ class Textarea extends Component {
     }
 
     render() { 
+
+    console.log(store.getState())
     
     const style = {
         width: '85%',
     } 
-    
+
     return (<>
         <TextField style={style}
             value={this.props.textValue}
@@ -53,7 +55,7 @@ const mapDispatchtoProps = (dispatch) => {
         inputChanged: (e) => {
             console.log('changed', e.target.value);
             const action = { type: 'TEXTAREA_CHANGE', text: e.target.value }
-            dispatch(action)
+            store.dispatch(action)
         }
     }
 }
