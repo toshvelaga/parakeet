@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 import ParakeetHeader from '../../components/ParakeetHeader/ParakeetHeader'
 import './Email.css'
 import axios from 'axios'
-import firebaseURL from '../../../assets/urls'
+// import firebaseURL from '../../../assets/urls'
 import { withRouter } from 'react-router-dom';
 import firebase from '../../../assets/init'
 
 // firestore documentation: https://firebase.google.com/docs/firestore/query-data/get-data
 
 let db = firebase.firestore();
-
-// todo: need to add email validation
 
 class Email extends Component {
     state = { value: '' }
@@ -19,18 +17,18 @@ class Email extends Component {
         this.setState({value: e.target.value})
     }
 
-    onSubmit = () => {
-        const email = { email: this.state.value }
-        axios.post(firebaseURL + '/reviewers.json', email, {
-            headers: {
-                'Content-Type':'application/json',
-                'Access-Control-Allow-Origin': '*'
-            }
-        })
-        .then(response => console.log(response))
-        .catch(error => console.log(error))
-            .then(this.props.history.push("/Rating"));
-    }
+    // onSubmit = () => {
+    //     const email = { email: this.state.value }
+    //     axios.post(firebaseURL + '/reviewers.json', email, {
+    //         headers: {
+    //             'Content-Type':'application/json',
+    //             'Access-Control-Allow-Origin': '*'
+    //         }
+    //     })
+    //     .then(response => console.log(response))
+    //     .catch(error => console.log(error))
+    //         .then(this.props.history.push("/Rating"));
+    // }
 
     validateEmail = (email) => {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

@@ -1,16 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import ParakeetHeader from '../../components/ParakeetHeader/ParakeetHeader'
-import StarRatingComponent from 'react-star-rating-component';
+import StarRatingComponent from 'react-star-rating-component'
 import './Rating.css'
 import axios from 'axios'
 import firebaseURL from '../../../assets/urls'
+import firebase from '../../../assets/init'
 
-import { withRouter } from 'react-router-dom';
-import color from '@material-ui/core/colors/amber';
+import { withRouter } from 'react-router-dom'
 import store from '../../../store/store'
 
 // documentation: https://www.npmjs.com/package/react-star-rating-component
 // Additional docs for half-star implementation: https://github.com/voronianski/react-star-rating-component/blob/master/example/index.js
+
+let db = firebase.firestore();
 
 class Rating extends Component {
     state = { rating: 5 }
@@ -20,10 +22,10 @@ class Rating extends Component {
     }
 
     onSubmit = () => {
-        const rating = { rating: this.state.rating }
-        axios.post(firebaseURL + '/reviewers.json', rating)
-            .then(response => console.log(response))
-            .catch(error => console.log(error))
+        let rating = { rating: this.state.rating }
+
+        db.collection("customers").doc("emails").set({
+            rating: rating.rating}, { merge: true })
 
         if (this.state.rating >= 4) {
             this.props.history.push({
