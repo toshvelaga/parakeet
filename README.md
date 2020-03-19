@@ -39,6 +39,16 @@ Cloud Firestore for reading and writing data:
 
 https://firebase.google.com/docs/firestore/
 
+## Cloud Functions
+
+```firebase login```
+
+```firebase init functions```
+
+```firebase deploy --only functions```
+
+```npm i -S cors``` must be used to enable CORS
+
 ## Deployment
 
 ```firebase use --add``` to add another project to web app
