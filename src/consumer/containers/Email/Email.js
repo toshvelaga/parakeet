@@ -32,26 +32,29 @@ class Email extends Component {
             .then(this.props.history.push("/Rating"));
     }
 
+    validateEmail = (email) => {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
 
     onSubmit2 = () => {
-        // const email = {email: this.state.value}
-        // axios.post('', email)
-        // .then (response => console.log(response))
-        // .catch(error => console.log(error))
 
-        // Add a new document in collection "cities"
-        db.collection("cities").doc("LA").set({
-            name: "Los Angeles",
-            state: "CA",
-            country: "USA"
+        const email = this.state.value
+
+        if (this.validateEmail(email) === false) {
+            alert("The email you entered is invalid")
+        } else
+        
+        db.collection("customers").doc("emails").set({
+            email: this.state.value,
         })
         .then(function() {
             console.log("Document successfully written!");
         })
+        .then(this.props.history.push("/Rating"))
         .catch(function(error) {
             console.error("Error writing document: ", error);
         });
-
     }
 
     emailCloudFunction = () => {
@@ -62,13 +65,13 @@ class Email extends Component {
     }
 
     render() { 
-        {console.log(this.state.value)}
         return (<div>
             <ParakeetHeader />
 
             <input value={this.state.value} onChange={this.InputHandler} className="emailInput" type="email" id="email" name="email" placeholder="Enter your email"></input>
-            //<button onClick={this.onSubmit} className="emailButton">Submit</button>
-            <button onClick={this.emailCloudFunction} className="emailButton">Submit</button>
+            <button onClick={this.onSubmit2} className="emailButton">Submit</button>
+
+            {/* <button onClick={this.emailCloudFunction} className="emailButton">Submit</button> */}
 
         </div>);
     }
