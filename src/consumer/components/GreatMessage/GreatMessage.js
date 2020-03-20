@@ -4,7 +4,7 @@ const Greatmessage = () => {
     return (<>
     <div style={{
         margin: 'auto', 
-        width: '80%', 
+        width: '82.5%', 
         color: '#0378d8', 
         textAlign: 'left', 
         fontSize: '1.5rem'

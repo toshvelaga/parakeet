@@ -4,7 +4,7 @@ const Sorrymessage = () => {
     return (<>
     <div style={{
         margin: 'auto', 
-        width: '80%', 
+        width: '82.5%', 
         color: '#fb7171', 
         textAlign: 'left', 
         fontSize: '1.5rem'

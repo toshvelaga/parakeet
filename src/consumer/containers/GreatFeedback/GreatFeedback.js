@@ -13,7 +13,7 @@ import store from '../../../store/store'
 class Greatfeedback extends Component {
     constructor(props) {
         super(props);
-        this.state = { };
+        this.state = { text: '' };
     }
 
     onBack = () => {
@@ -26,6 +26,14 @@ class Greatfeedback extends Component {
 
     render() { 
 
+        store.subscribe(() => {      
+            this.setState({
+              text: store.getState().textareaReducer.textValue
+            });
+        });
+
+        console.log(this.state.text)
+        
         const outerDivStyle = {width: '85%', display: 'inline-block'}
         const innerDivStyle = {display: 'flex', justifyContent: 'space-between'}
 
@@ -68,8 +76,5 @@ class Greatfeedback extends Component {
         </>);
     }
 }
-
-store.subscribe( () => { console.log(store.getState().textareaReducer.textValue) }
-)
 
 export default withRouter(Greatfeedback);
