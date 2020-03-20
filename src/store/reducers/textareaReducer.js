@@ -1,5 +1,3 @@
-// import { TEXTAREA_VALUE } from '../constants/action-types'
-
 const initialState = {
     textValue: '',
   };
@@ -9,7 +7,6 @@ const initialState = {
       switch (action.type) {
         case 'TEXTAREA_CHANGE':
           return {...initialState, textValue: action.text };
-          console.log(initialState.textValue)
         default:
           return state;
       }

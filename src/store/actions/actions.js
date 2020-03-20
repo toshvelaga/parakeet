@@ -1,5 +1,3 @@
-// src/js/actions/index.js
-
 import { BAD_REVIEW, TEXTAREA_VALUE } from '../constants/action-types'
 
 export const badReview = () => {

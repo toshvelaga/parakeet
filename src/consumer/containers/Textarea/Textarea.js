@@ -12,12 +12,6 @@ import { connect } from 'react-redux';
 // Adding redux to a textarea/input tutorial: https://www.youtube.com/watch?v=MOO5hit7s0U
 
 class Textarea extends Component {
-    constructor(props) {
-    super(props)
-        this.state = { 
-            show: 'false',
-        }
-    }
 
     render() { 
 
@@ -59,6 +53,6 @@ const mapDispatchtoProps = (dispatch) => {
         }
     }
 }
- 
+
 export default connect(mapStatetoProps, mapDispatchtoProps)(Textarea);
 
