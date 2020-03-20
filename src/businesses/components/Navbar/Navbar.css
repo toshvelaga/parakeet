@@ -1,27 +1,32 @@
 #nav {
 	width: 100%;
 	float: left;
-	margin: 0 0 3em 0;
+	margin: 0 auto;
 	padding: 0;
-    list-style: none; 
+	list-style: none; 
+	background: #287ffb;
+	height: 3rem;
 }
 
 #nav li {
-    float: left; 
+	float: left; 
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-left: 1rem;
 }
 
 #nav li a {
-		display: block;
+		/* display: block; */
 		padding: 8px 15px;
 		text-decoration: none;
 		/* font-weight: bold; */
-		color: gray;
-    } 
-
-/* #nav li a {
+		color: white;
+	} 
+	
+#nav li a:hover {
 		display: block;
 		padding: 8px 15px;
 		text-decoration: none;
-		font-weight: bold;
-		color: #069;     
-    }  */
+		color: whitesmoke;  
+    } 

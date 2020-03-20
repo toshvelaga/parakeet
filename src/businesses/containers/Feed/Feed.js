@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../../components/Navbar/Navbar'
+import './Feed.css'
 
 class Feed extends Component {
     state = {  }
@@ -7,7 +8,7 @@ class Feed extends Component {
         return (
         <div>
             <Navbar />
-            <h2>Feed</h2>
+            <h2 style={{marginTop: 0}}>Feed</h2>
         </div>);
     }
 }

@@ -5,10 +5,10 @@ class Analytics extends Component {
     state = {  }
     render() { 
         return (
-        <div>
+        <>
             <Navbar />
             <h2>Analytics</h2>
-        </div>);
+        </>);
     }
 }
  
