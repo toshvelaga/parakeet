@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
+import QRcode from '../../components/QRcode/QRcode'
 
 class Customize extends Component {
     state = {  }
@@ -8,6 +9,7 @@ class Customize extends Component {
         <div>
             <Navbar />
             <h2>Customize</h2>
+            <QRcode />
         </div>);
     }
 }
