@@ -100,7 +100,7 @@ export default function Navbar() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar
+      <AppBar style={{ background: '#0378d8' }}
         position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
@@ -121,7 +121,7 @@ export default function Navbar() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer
+      <Drawer 
         className={classes.drawer}
         variant="persistent"
         anchor="left"
