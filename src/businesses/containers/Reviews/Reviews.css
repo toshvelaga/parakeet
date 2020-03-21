@@ -1,0 +1,41 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+  
+  .review {
+    display: inline-block;
+    margin: 2rem;
+    padding: 1.1rem;
+    max-width: 500px;
+    border-radius: 3px;
+    border: 1px solid #bfbfbf;
+    background-color: #efeded;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+  .review .review__title {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+  }
+  .review .review__score {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+    margin-bottom: 0.8rem;
+  }
+  .review .review__score .score {
+    font-size: 2rem;
+  }
+  .review .review__score .score-stars {
+    margin-left: 1rem;
+  }
+  .review .review__score .date {
+    margin-left: 13.5em;
+    background: white;
+    padding: 5px;
+    border-radius: 3px;
+  }
+  .review .review__text {
+    line-height: 1.45;
+  }
+  
