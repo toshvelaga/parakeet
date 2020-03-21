@@ -1,32 +1,4 @@
-#nav {
-	width: 100%;
-	float: left;
-	margin: 0 auto;
-	padding: 0;
-	list-style: none; 
-	background: #287ffb;
-	height: 3rem;
+.MuiAppBar-colorPrimary {
+    color: #fff;
+    background-color: red;
 }
-
-#nav li {
-	float: left; 
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	margin-left: 1rem;
-}
-
-#nav li a {
-		/* display: block; */
-		padding: 8px 15px;
-		text-decoration: none;
-		/* font-weight: bold; */
-		color: white;
-	} 
-	
-#nav li a:hover {
-		display: block;
-		padding: 8px 15px;
-		text-decoration: none;
-		color: whitesmoke;  
-    } 

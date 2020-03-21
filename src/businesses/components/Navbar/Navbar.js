@@ -15,8 +15,15 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+
+import NotificationImportantIcon from '@material-ui/icons/NotificationImportant';
+import TimelineOutlinedIcon from '@material-ui/icons/TimelineOutlined';
+import LocalDiningOutlinedIcon from '@material-ui/icons/LocalDiningOutlined';
+import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
+
+import { Link } from "react-router-dom";
+
+import './Navbar.css'
 
 const drawerWidth = 240;
 
@@ -130,15 +137,35 @@ export default function Navbar() {
         </div>
         <Divider />
         <List>
-          {['Feed', 'Analytics', 'Customize', 'Logout'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-    
+          <Link to="Feed" style={{ textDecoration: 'none', color: 'gray' }}>
+            <ListItem button key="Feed">
+              <ListItemIcon><NotificationImportantIcon /></ListItemIcon>
+              <ListItemText primary="Feed" />
+            </ListItem>  
+          </Link>    
 
+          <Link to="Analytics" style={{ textDecoration: 'none', color: 'gray' }}>
+            <ListItem button key="Analytics">
+              <ListItemIcon><TimelineOutlinedIcon /></ListItemIcon>
+              <ListItemText primary="Analytics" />
+            </ListItem>  
+          </Link>
+
+          <Link to="Customize" style={{ textDecoration: 'none', color: 'gray' }}>
+            <ListItem button key="Customize">
+              <ListItemIcon><LocalDiningOutlinedIcon /></ListItemIcon>
+              <ListItemText primary="Customize" />
+            </ListItem>  
+          </Link>      
+
+          <Link to="Logout" style={{ textDecoration: 'none', color: 'gray' }}>
+            <ListItem button key="Logout">
+              <ListItemIcon><ExitToAppOutlinedIcon /></ListItemIcon>
+              <ListItemText primary="Logout" />
+            </ListItem>  
+          </Link>  
+
+        </List>
       </Drawer>
       <main
         className={clsx(classes.content, {
