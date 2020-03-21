@@ -58,12 +58,12 @@ class Negativefeedback extends Component {
                 <Textarea label="Please tell us how we can do better" color="secondary"/>
             </div>
             
-            <div style={{ width: '85%'}}>
+            <div style={{...outerDivStyle, marginTop: '.3rem'}}>
                 <RadioBtn />
             </div>
             
-            <div style={{width: '85%', display: 'inline-block'}}>
-                <div style={{marginTop: '1rem', display: 'flex', justifyContent: 'space-between'}}>
+            <div style={outerDivStyle}>
+                <div style={{marginTop: '.7rem', display: 'flex', justifyContent: 'space-between'}}>
                     <NavButton name="BACK" click={this.onBack} />
                     <NavButton name="SUBMIT" click={this.onSubmit} />
                 </div>

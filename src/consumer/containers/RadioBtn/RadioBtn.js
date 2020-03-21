@@ -10,15 +10,13 @@ class RadioBtn extends Component {
     state = {  }
     render() { 
         return (<>    
-        <FormControl component="fieldset">
-        <FormGroup aria-label="position" row>
+        <FormControl style={{float: 'left'}} component="fieldset">
           <FormControlLabel
             value="end"
             control={<Checkbox color="secondary" />}
             label={<Typography style={{ color: '#afafaf' }}>Send directly to manager</Typography>}
             labelPlacement="end"
           />
-        </FormGroup>
       </FormControl>
       </>);
     }

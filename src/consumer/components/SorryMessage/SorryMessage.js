@@ -5,7 +5,7 @@ const Sorrymessage = () => {
     <div style={{
         margin: 'auto', 
         width: '82.5%', 
-        color: '#fb7171', 
+        color: '#f40054', 
         textAlign: 'left', 
         fontSize: '1.5rem'
         }}>
