@@ -2,7 +2,7 @@
   display: inline-block;
   margin: 2em;
   padding: 1.1rem;
-  width: 50%;
+  width: 60%;
   border-radius: 3px;
   border: 1px solid #bfbfbf;
   background-color:white;
@@ -14,3 +14,4 @@
     display: flex;
     justify-content: space-between;
   }
+
