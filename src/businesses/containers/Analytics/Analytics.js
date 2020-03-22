@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
-import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 import StarRateIcon from '@material-ui/icons/StarRate';
+import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
+import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
 
 import './Analytics.css'
+
+// todo: good reviews
+// todo: bad reviews
+// todo: most frequently selected items for improvement (bar chart)
+// todo: most frequently selected items that business is doing well in (bar chart)
 
 class Analytics extends Component {
     state = {  }
@@ -11,26 +17,31 @@ class Analytics extends Component {
         return (
         <>
             <Navbar />
-            <h2>Analytics</h2>
-           
-            <div className="reviewTotal">
-                <div style={{float: 'left', width: '40%'}}>
-                    <AccountCircleOutlinedIcon style={{fontSize: '5rem', color: '#92e2b9'}} />
-                </div>
-                <div style={{float: 'right', width: '40%', fontSize: '1rem', marginRight: '1rem'}}>
-                    <h3>2</h3>
-                    <h3>Reviews</h3>
-                </div>
-            </div>
+            <h2 style={{marginTop: 0}}>Analytics</h2>
 
-            <div style={{marginLeft: '5rem'}} className="reviewTotal">
+            <div style={{marginTop: '3rem'}}>
+
+            <div style={{marginRight: '5rem'}} className="reviewTotal">
                 <div style={{float: 'left'}}>
                     <StarRateIcon style={{fontSize: '5rem', color: '#0378d8'}} />
                 </div>
                 <div style={{float: 'right', fontSize: '1rem', marginRight: '1rem'}}>
-                    <h3>4.5</h3>
-                    <h3>Average Rating</h3>
+                    <p>4.5</p>
+                    <p>Average Rating</p>
                 </div>
+            </div>
+           
+            <div className="reviewTotal">
+                <div style={{float: 'left', width: '40%'}}>
+                    <ThumbUpAltOutlinedIcon style={{fontSize: '3rem', color: '#0378d8'}} />
+                    <ThumbDownOutlinedIcon style={{fontSize: '3rem', color: '#f40054'}} />
+                </div>
+                <div style={{float: 'right', width: '40%', fontSize: '1rem', marginRight: '1rem'}}>
+                    <p>2</p>
+                    <p>Reviews</p>
+                </div>
+            </div>
+
             </div>
            
         </>);

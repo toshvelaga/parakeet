@@ -9,6 +9,10 @@ class Customize extends Component {
         <div>
             <Navbar />
             <h2>Customize</h2>
+            <span>Enter in business email: <input type="text"></input></span>
+            <br></br><br></br>
+            <span>Enter in name of restaurant: <input type="text"></input></span>
+            <br></br><br></br>
             <QRcode />
         </div>);
     }
