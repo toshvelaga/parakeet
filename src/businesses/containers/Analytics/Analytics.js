@@ -5,6 +5,7 @@ import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
 import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
 
 import './Analytics.css'
+import BarChart from '../BarChart/BarChart';
 
 // todo: good reviews
 // todo: bad reviews
@@ -43,6 +44,8 @@ class Analytics extends Component {
             </div>
 
             </div>
+
+            {/* <BarChart /> */}
            
         </>);
     }
