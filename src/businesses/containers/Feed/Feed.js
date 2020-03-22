@@ -22,12 +22,19 @@ class Feed extends Component {
         }
    }
 
+    result = Object.values(this.reviewData)
+
     render() { 
+
         return (
         <div>
             <Navbar />
             <h2 style={{marginTop: 0}}>Feed</h2>
-            <Reviews text="Great service!" n={this.reviewData.data1.rating} email="toshvelaga@gmail.com" date="3/20/20"  />
+
+            {this.result.map(({text, rating, date, email, index}) => {
+                return (<Reviews key={index + email + text} text={text} n={rating} email={email} date={date} />
+                )
+            })}
         </div>);
     }
 }
