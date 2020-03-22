@@ -1,30 +1,48 @@
 import React, { Component } from 'react';
-import './Reviews.css'
+import './Reviews.css';
+import StarRateIcon from '@material-ui/icons/StarRate';
 
 // https://codepen.io/toshvelaga/pen/vYYLdbV
 
 class Reviews extends Component {
     state = {  }
     render() { 
+        const reviewData = {
+        data1 : {
+            text: "Great service!",
+            rating: 4,
+            date: '3/20/20',
+            email: 'toshvelaga@gmail.com'
+        },
+        data2 : {
+            text: "The service could use improvement. I was very dissapointed.",
+            rating: 2,
+            date: '3/20/20',
+            email: 'igor@gmail.com'
+        }
+        }
+
+        const n = reviewData.data1.rating;
+
+        function Star(n) {
+            if (n < 4) {
+                return <StarRateIcon style={{color: '#f40054', fontSize: '2rem'}}/>
+            } else 
+            return <StarRateIcon style={{color: '#0378d8', fontSize: '2rem'}}/>
+        }
+
         return (<>
-        <div class="review">
-        <div class="review__score">
-          <span class="score">4</span>
-          <span>&nbsp;/&nbsp;5&nbsp;</span>
-          <span class="score-stars">⭐⭐⭐⭐</span><span class="date">11/12/19 3:00 PM</span>
+        <div className="review">
+            <div className="top_row">
+                <span style={{float: 'left'}} className="rating">
+                    {[...Array(n)].map((e, i) => <span key={i}>
+                        {Star(n)}
+                    </span>)}
+                </span>
+                <span style={{float: 'right'}} className="date">{reviewData.data1.date}</span>
+            </div>
+            <p style={{marginTop:'3rem', textAlign: 'left'}}>{reviewData.data1.text} {"––"} {reviewData.data1.email} </p>
         </div>
-        <div class="review__text">"My son who is in high school is a big fan of startups and TechCrunch. Unfortunately, we both felt that we could have used our money worth two tickets towards something better than attending this year's conference." </div>
-      </div>
-      
-      <div class="review">
-      
-        <div class="review__score">
-          <span class="score">3</span>
-          <span>&nbsp;/&nbsp;5&nbsp;</span>
-          <span class="score-stars">⭐⭐⭐</span><span class="date">11/12/19 7:00 PM</span>
-        </div>
-        <div class="review__text">"In the app, exhibitors should be organized by day. Set-up starts at 7, but no one is ready until after 9. The speakers are always running late. I think the cost of entry is too high that it limits the number of early stage "disruptors" to the conference."</div>
-      </div>
       </>);
     }
 }
