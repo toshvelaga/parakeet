@@ -12,6 +12,8 @@ import BarChart from '../BarChart/BarChart';
 // todo: most frequently selected items for improvement (bar chart)
 // todo: most frequently selected items that business is doing well in (bar chart)
 
+// can use ChartJS: https://www.chartjs.org/docs/latest/charts/bar.html
+
 class Analytics extends Component {
     state = {  }
     render() { 
