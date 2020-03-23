@@ -1,0 +1,9 @@
+.outerDiv {
+    border: 1px solid lightgray;
+    background: whitesmoke;
+    border-radius: 5px;
+    width: 40%;
+    display: inline-block;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
