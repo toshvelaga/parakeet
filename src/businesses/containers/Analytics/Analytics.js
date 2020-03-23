@@ -35,7 +35,7 @@ class Analytics extends Component {
             <div className="reviewTotal">
                 <div style={{float: 'left', width: '40%'}}>
                     <ThumbUpAltOutlinedIcon style={{fontSize: '3rem', color: '#0378d8'}} />
-                    <ThumbDownOutlinedIcon style={{fontSize: '3rem', color: '#f40054'}} />
+                    <ThumbDownOutlinedIcon style={{fontSize: '3rem', color: '#d8030d'}} />
                 </div>
                 <div style={{float: 'right', width: '40%', fontSize: '1rem', marginRight: '1rem'}}>
                     <p>2</p>
@@ -45,8 +45,10 @@ class Analytics extends Component {
 
             </div>
 
-            {/* <BarChart /> */}
-           
+            <div style={{display: 'inline-block', marginTop: '5rem'}}>
+            <h2>Customer Feedback Votes</h2>
+            <BarChart />
+            </div>
         </>);
     }
 }
