@@ -3,6 +3,8 @@ import './App.css';
 
 // React Router imports
 
+import { connect } from "react-redux";
+
 // importing routes 
 
 import {
@@ -26,12 +28,25 @@ import Analytics from './businesses/containers/Analytics/Analytics'
 import Feed from './businesses/containers/Feed/Feed';
 import Customize from './businesses/containers/Customize/Customize';
 
-function App() {
+import Home from './businesses/components/Home/Home'
+import Login from './businesses/components/Login/Login'
+import ProtectedRoute from './businesses/components/ProtectedRoute/ProtectedRoute'
+
+function App(props) {
+  const { isAuthenticated, isVerifying } = props;
   return (
 
     <div className="App">
     <Router>
       <Switch>
+          <ProtectedRoute
+            exact
+            path="/home"
+            component={Home}
+            isAuthenticated={isAuthenticated}
+            isVerifying={isVerifying}
+          />
+          <Route path="/login" component={Login} />
 
           <Route path="/bad">
             <Negativefeedback />
@@ -71,4 +86,11 @@ function App() {
   );
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    isAuthenticated: state.auth.isAuthenticated,
+    isVerifying: state.auth.isVerifying
+  };
+}
+
+export default connect(mapStateToProps) (App);

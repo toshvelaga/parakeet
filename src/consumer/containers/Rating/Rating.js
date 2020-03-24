@@ -10,6 +10,7 @@ import { db } from '../../../firebase/firebase'
 
 import { withRouter } from 'react-router-dom'
 import store from '../../../store/store'
+import { configureStore } from '../../../store/store'
 
 // documentation: https://www.npmjs.com/package/react-star-rating-component
 // Additional docs for half-star implementation: https://github.com/voronianski/react-star-rating-component/blob/master/example/index.js
