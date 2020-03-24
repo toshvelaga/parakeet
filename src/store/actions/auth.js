@@ -12,98 +12,90 @@ export const VERIFY_REQUEST = "VERIFY_REQUEST";
 export const VERIFY_SUCCESS = "VERIFY_SUCCESS";
 
 const requestLogin = () => {
-    return {
-      type: LOGIN_REQUEST
-    };
+  return {
+    type: LOGIN_REQUEST
   };
+};
 
 const receiveLogin = user => {
-return {
+  return {
     type: LOGIN_SUCCESS,
     user
-    };
   };
+};
 
 const loginError = () => {
-return {
+  return {
     type: LOGIN_FAILURE
-    };
   };
+};
 
-//   Logouts //
-
-  const requestLogout = () => {
-    return {
-      type: LOGOUT_REQUEST
-    };
+const requestLogout = () => {
+  return {
+    type: LOGOUT_REQUEST
   };
+};
 
-const receiveLogout = user => {
-return {
-    type: LOGOUT_SUCCESS,
-    // user
-    };
+const receiveLogout = () => {
+  return {
+    type: LOGOUT_SUCCESS
   };
+};
 
 const logoutError = () => {
-return {
+  return {
     type: LOGOUT_FAILURE
-    };
   };
+};
 
-  const requestVerify = () => {
-    return {
-      type: VERIFY_REQUEST
-    };
+const verifyRequest = () => {
+  return {
+    type: VERIFY_REQUEST
   };
+};
 
-const receiveVerify = user => {
-return {
-    type: VERIFY_SUCCESS,
-    };
+const verifySuccess = () => {
+  return {
+    type: VERIFY_SUCCESS
   };
+};
 
-//   loginUser() thunk //
+export const loginUser = (email, password) => dispatch => {
+  dispatch(requestLogin());
+  myFirebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(user => {
+      dispatch(receiveLogin(user));
+    })
+    .catch(error => {
+      //Do something with the error if you want!
+      dispatch(loginError());
+    });
+};
 
-  export const loginUser = (email, password) => dispatch => {
-    dispatch(requestLogin());
-    myFirebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(user => {
-        dispatch(receiveLogin(user));
-      })
-      .catch(error => {
-        //Do something with the error if you want!
-        dispatch(loginError());
-      });
-  };
+export const logoutUser = () => dispatch => {
+  dispatch(requestLogout());
+  myFirebase
+    .auth()
+    .signOut()
+    .then(() => {
+      dispatch(receiveLogout());
+    })
+    .catch(error => {
+      //Do something with the error if you want!
+      dispatch(logoutError());
+    });
+};
 
-//   logoutUser() thunk //
-
-  export const logoutUser = () => dispatch => {
-    dispatch(requestLogout());
-    myFirebase
-      .auth()
-      .signOut()
-      .then(() => {
-        dispatch(receiveLogout());
-      })
-      .catch(error => {
-        //Do something with the error if you want!
-        dispatch(logoutError());
-      });
-  };
-
-//   verifyAuth() calls the firebase onAuthStateChanged() method
-
-  export const verifyAuth = () => dispatch => {
-    dispatch(verifyRequest());
-    myFirebase.auth().onAuthStateChanged(user => {
+export const verifyAuth = () => dispatch => {
+  dispatch(verifyRequest());
+  myFirebase
+    .auth()
+    .onAuthStateChanged(user => {
       if (user !== null) {
         dispatch(receiveLogin(user));
       }
       dispatch(verifySuccess());
     });
-  };
-
+};

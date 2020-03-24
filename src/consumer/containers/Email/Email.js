@@ -4,11 +4,11 @@ import './Email.css'
 import axios from 'axios'
 // import firebaseURL from '../../../assets/urls'
 import { withRouter } from 'react-router-dom';
-import firebase from '../../../assets/init'
+import { db } from '../../../firebase/firebase'
 
 // firestore documentation: https://firebase.google.com/docs/firestore/query-data/get-data
 
-let db = firebase.firestore();
+let db_ = db;
 
 class Email extends Component {
     state = { value: '' }
@@ -43,7 +43,7 @@ class Email extends Component {
             alert("The email you entered is invalid")
         } else
         
-        db.collection("customers").doc("emails").set({
+        db_.collection("customers").doc("emails").set({
             email: this.state.value,
         })
         .then(function() {
