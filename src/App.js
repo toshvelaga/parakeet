@@ -26,6 +26,7 @@ import Analytics from './businesses/containers/Analytics/Analytics'
 import Feed from './businesses/containers/Feed/Feed';
 import Customize from './businesses/containers/Customize/Customize';
 import Signin from './businesses/containers/Signin/Signin';
+import SignUp from './businesses/containers/SignUp/SignUp';
 
 function App() {
   return (
@@ -33,6 +34,10 @@ function App() {
     <div className="App">
     <Router>
       <Switch>
+          <Route path="/signup">
+            <SignUp />
+          </Route>
+
           <Route path="/signin">
             <Signin />
           </Route>
