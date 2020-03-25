@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import rootReducer from './store/reducers/rootReducer';
+import thunk from 'redux-thunk'
 
 const store = createStore(rootReducer)
 
