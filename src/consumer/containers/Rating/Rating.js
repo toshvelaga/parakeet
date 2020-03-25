@@ -4,7 +4,7 @@ import StarRatingComponent from 'react-star-rating-component'
 import './Rating.css'
 // import axios from 'axios'
 // import firebaseURL from '../../../assets/urls'
-import firebase from '../../../assets/init'
+import firebase from '../../../firebase/fbConfig'
 
 import { withRouter } from 'react-router-dom'
 import store from '../../../store/store'

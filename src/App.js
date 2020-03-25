@@ -25,7 +25,7 @@ import Thanks from './consumer/containers/Thanks/Thanks';
 import Analytics from './businesses/containers/Analytics/Analytics'
 import Feed from './businesses/containers/Feed/Feed';
 import Customize from './businesses/containers/Customize/Customize';
-import Signin from './businesses/containers/Signin/Signin';
+import SignIn from './businesses/containers/SignIn/SignIn';
 import SignUp from './businesses/containers/SignUp/SignUp';
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
           </Route>
 
           <Route path="/signin">
-            <Signin />
+            <SignIn />
           </Route>
 
           <Route path="/bad">

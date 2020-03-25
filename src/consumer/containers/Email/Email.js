@@ -4,7 +4,7 @@ import './Email.css'
 import axios from 'axios'
 // import firebaseURL from '../../../assets/urls'
 import { withRouter } from 'react-router-dom';
-import firebase from '../../../assets/init'
+import firebase from '../../../firebase/fbConfig'
 
 // firestore documentation: https://firebase.google.com/docs/firestore/query-data/get-data
 
