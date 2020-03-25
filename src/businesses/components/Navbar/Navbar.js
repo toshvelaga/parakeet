@@ -25,6 +25,10 @@ import { Link } from "react-router-dom";
 
 import './Navbar.css'
 
+// import signout action and reducer //
+import { connect } from 'react-redux'
+import { signOut } from '../../../store/actions/actions'
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
@@ -84,7 +88,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Navbar() {
+const Navbar = (props) => {
+  const { auth } = props;
+  console.log(auth)
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -158,7 +164,7 @@ export default function Navbar() {
             </ListItem>  
           </Link>      
 
-          <Link to="Logout" style={{ textDecoration: 'none', color: 'gray' }}>
+          <Link onClick={props.signOut} to="Logout" style={{ textDecoration: 'none', color: 'gray' }}>
             <ListItem button key="Logout">
               <ListItemIcon><ExitToAppOutlinedIcon /></ListItemIcon>
               <ListItemText primary="Logout" />
@@ -178,3 +184,11 @@ export default function Navbar() {
     </div>
   );
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut())
+  }  
+}
+
+export default connect(null, mapDispatchToProps)(Navbar);

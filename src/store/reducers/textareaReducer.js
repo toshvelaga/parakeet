@@ -3,7 +3,7 @@ const initialState = {
   };
   
   const textareaReducer = (state = initialState, action) => {
-      console.log('reducer', action)
+      // console.log('reducer', action)
       switch (action.type) {
         case 'TEXTAREA_CHANGE':
           return {...initialState, textValue: action.text };
