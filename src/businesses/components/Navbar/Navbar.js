@@ -185,10 +185,17 @@ const Navbar = (props) => {
   );
 }
 
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    auth: state.firebase.auth
+  }
+}
+
 const mapDispatchToProps = (dispatch) => {
   return {
     signOut: () => dispatch(signOut())
   }  
 }
 
-export default connect(null, mapDispatchToProps)(Navbar);
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

@@ -4,7 +4,13 @@ import './Feed.css'
 
 import Reviews from '../../components/Reviews/Reviews'
 
+import { Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
+
 class Feed extends Component {
+    constructor(props) {
+        super(props)
+    }
     state = {  }
 
     reviewData = {
@@ -25,7 +31,10 @@ class Feed extends Component {
     result = Object.values(this.reviewData)
 
     render() { 
+        const { auth } = this.props
+        console.log(auth)
 
+        if (!auth.uid) return <Redirect to='/signin' />
         return (
         <div>
             <Navbar />
@@ -38,5 +47,12 @@ class Feed extends Component {
         </div>);
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    }
+}
+
  
-export default Feed;
+export default connect(mapStateToProps, null)(Feed);
