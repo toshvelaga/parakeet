@@ -164,7 +164,7 @@ const Navbar = (props) => {
             </ListItem>  
           </Link>      
 
-          <Link onClick={props.signOut} to="Logout" style={{ textDecoration: 'none', color: 'gray' }}>
+          <Link onClick={props.signOut} to="SignIn" style={{ textDecoration: 'none', color: 'gray' }}>
             <ListItem button key="Logout">
               <ListItemIcon><ExitToAppOutlinedIcon /></ListItemIcon>
               <ListItemText primary="Logout" />

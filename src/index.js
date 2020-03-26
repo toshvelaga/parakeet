@@ -36,14 +36,16 @@ const store = createStore(
   
   function AuthIsLoaded({ children }) {
     const auth = useSelector(state => state.firebase.auth)
-    if (!isLoaded(auth)) return <div>Loading Screen...</div>;
+    if (!isLoaded(auth)) return <></>;
         return children
 }
   
   ReactDOM.render(
     <Provider store={store}>
       <ReactReduxFirebaseProvider {...rrfProps}>
-      <AuthIsLoaded><App /> </AuthIsLoaded>
+        <AuthIsLoaded>
+          <App />
+        </AuthIsLoaded>
       </ReactReduxFirebaseProvider>
     </Provider>,
     document.getElementById("root")
