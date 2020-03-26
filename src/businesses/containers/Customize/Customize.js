@@ -7,9 +7,20 @@ import SaveIcon from '@material-ui/icons/Save';
 
 import './Customize.css'
 
+import { Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
+
 class Customize extends Component {
+    constructor(props) {
+        super()
+    }
     state = {  }
     render() { 
+        const { auth } = this.props
+        console.log(auth)
+
+        if (!auth.uid) return <Redirect to='/signin' />
+
         return (
         <div>
             <Navbar />
@@ -83,5 +94,11 @@ class Customize extends Component {
         </div>);
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    }
+}
  
-export default Customize;
+export default connect(mapStateToProps, null)(Customize);

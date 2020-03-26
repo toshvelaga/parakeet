@@ -7,6 +7,9 @@ import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
 import './Analytics.css'
 import BarChart from '../BarChart/BarChart';
 
+import { Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
+
 // todo: good reviews
 // todo: bad reviews
 // todo: most frequently selected items for improvement (bar chart)
@@ -15,8 +18,16 @@ import BarChart from '../BarChart/BarChart';
 // can use ChartJS: https://www.chartjs.org/docs/latest/charts/bar.html
 
 class Analytics extends Component {
+    constructor(props) {
+        super()
+    }
     state = {  }
     render() { 
+        const { auth } = this.props
+        console.log(auth)
+
+        if (!auth.uid) return <Redirect to='/signin' />
+
         return (
         <>
             <Navbar />
@@ -55,5 +66,10 @@ class Analytics extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    }
+}
  
-export default Analytics;
+export default connect(mapStateToProps, null)(Analytics);
