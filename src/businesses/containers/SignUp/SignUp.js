@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router'
+import { signUp } from '../../../store/actions/actions'
 
 class SignUp extends Component {
   state = {
@@ -19,9 +20,11 @@ class SignUp extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     console.log(this.state)
+    this.props.signUp(this.state)
   }
+
   render() {
-    const { auth } = this.props
+    const { auth, authError } = this.props
     if (auth.uid) return <Redirect to="Feed" />
     return (
       <div className="container">
@@ -46,6 +49,9 @@ class SignUp extends Component {
           <div className="input-field">
             <button>Sign Up</button>
           </div>
+          <div className="error">
+            {authError ? <p>{authError}</p> : null}
+          </div>
         </form>
       </div>
     )
@@ -59,4 +65,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, null)(SignUp);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signUp: (newUser) => dispatch(signUp(newUser))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
