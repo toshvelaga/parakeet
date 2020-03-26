@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { signIn } from '../../../store/actions/actions'
 import { Redirect } from 'react-router-dom'
+import ParakeetHeader from '../../../consumer/components/ParakeetHeader/ParakeetHeader';
+
+// reused ParakeetHeader component that was created for the consumer side
 
 class Signin extends Component {
   state = {
@@ -21,7 +24,8 @@ class Signin extends Component {
   render() {
     const { authError, auth } = this.props
     if (auth.uid) return <Redirect to='/Feed' />
-    return (
+    return (<>
+      <ParakeetHeader />
       <div className="container">
         <form onSubmit={this.handleSubmit} className="white">
           <h5>Signin</h5>
@@ -41,6 +45,7 @@ class Signin extends Component {
           </div>
         </form>
       </div>
+      </>
     )
   }
 }
