@@ -3,8 +3,8 @@ import React from 'react';
 const styles = {
     backgroundColor: "#0378d8",
     width: '100%', 
-    paddingTop: '.4rem',
-    paddingBottom: '.4rem',
+    paddingTop: '.1rem',
+    paddingBottom: '.1rem',
     color: 'white',
     fontSize: '1.3rem',
     fontWeight: '100'
