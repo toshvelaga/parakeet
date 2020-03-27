@@ -24,6 +24,10 @@ class Greatfeedback extends Component {
         this.props.history.push("/thanks")
     }
 
+    clickMessage = () => {
+        console.log('Food');
+    }
+
     render() { 
 
         store.subscribe(() => {      
@@ -31,6 +35,8 @@ class Greatfeedback extends Component {
               text: store.getState().textareaReducer.textValue
             });
         });
+
+        
 
         console.log(this.state.text)
         
@@ -45,7 +51,7 @@ class Greatfeedback extends Component {
         
         <div style={outerDivStyle}>
         <div style={innerDivStyle}>
-            <FeedbackBtns name="Food" />
+            <FeedbackBtns onClick={this.clickMessage} name="Food" />
             <FeedbackBtns name="Service" />
         </div>
             
