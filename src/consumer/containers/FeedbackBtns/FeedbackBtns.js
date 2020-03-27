@@ -25,9 +25,9 @@ class FeedbackBtns extends Component {
 
     nameToState = () => {
         if (this.state.active == true) {
-            console.log(this.props.name)
+            console.log("add" + this.props.name)
         } else if (this.state.active == false) {
-            console.log('null')
+            console.log("remove" + this.props.name)
         }
     }
 

@@ -13,7 +13,10 @@ import store from '../../../store/store'
 class Greatfeedback extends Component {
     constructor(props) {
         super(props);
-        this.state = { text: '' };
+        this.state = { 
+            text: '',
+            doingWell: [],
+        };
     }
 
     onBack = () => {
@@ -35,8 +38,6 @@ class Greatfeedback extends Component {
               text: store.getState().textareaReducer.textValue
             });
         });
-
-        
 
         console.log(this.state.text)
         
