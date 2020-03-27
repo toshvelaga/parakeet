@@ -7,6 +7,10 @@ import Header from '../../components/Header/Header'
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Avatar from '@material-ui/core/Avatar';
+import Typography from '@material-ui/core/Typography';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+
 import { Link } from "react-router-dom";
 
 class SignUp extends Component {
@@ -35,7 +39,15 @@ class SignUp extends Component {
       <Header />
       <div className="container">
         <form onSubmit={this.handleSubmit} style={{width: '60%', display: 'inline-block'}}>
-          <h5>Sign Up</h5>
+          <div style={{display: 'inline-block', marginTop: '2rem'}}>
+            <Avatar style={{backgroundColor: '#dd004f', fontSize: '2rem'}}>
+              <LockOutlinedIcon />
+            </Avatar>
+          </div>
+
+          <Typography style={{marginBottom: '2rem'}} component="h1" variant="h5">
+            Sign Up
+          </Typography>
 
           {/* <div className="input-field">
             <label>Email</label>
@@ -120,10 +132,11 @@ class SignUp extends Component {
           >
             Sign Up
           </Button>
-          <Grid container justify="flex-end">
+          <Grid container justify="flex">
             <Grid item>
-              <Link to="/signin">
-                Already have an account? Sign in
+              
+              <Link style={{textDecoration: 'none', color: '#0378d8'}} to="/signin">
+                <p>Already have an account? Sign in</p>
               </Link>
             </Grid>
           </Grid>
