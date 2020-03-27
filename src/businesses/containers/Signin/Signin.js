@@ -4,6 +4,10 @@ import { signIn } from '../../../store/actions/actions'
 import { Redirect } from 'react-router-dom'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Avatar from '@material-ui/core/Avatar';
+import Typography from '@material-ui/core/Typography';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import { Link } from "react-router-dom";
 
 // reused ParakeetHeader component that was created for the consumer side
 import ParakeetHeader from '../../../consumer/components/ParakeetHeader/ParakeetHeader';
@@ -24,6 +28,7 @@ class Signin extends Component {
     this.props.signIn(this.state)
   }
   render() {
+
     const { authError, auth, classes } = this.props
     if (auth.uid) return <Redirect to='/Feed' />
     return (<>
@@ -31,10 +36,19 @@ class Signin extends Component {
       <div className="container">
 
         <form onSubmit={this.handleSubmit} className="white">
-          <h5>Signin</h5>
+
+          <div style={{display: 'inline-block', marginTop: '2rem'}}>
+          <Avatar style={{backgroundColor: '#dd004f', fontSize: '2rem'}}>
+            <LockOutlinedIcon />
+          </Avatar>
+          </div>
+        
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
 
           <TextField 
-            style={{width: '50%'}}
+            style={{width: '50%', marginTop: '2rem'}}
             variant="outlined"
             margin="normal"
             required
@@ -61,8 +75,8 @@ class Signin extends Component {
           
           <div className="submit">
             <Button
+              style={{width: '50%', marginTop: '1rem', marginBottom: '2rem', color: 'white', backgroundColor: '#0378d8'}}
               onClick={this.handleSubmit}
-              style={{width: '50%'}}
               type="submit"
               fullWidth
               variant="contained"
@@ -70,6 +84,9 @@ class Signin extends Component {
             >
               Sign In
             </Button>
+            <p>
+              <Link style={{textDecoration: 'none', color: '#0378d8'}} to="/SignUp">Don't have an account? Sign Up</Link>
+            </p>
             <div>
               { authError ? <p>{authError}</p> : null}
             </div>
