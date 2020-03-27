@@ -66,7 +66,7 @@ class Signin extends Component {
             required
             fullWidth
             id="password"
-            label="password"
+            label="Password"
             name="password"
             onChange={this.handleChange}
           />
