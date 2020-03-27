@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { signIn } from '../../../store/actions/actions'
 import { Redirect } from 'react-router-dom'
-import ParakeetHeader from '../../../consumer/components/ParakeetHeader/ParakeetHeader';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 // reused ParakeetHeader component that was created for the consumer side
+import ParakeetHeader from '../../../consumer/components/ParakeetHeader/ParakeetHeader';
 
 class Signin extends Component {
   state = {
@@ -22,23 +24,52 @@ class Signin extends Component {
     this.props.signIn(this.state)
   }
   render() {
-    const { authError, auth } = this.props
+    const { authError, auth, classes } = this.props
     if (auth.uid) return <Redirect to='/Feed' />
     return (<>
       <ParakeetHeader />
       <div className="container">
+
         <form onSubmit={this.handleSubmit} className="white">
           <h5>Signin</h5>
-          <div className="input-field">
-            <label>Email</label>
-            <input type="email" id="email" onChange={this.handleChange}/>
-          </div>
-          <div className="input-field">
-            <label>Password</label>
-            <input type="password" id="password" onChange={this.handleChange}/>
-          </div>
-          <div className="input-field">
-            <button>Login</button>
+
+          <TextField 
+            style={{width: '50%'}}
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            notched
+            name="email"
+            autoComplete="email"
+            onChange={this.handleChange}
+          />
+          <br></br>
+          <TextField 
+            style={{width: '50%'}}
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="password"
+            label="password"
+            name="password"
+            onChange={this.handleChange}
+          />
+          
+          <div className="submit">
+            <Button
+              onClick={this.handleSubmit}
+              style={{width: '50%'}}
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+            >
+              Sign In
+            </Button>
             <div>
               { authError ? <p>{authError}</p> : null}
             </div>
