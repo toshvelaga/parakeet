@@ -8,9 +8,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { Link } from "react-router-dom";
-
-// reused ParakeetHeader component that was created for the consumer side
-import ParakeetHeader from '../../../consumer/components/ParakeetHeader/ParakeetHeader';
+import Header from '../../components/Header/Header';
 
 class Signin extends Component {
   state = {
@@ -32,7 +30,7 @@ class Signin extends Component {
     const { authError, auth, classes } = this.props
     if (auth.uid) return <Redirect to='/Feed' />
     return (<>
-      <ParakeetHeader />
+      <Header />
       <div className="container">
 
         <form onSubmit={this.handleSubmit} className="white">
@@ -76,7 +74,6 @@ class Signin extends Component {
           <div className="submit">
             <Button
               style={{width: '50%', marginTop: '1rem', marginBottom: '2rem', color: 'white', backgroundColor: '#0378d8'}}
-              onClick={this.handleSubmit}
               type="submit"
               fullWidth
               variant="contained"
@@ -92,6 +89,7 @@ class Signin extends Component {
             </div>
           </div>
         </form>
+
       </div>
       </>
     )

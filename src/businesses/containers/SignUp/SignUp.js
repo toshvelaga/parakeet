@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router'
 import { signUp } from '../../../store/actions/actions'
+import Header from '../../components/Header/Header'
 
 class SignUp extends Component {
   state = {
@@ -26,7 +27,8 @@ class SignUp extends Component {
   render() {
     const { auth, authError } = this.props
     if (auth.uid) return <Redirect to="Feed" />
-    return (
+    return (<>
+      <Header />
       <div className="container">
         <form onSubmit={this.handleSubmit} className="white">
           <h5>Sign Up</h5>
@@ -54,6 +56,7 @@ class SignUp extends Component {
           </div>
         </form>
       </div>
+      </>
     )
   }
 }
