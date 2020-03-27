@@ -15,6 +15,7 @@ class FeedbackBtns extends Component {
         this.state = { 
             className: 'feedbackBtn',
             active: true,
+            doingWell: [],
         };
     }
 

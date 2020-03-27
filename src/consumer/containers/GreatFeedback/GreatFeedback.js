@@ -15,7 +15,6 @@ class Greatfeedback extends Component {
         super(props);
         this.state = { 
             text: '',
-            doingWell: [],
         };
     }
 
