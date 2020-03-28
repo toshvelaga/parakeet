@@ -12,6 +12,8 @@ import firebase from '../../../firebase/fbConfig'
 
 let db = firebase.firestore();
 
+let today = new Date().toLocaleDateString()
+
 class Greatfeedback extends Component {
     constructor(props) {
         super(props);
@@ -24,7 +26,8 @@ class Greatfeedback extends Component {
     onSubmit = () => {
         db.collection("customers").doc("emails").set({
             review: store.getState().textareaReducer.textValue,
-            Doing_Well: store.getState().feedbackReducer.doingGreat
+            Doing_Well: store.getState().feedbackReducer.doingGreat,
+            Date: today
         }, { merge: true })
         
         this.props.history.push("/thanks")

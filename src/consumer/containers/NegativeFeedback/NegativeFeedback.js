@@ -14,6 +14,8 @@ import { withRouter } from 'react-router';
 
 let db = firebase.firestore();
 
+let today = new Date().toLocaleDateString()
+
 class Negativefeedback extends Component {
     constructor(props) {
         super(props);
@@ -26,7 +28,8 @@ class Negativefeedback extends Component {
     onSubmit = () => {
         db.collection("customers").doc("emails").set({
             review: store.getState().textareaReducer.textValue,
-            Doing_Bad: store.getState().feedbackReducer.doingBad
+            Doing_Bad: store.getState().feedbackReducer.doingBad,
+            Date: today
         }, { merge: true })
 
         this.props.history.push("/thanks")
