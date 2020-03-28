@@ -47,7 +47,6 @@ const mapStatetoProps = (state) => {
 const mapDispatchtoProps = (dispatch) => {
     return {
         inputChanged: (e) => {
-            console.log('changed', e.target.value);
             const action = { type: 'TEXTAREA_CHANGE', text: e.target.value }
             store.dispatch(action)
         }

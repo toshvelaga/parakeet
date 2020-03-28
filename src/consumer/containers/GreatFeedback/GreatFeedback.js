@@ -5,17 +5,16 @@ import Greatmessage from '../../components/GreatMessage/GreatMessage';
 import FeedbackBtns from '../FeedbackBtns/FeedbackBtns';
 import Textarea from '../Textarea/Textarea';
 import Otherbtn from '../OtherBtn/OtherBtn';
-
 import { withRouter } from 'react-router'; 
-
 import store from '../../../store/store'
+import { connect } from 'react-redux';
+import firebase from '../../../firebase/fbConfig'
+
+let db = firebase.firestore();
 
 class Greatfeedback extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
-            text: '',
-        };
     }
 
     onBack = () => {
@@ -23,22 +22,15 @@ class Greatfeedback extends Component {
     }
 
     onSubmit = () => {
+        db.collection("customers").doc("emails").set({
+            review: store.getState().textareaReducer.textValue,
+            Doing_Well: store.getState().feedbackReducer.doingGreat
+        }, { merge: true })
+        
         this.props.history.push("/thanks")
     }
 
-    clickMessage = () => {
-        console.log('Food');
-    }
-
     render() { 
-
-        store.subscribe(() => {      
-            this.setState({
-              text: store.getState().textareaReducer.textValue
-            });
-        });
-
-        console.log(this.state.text)
         
         const outerDivStyle = {width: '85%', display: 'inline-block'}
         const innerDivStyle = {display: 'flex', justifyContent: 'space-between'}
@@ -48,7 +40,7 @@ class Greatfeedback extends Component {
         <div style={{width: '85%'}}>
         <Greatmessage />
         </div>
-        
+
         <div style={outerDivStyle}>
         <div style={innerDivStyle}>
             <FeedbackBtns name="Food" />
@@ -78,9 +70,8 @@ class Greatfeedback extends Component {
         <NavButton name="SUBMIT" click={this.onSubmit}/>
         </div>
         </div>
-        
         </>);
     }
 }
 
-export default withRouter(Greatfeedback);
+export default connect()(withRouter(Greatfeedback));
