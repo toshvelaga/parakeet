@@ -51,7 +51,7 @@ class Greatfeedback extends Component {
         
         <div style={outerDivStyle}>
         <div style={innerDivStyle}>
-            <FeedbackBtns onClick={this.clickMessage} name="Food" />
+            <FeedbackBtns name="Food" />
             <FeedbackBtns name="Service" />
         </div>
             
