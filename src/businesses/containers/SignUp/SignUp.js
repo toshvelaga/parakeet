@@ -100,6 +100,18 @@ class SignUp extends Component {
                 variant="outlined"
                 required
                 fullWidth
+                id="businessName"
+                label="Business Name"
+                name="businessName"
+                autoComplete="businessName"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                onChange={this.handleChange}
+                variant="outlined"
+                required
+                fullWidth
                 id="email"
                 label="Email Address"
                 name="email"
