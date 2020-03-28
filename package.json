@@ -9,6 +9,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
+    "chartjs": "^0.3.24",
     "cors": "^2.8.5",
     "firebase": "^7.11.0",
     "qrcode.react": "^1.0.0",
