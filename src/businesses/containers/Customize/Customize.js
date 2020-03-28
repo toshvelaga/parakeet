@@ -10,16 +10,56 @@ import './Customize.css'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+import firebase from '../../../firebase/fbConfig'
+import { auth } from 'firebase';
+
+let db = firebase.firestore();
+
 class Customize extends Component {
     constructor(props) {
         super()
     }
-    state = {  }
+    state = { 
+        businessName: '',
+        managerEmail: '',
+     }
+
+    changeHandler = (e) => {
+        this.setState({[e.target.id]: e.target.value})
+    }
+
+    validateEmail = (email) => {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    onSubmit = () => {
+        const email = this.state.managerEmail
+
+        if (this.validateEmail(email) === false) {
+            alert("The email you entered is invalid")
+        } else
+        
+        db.collection("users").doc(this.props.auth.uid).set({
+            businessName: this.state.businessName,
+            managerEmail: this.state.managerEmail,
+        }, { merge: true })
+        .then(function() {
+            console.log("Document successfully written!");
+        })
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
+        });
+    }
+
     render() { 
         const { auth } = this.props
         console.log(auth)
 
         if (!auth.uid) return <Redirect to='/signin' />
+
+        console.log(this.state.businessName)
+        console.log(this.state.managerEmail)
 
         return (
         <div>
@@ -29,51 +69,37 @@ class Customize extends Component {
             <div className="outerDiv">
 
             <TextField
-                // id="outlined-full-width"
-                // label="Enter in business email"
+                id="businessName"
                 style={{ margin: '1rem', width: '80%' }}
                 placeholder="Enter name of restaurant"
-                // margin="dense"
+                margin="dense"
                 size="small"
-                // helperText="Enter name of restaurant"
+                helperText="Will be used to generate custom QR code*"
                 fullWidth
                 margin="normal"
                 InputLabelProps={{
                     shrink: true,
                 }}
                 variant="outlined"
+                onChange={this.changeHandler}
+                required
             />
 
             <TextField
-                // id="outlined-full-width"
-                // label="Enter in business email"
+                id="managerEmail"
                 style={{ margin: '1rem', width: '80%' }}
-                placeholder="Enter business email"
-                // margin="dense"
+                placeholder="Enter manager's email"
+                margin="dense"
                 size="small"
-                // helperText="Enter in business email"
+                helperText="Will recieve negative feedback*"
                 fullWidth
                 margin="normal"
                 InputLabelProps={{
                     shrink: true,
                 }}
                 variant="outlined"
-            />
-
-            <TextField
-                // id="outlined-full-width"
-                // label="Enter in business email"
-                style={{ margin: '1rem', width: '80%' }}
-                placeholder="Enter manager email"
-                // margin="dense"
-                size="small"
-                // helperText="Enter in manager email"
-                fullWidth
-                margin="normal"
-                InputLabelProps={{
-                    shrink: true,
-                }}
-                variant="outlined"
+                onChange={this.changeHandler}
+                required
             />
 
             <br></br><br></br>
@@ -86,7 +112,7 @@ class Customize extends Component {
 
             <div>            
                 {/* <Button style={{color: 'green', border: '1px solid green', width: '15%', marginTop: '2rem'}} variant="outlined" color="primary">Save</Button> */}
-                <Button style={{width: '20%', marginTop: '2rem', marginBottom: '2rem', color: 'white', backgroundColor: '#0378d8'}} variant="contained" color="primary" size="large" startIcon={<SaveIcon />}>
+                <Button onClick={this.onSubmit} style={{width: '20%', marginTop: '2rem', marginBottom: '2rem', color: 'white', backgroundColor: '#0378d8'}} variant="contained" color="primary" size="large" startIcon={<SaveIcon />}>
                     Save
                 </Button>
             </div>
