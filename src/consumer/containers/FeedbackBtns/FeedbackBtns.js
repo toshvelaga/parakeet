@@ -3,12 +3,14 @@ import './FeedbackBtns.css'
 
 import { withRouter } from 'react-router-dom';
 
-// toggle SO: https://stackoverflow.com/questions/42630473/react-toggle-class-onclick
-
-// importing store into component
-
 import store from '../../../store/store'
-import { ADD_GREAT_FEEDBACK, REMOVE_GREAT_FEEDBACK } from '../../../store/constants/action-types';
+
+import { 
+    ADD_GREAT_FEEDBACK, 
+    REMOVE_GREAT_FEEDBACK,
+    ADD_BAD_FEEDBACK,
+    REMOVE_BAD_FEEDBACK
+} from '../../../store/constants/action-types';
 
 class FeedbackBtns extends Component {
     constructor(props) {
@@ -16,7 +18,6 @@ class FeedbackBtns extends Component {
         this.state = { 
             className: 'feedbackBtn',
             active: true,
-            doingWell: [],
         };
     }
 
@@ -25,7 +26,7 @@ class FeedbackBtns extends Component {
         this.setState({ active: !currentState });
     };
 
-    nameToState = () => {
+    nameToState1 = () => {
         if (this.state.active == true) {
             console.log("add" + this.props.name)
             const action1 = {type: ADD_GREAT_FEEDBACK, addedName: this.props.name };
@@ -37,9 +38,26 @@ class FeedbackBtns extends Component {
         }
     }
 
-    onClickFx = () => {
+    nameToState2 = () => {
+        if (this.state.active == true) {
+            console.log("add" + this.props.name)
+            const action1 = {type: ADD_BAD_FEEDBACK, addedName: this.props.name };
+            store.dispatch(action1)
+        } else if (this.state.active == false) {
+            console.log("remove" + this.props.name)
+            const action2 = {type: REMOVE_BAD_FEEDBACK, removedName: this.props.name };
+            store.dispatch(action2)
+        }
+    }
+
+    onClickFx1 = () => {
         this.toggleClass();
-        this.nameToState();
+        this.nameToState1();
+    }
+
+    onClickFx2 = () => {
+        this.toggleClass();
+        this.nameToState2();
     }
 
     render() { 
@@ -49,10 +67,10 @@ class FeedbackBtns extends Component {
         let button;
 
         if (reviewType == 'great') {
-            button = <button onClick={this.onClickFx} className={this.state.active ? 'feedbackBtn' : 'greatSelected'}>{this.props.name}</button>
+            button = <button onClick={this.onClickFx1} className={this.state.active ? 'feedbackBtn' : 'greatSelected'}>{this.props.name}</button>
         } 
         if (reviewType == 'bad') {
-            button = <button onClick={this.toggleClass} className={this.state.active ? 'feedbackBtn' : 'badSelected'}>{this.props.name}</button>
+            button = <button onClick={this.onClickFx2} className={this.state.active ? 'feedbackBtn' : 'badSelected'}>{this.props.name}</button>
         }
 
         return ( 
