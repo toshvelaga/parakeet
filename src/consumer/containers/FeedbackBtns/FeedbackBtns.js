@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom';
 // importing store into component
 
 import store from '../../../store/store'
-import { ADD_FEEDBACK, REMOVE_FEEDBACK } from '../../../store/constants/action-types';
+import { ADD_GREAT_FEEDBACK, REMOVE_GREAT_FEEDBACK } from '../../../store/constants/action-types';
 
 class FeedbackBtns extends Component {
     constructor(props) {
@@ -28,11 +28,11 @@ class FeedbackBtns extends Component {
     nameToState = () => {
         if (this.state.active == true) {
             console.log("add" + this.props.name)
-            const action1 = {type: ADD_FEEDBACK, addedName: this.props.name };
+            const action1 = {type: ADD_GREAT_FEEDBACK, addedName: this.props.name };
             store.dispatch(action1)
         } else if (this.state.active == false) {
             console.log("remove" + this.props.name)
-            const action2 = {type: REMOVE_FEEDBACK, removedName: this.props.name };
+            const action2 = {type: REMOVE_GREAT_FEEDBACK, removedName: this.props.name };
             store.dispatch(action2)
         }
     }
