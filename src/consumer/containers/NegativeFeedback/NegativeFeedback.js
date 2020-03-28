@@ -7,8 +7,14 @@ import RadioBtn from '../RadioBtn/RadioBtn';
 import NavButton from '../../components/NavButton/NavButton'
 import Otherbtn from '../OtherBtn/OtherBtn'
 import Textarea from '../Textarea/Textarea';
-
+import { connect } from 'react-redux';
+import firebase from '../../../firebase/fbConfig'
+import store from '../../../store/store'
 import { withRouter } from 'react-router'; 
+
+let db = firebase.firestore();
+
+let today = new Date().toLocaleDateString()
 
 class Negativefeedback extends Component {
     constructor(props) {
@@ -20,6 +26,12 @@ class Negativefeedback extends Component {
     }
 
     onSubmit = () => {
+        db.collection("customers").doc("emails").set({
+            review: store.getState().textareaReducer.textValue,
+            Doing_Bad: store.getState().feedbackReducer.doingBad,
+            Date: today
+        }, { merge: true })
+
         this.props.history.push("/thanks")
     }
 
@@ -72,4 +84,4 @@ class Negativefeedback extends Component {
     }
 }
  
-export default withRouter(Negativefeedback);
+export default connect()(withRouter(Negativefeedback));
