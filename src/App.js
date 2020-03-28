@@ -3,8 +3,6 @@ import './App.css';
 
 // React Router imports
 
-// importing routes 
-
 import {
   BrowserRouter as Router,
   Switch,

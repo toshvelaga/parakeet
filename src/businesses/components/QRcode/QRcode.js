@@ -4,6 +4,8 @@ import React from 'react';
 
 var QRCode = require('qrcode.react');
 
+const url = 'http://localhost:3000/'
+
 const QRcode = () => {
     return (<>  
     <QRCode value="http://facebook.github.io/react/" />,
