@@ -15,7 +15,6 @@ class Greatfeedback extends Component {
         super(props);
         this.state = { 
             text: '',
-            doingWell: [],
         };
     }
 
@@ -52,7 +51,7 @@ class Greatfeedback extends Component {
         
         <div style={outerDivStyle}>
         <div style={innerDivStyle}>
-            <FeedbackBtns onClick={this.clickMessage} name="Food" />
+            <FeedbackBtns name="Food" />
             <FeedbackBtns name="Service" />
         </div>
             
