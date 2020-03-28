@@ -26,18 +26,19 @@ class Otherbtn extends Component {
 
     dispatchToStore = () => {
         const review = store.getState().btnReducer.reviewType
+        const Other = 'Other'
 
         if (this.state.active == true && review == 'great') {
-            const action1 = {type: ADD_GREAT_FEEDBACK, addedName: 'Other' };
+            const action1 = {type: ADD_GREAT_FEEDBACK, addedName: Other };
             store.dispatch(action1)
         } else if (this.state.active == false && review == 'great') {
-            const action2 = {type: REMOVE_GREAT_FEEDBACK, removedName: 'Other'};
+            const action2 = {type: REMOVE_GREAT_FEEDBACK, removedName: Other};
             store.dispatch(action2)
         } else if (this.state.active == true && review == 'bad') {
-            const action3 = {type: ADD_BAD_FEEDBACK, addedName: 'Other' };
+            const action3 = {type: ADD_BAD_FEEDBACK, addedName: Other };
             store.dispatch(action3)
         } else if (this.state.active == false && review == 'bad') {
-            const action4 = {type: REMOVE_BAD_FEEDBACK, removedName: 'Other' };
+            const action4 = {type: REMOVE_BAD_FEEDBACK, removedName: Other };
             store.dispatch(action4)
         }
     }
