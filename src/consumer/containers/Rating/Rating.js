@@ -23,9 +23,10 @@ class Rating extends Component {
 
     onSubmit = () => {
         let rating = { rating: this.state.rating }
+        const email = 'toshvelaga@gmail.com'
 
-        db.collection("customers").doc("emails").set({
-            rating: rating.rating}, { merge: true })
+        db.collection("customers").doc(this.props.match.params.uid).set(
+           {emails: {rating: rating.rating}}, { merge: true })
 
         if (this.state.rating >= 4) {
             this.props.history.push({

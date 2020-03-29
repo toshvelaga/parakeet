@@ -30,13 +30,13 @@ class Email extends Component {
             alert("The email you entered is invalid")
         } else
         
-        db.collection("customers").doc("emails").set({
-            email: this.state.value,
+        db.collection("customers").doc(this.props.match.params.uid).set({
+            emails: {email: this.state.value},
         })
         .then(function() {
             console.log("Document successfully written!");
         })
-        .then(this.props.history.push("/Rating"))
+        .then(this.props.history.push(this.props.match.params.uid + '/rating'))
         .catch(function(error) {
             console.error("Error writing document: ", error);
         });
