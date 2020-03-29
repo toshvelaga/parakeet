@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import ParakeetHeader from '../../components/ParakeetHeader/ParakeetHeader'
 import StarRatingComponent from 'react-star-rating-component'
 import './Rating.css'
-// import axios from 'axios'
-// import firebaseURL from '../../../assets/urls'
-import firebase from '../../../firebase/fbConfig'
+// import firebase from '../../../firebase/fbConfig'
 
 import { withRouter } from 'react-router-dom'
 import store from '../../../store/store'
@@ -12,7 +10,7 @@ import store from '../../../store/store'
 // documentation: https://www.npmjs.com/package/react-star-rating-component
 // Additional docs for half-star implementation: https://github.com/voronianski/react-star-rating-component/blob/master/example/index.js
 
-let db = firebase.firestore();
+// let db = firebase.firestore();
 
 class Rating extends Component {
     state = { rating: 5 }
@@ -22,10 +20,13 @@ class Rating extends Component {
     }
 
     onSubmit = () => {
-        let rating = { rating: this.state.rating }
+        // let rating = { rating: this.state.rating }
 
-        db.collection("customers").doc(this.props.match.params.uid).set(
-           {emails: {rating: rating.rating}}, { merge: true })
+        const action = { type: 'SELECTED_STARS', stars: this.state.rating }
+        store.dispatch(action)
+
+        // db.collection("users").doc(this.props.match.params.uid).collection("customers").add(
+        //    {emails: {rating: rating.rating}})
 
         if (this.state.rating >= 4) {
             this.props.history.push('/' + this.props.match.params.uid + '/great')        

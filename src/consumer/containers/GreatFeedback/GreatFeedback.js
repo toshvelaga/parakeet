@@ -24,11 +24,13 @@ class Greatfeedback extends Component {
     }
 
     onSubmit = () => {
-        db.collection("customers").doc(this.props.match.params.uid).set({
+        db.collection("users").doc(this.props.match.params.uid).collection("customers").add({
+            emails: {
             review: store.getState().textareaReducer.textValue,
             Doing_Well: store.getState().feedbackReducer.doingGreat,
-            Date: today
-        }, { merge: true })
+            rating: store.getState().ratingReducer.rating,
+            Date: today }
+        })
         
         this.props.history.push("/thanks")
     }

@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
-// import './Textarea.css'
-
 import TextField from '@material-ui/core/TextField';
-
 import store from '../../../store/store'
 import { connect } from 'react-redux';
-
-// Need to change color of the textinput on click
-// SO answer: https://stackoverflow.com/questions/56803234/reactjs-material-ui-textfield-change-color-label-and-underline-activity-field-in
-
-// Adding redux to a textarea/input tutorial: https://www.youtube.com/watch?v=MOO5hit7s0U
 
 class Textarea extends Component {
 
     render() { 
-
-    console.log(store.getState())
     
     const style = {
         width: '85%',
