@@ -22,11 +22,11 @@ class Negativefeedback extends Component {
     }
 
     onBack = () => {
-        this.props.history.push("/rating")
+        this.props.history.goBack();
     }
 
     onSubmit = () => {
-        db.collection("customers").doc("emails").set({
+        db.collection("customers").doc(this.props.match.params.uid).set({
             review: store.getState().textareaReducer.textValue,
             Doing_Bad: store.getState().feedbackReducer.doingBad,
             Date: today

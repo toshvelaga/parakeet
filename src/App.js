@@ -40,11 +40,11 @@ function App() {
             <SignIn />
           </Route>
 
-          <Route path="/bad">
+          <Route path="/:uid/bad">
             <Negativefeedback />
           </Route>
 
-          <Route path="/great">
+          <Route path="/:uid/great">
             <Greatfeedback />
           </Route>
 

@@ -20,11 +20,11 @@ class Greatfeedback extends Component {
     }
 
     onBack = () => {
-        this.props.history.push("/rating")
+        this.props.history.goBack()
     }
 
     onSubmit = () => {
-        db.collection("customers").doc("emails").set({
+        db.collection("customers").doc(this.props.match.params.uid).set({
             review: store.getState().textareaReducer.textValue,
             Doing_Well: store.getState().feedbackReducer.doingGreat,
             Date: today

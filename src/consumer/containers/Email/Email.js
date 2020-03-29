@@ -36,7 +36,7 @@ class Email extends Component {
         .then(function() {
             console.log("Document successfully written!");
         })
-        .then(this.props.history.push(this.props.match.params.uid + '/rating'))
+        .then(this.props.history.push('/' + this.props.match.params.uid + '/rating'))
         .catch(function(error) {
             console.error("Error writing document: ", error);
         });
