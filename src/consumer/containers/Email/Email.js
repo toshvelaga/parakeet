@@ -1,38 +1,46 @@
 import React, { Component } from 'react';
 import ParakeetHeader from '../../components/ParakeetHeader/ParakeetHeader'
 import './Email.css'
+import axios from 'axios'
+// import firebaseURL from '../../../assets/urls'
 import { withRouter } from 'react-router-dom';
 import firebase from '../../../firebase/fbConfig'
-
+import validateEmail from '../../../assets/emailValidation'
 import store from '../../../store/store'
-import { connect } from 'react-redux'
+
+// firestore documentation: https://firebase.google.com/docs/firestore/query-data/get-data
 
 let db = firebase.firestore();
 
 class Email extends Component {
+    state = { value: '' }
 
-    validateEmail = (email) => {
-        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
+    InputHandler = (e) => {
+        this.setState({value: e.target.value})
     }
 
     onSubmit2 = () => {
 
-        const email = this.props
-        console.log(email)
-        if (this.validateEmail(email) === false) {
+        const email = this.state.value
+
+        if (validateEmail(email) === false) {
             alert("The email you entered is invalid")
-        } else
+        } else {
+        // console.log('success')
+        const action = { type: 'SUBMIT_EMAIL', text: this.state.value }
+        store.dispatch(action)
         
-        db.collection("users").doc(this.props.match.params.uid).collection("customers").set({
-            email: email}, {merge: true})
-        .then(function() {
-            console.log("Document successfully written!");
-        })
-        .then(this.props.history.push('/' + this.props.match.params.uid + '/rating'))
-        .catch(function(error) {
-            console.error("Error writing document: ", error);
-        });
+        this.props.history.push('/' + this.props.match.params.uid + '/rating')
+        }
+        // db.collection("users").doc(this.props.match.params.uid).collection("customers").add({
+        //     email: this.state.value}, {merge: true})
+        // .then(function() {
+        //     console.log("Document successfully written!");
+        // })
+        // .then(this.props.history.push('/' + this.props.match.params.uid + '/rating'))
+        // .catch(function(error) {
+        //     console.error("Error writing document: ", error);
+        // });
     }
 
     // emailCloudFunction = () => {
@@ -46,7 +54,7 @@ class Email extends Component {
         return (<div>
             <ParakeetHeader />
 
-            <input value={this.props.email} onChange={this.props.inputChanged} className="emailInput" type="email" id="email" name="email" placeholder="Enter your email"></input>
+            <input value={this.state.value} onChange={this.InputHandler} className="emailInput" type="email" id="email" name="email" placeholder="Enter your email"></input>
             <button onClick={this.onSubmit2} className="emailButton">Submit</button>
 
             {/* <button onClick={this.emailCloudFunction} className="emailButton">Submit</button> */}
@@ -54,23 +62,8 @@ class Email extends Component {
         </div>);
     }
 }
-
-const mapStatetoProps = (state) => {
-    return {
-        email: state.emailValue
-    }
-}
-
-const mapDispatchtoProps = (dispatch) => {
-    return {
-        inputChanged: (e) => {
-            const action = { type: 'SUBMIT_EMAIL', text: e.target.value }
-            store.dispatch(action)
-        }
-    }
-}
  
-export default connect(mapStatetoProps, mapDispatchtoProps)(withRouter(Email));
+export default withRouter(Email);
 
 
 

@@ -9,7 +9,7 @@ const emailReducer = (state = initialState, action) => {
         case SUBMIT_EMAIL:
           return {
               ...initialState, 
-              emailValue: action.text 
+              emailValue: action.text
             };
         default:
           return state;
