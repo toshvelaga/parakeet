@@ -6,12 +6,10 @@ import TextField from '@material-ui/core/TextField';
 import SaveIcon from '@material-ui/icons/Save';
 
 import './Customize.css'
-
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-
 import firebase from '../../../firebase/fbConfig'
-import { auth } from 'firebase';
+import validateEmail from '../../../assets/emailValidation'
 
 let db = firebase.firestore();
 
@@ -28,15 +26,15 @@ class Customize extends Component {
         this.setState({[e.target.id]: e.target.value})
     }
 
-    validateEmail = (email) => {
-        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
-    }
+    // validateEmail = (email) => {
+    //     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    //     return re.test(String(email).toLowerCase());
+    // }
 
     onSubmit = () => {
         const email = this.state.managerEmail
 
-        if (this.validateEmail(email) === false) {
+        if (validateEmail(email) === false) {
             alert("The email you entered is invalid")
         } else
         

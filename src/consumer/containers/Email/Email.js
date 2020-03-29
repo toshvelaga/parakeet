@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import ParakeetHeader from '../../components/ParakeetHeader/ParakeetHeader'
 import './Email.css'
-import axios from 'axios'
-// import firebaseURL from '../../../assets/urls'
 import { withRouter } from 'react-router-dom';
-import firebase from '../../../firebase/fbConfig'
 import validateEmail from '../../../assets/emailValidation'
 import store from '../../../store/store'
 
 // firestore documentation: https://firebase.google.com/docs/firestore/query-data/get-data
-
-let db = firebase.firestore();
 
 class Email extends Component {
     state = { value: '' }
@@ -20,27 +15,15 @@ class Email extends Component {
     }
 
     onSubmit2 = () => {
-
         const email = this.state.value
 
         if (validateEmail(email) === false) {
             alert("The email you entered is invalid")
         } else {
-        // console.log('success')
         const action = { type: 'SUBMIT_EMAIL', text: this.state.value }
         store.dispatch(action)
-        
         this.props.history.push('/' + this.props.match.params.uid + '/rating')
         }
-        // db.collection("users").doc(this.props.match.params.uid).collection("customers").add({
-        //     email: this.state.value}, {merge: true})
-        // .then(function() {
-        //     console.log("Document successfully written!");
-        // })
-        // .then(this.props.history.push('/' + this.props.match.params.uid + '/rating'))
-        // .catch(function(error) {
-        //     console.error("Error writing document: ", error);
-        // });
     }
 
     // emailCloudFunction = () => {

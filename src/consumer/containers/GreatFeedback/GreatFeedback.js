@@ -36,6 +36,7 @@ class Greatfeedback extends Component {
     }
 
     render() { 
+        console.log(this.props.match.params)
         
         const outerDivStyle = {width: '85%', display: 'inline-block'}
         const innerDivStyle = {display: 'flex', justifyContent: 'space-between'}
