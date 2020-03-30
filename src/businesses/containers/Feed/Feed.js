@@ -12,21 +12,30 @@ class Feed extends Component {
     constructor(props) {
         super(props)
     }
-    state = {  }
+    state = { 
+        reviewData: {}
+     }
 
     componentDidMount() {
-        const docRef = db.collection("users").doc(this.props.auth.uid)
-        docRef.get().then(function(doc) {
-            if (doc.exists) {
-                console.log("Document data:", doc.data());
-            } else {
-                // doc.data() will be undefined in this case
-                console.log("No such document!");
-            }
-        }).catch(function(error) {
-            console.log("Error getting document:", error);
+        const docRef = db.collection("users").doc(this.props.auth.uid).collection("customers").get()
+        .then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+                console.log(doc.data());
+                this.setState({reviewData: doc.data()})
+            });
         });
+        // docRef.get().then(function(doc) {
+        //     if (doc.exists) {
+        //         console.log("Document data:", doc.data());
+        //     } else {
+        //         // doc.data() will be undefined in this case
+        //         console.log("No such document!");
+        //     }
+        // }).catch(function(error) {
+        //     console.log("Error getting document:", error);
+        // });
     }
+
 
     reviewData = {
         data1 : {
@@ -46,9 +55,9 @@ class Feed extends Component {
     result = Object.values(this.reviewData)
 
     render() { 
-        console.log(this.props.auth.uid)
+        console.log(this.state.reviewData)
+
         const { auth } = this.props
-        console.log(auth)
 
         if (!auth.uid) return <Redirect to='/signin' />
         return (
