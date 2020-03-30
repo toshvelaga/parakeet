@@ -40,15 +40,15 @@ function App() {
             <SignIn />
           </Route>
 
-          <Route path="/bad">
+          <Route path="/:uid/bad">
             <Negativefeedback />
           </Route>
 
-          <Route path="/great">
+          <Route path="/:uid/great">
             <Greatfeedback />
           </Route>
 
-          <Route path="/rating">
+          <Route path="/:uid/rating">
           <Rating />
           </Route>
 
@@ -66,6 +66,10 @@ function App() {
 
           <Route path="/customize">
             <Customize />
+          </Route>
+
+          <Route path="/:uid">
+            <Email />
           </Route>
 
           <Route path="/">

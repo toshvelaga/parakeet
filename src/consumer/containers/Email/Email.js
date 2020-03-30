@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import ParakeetHeader from '../../components/ParakeetHeader/ParakeetHeader'
 import './Email.css'
-import axios from 'axios'
-// import firebaseURL from '../../../assets/urls'
 import { withRouter } from 'react-router-dom';
-import firebase from '../../../firebase/fbConfig'
+import validateEmail from '../../../assets/emailValidation'
+import store from '../../../store/store'
 
 // firestore documentation: https://firebase.google.com/docs/firestore/query-data/get-data
-
-let db = firebase.firestore();
 
 class Email extends Component {
     state = { value: '' }
@@ -17,37 +14,24 @@ class Email extends Component {
         this.setState({value: e.target.value})
     }
 
-    validateEmail = (email) => {
-        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
-    }
-
     onSubmit2 = () => {
-
         const email = this.state.value
 
-        if (this.validateEmail(email) === false) {
+        if (validateEmail(email) === false) {
             alert("The email you entered is invalid")
-        } else
-        
-        db.collection("customers").doc("emails").set({
-            email: this.state.value,
-        })
-        .then(function() {
-            console.log("Document successfully written!");
-        })
-        .then(this.props.history.push("/Rating"))
-        .catch(function(error) {
-            console.error("Error writing document: ", error);
-        });
+        } else {
+        const action = { type: 'SUBMIT_EMAIL', text: this.state.value }
+        store.dispatch(action)
+        this.props.history.push('/' + this.props.match.params.uid + '/rating')
+        }
     }
 
-    emailCloudFunction = () => {
-        // const email = { email: this.state.value }
-        axios.post('https://us-central1-feedback-9ac15.cloudfunctions.net/helloWorld')
-        .then(response => console.log(response))
-        .catch(error => console.log(error))
-    }
+    // emailCloudFunction = () => {
+    //     // const email = { email: this.state.value }
+    //     axios.post('https://us-central1-feedback-9ac15.cloudfunctions.net/helloWorld')
+    //     .then(response => console.log(response))
+    //     .catch(error => console.log(error))
+    // }
 
     render() { 
         return (<div>

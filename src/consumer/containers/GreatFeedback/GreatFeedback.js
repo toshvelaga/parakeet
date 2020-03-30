@@ -20,20 +20,23 @@ class Greatfeedback extends Component {
     }
 
     onBack = () => {
-        this.props.history.push("/rating")
+        this.props.history.goBack()
     }
 
     onSubmit = () => {
-        db.collection("customers").doc("emails").set({
+        db.collection("users").doc(this.props.match.params.uid).collection("customers").add({
+            email: store.getState().emailReducer.emailValue,
             review: store.getState().textareaReducer.textValue,
             Doing_Well: store.getState().feedbackReducer.doingGreat,
-            Date: today
-        }, { merge: true })
+            rating: store.getState().ratingReducer.rating,
+            Date: today 
+        })
         
         this.props.history.push("/thanks")
     }
 
     render() { 
+        console.log(this.props.match.params)
         
         const outerDivStyle = {width: '85%', display: 'inline-block'}
         const innerDivStyle = {display: 'flex', justifyContent: 'space-between'}

@@ -16,8 +16,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import NotificationImportantIcon from '@material-ui/icons/NotificationImportant';
-import TimelineOutlinedIcon from '@material-ui/icons/TimelineOutlined';
+import FastfoodIcon from '@material-ui/icons/Fastfood';import TimelineOutlinedIcon from '@material-ui/icons/TimelineOutlined';
 import LocalDiningOutlinedIcon from '@material-ui/icons/LocalDiningOutlined';
 import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
 
@@ -145,7 +144,7 @@ const Navbar = (props) => {
         <List>
           <Link to="Feed" style={{ textDecoration: 'none', color: 'gray' }}>
             <ListItem button key="Feed">
-              <ListItemIcon><NotificationImportantIcon /></ListItemIcon>
+              <ListItemIcon><FastfoodIcon /></ListItemIcon>
               <ListItemText primary="Feed" />
             </ListItem>  
           </Link>    
