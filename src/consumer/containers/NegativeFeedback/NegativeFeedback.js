@@ -26,7 +26,8 @@ class Negativefeedback extends Component {
     }
 
     onSubmit = () => {
-        db.collection("users").doc(this.props.match.params.uid).collection("customers").add({
+        const ref =  db.collection("users").doc(this.props.match.params.uid).collection("customers");
+        ref.add({
             email: store.getState().emailReducer.emailValue,
             review: store.getState().textareaReducer.textValue,
             Doing_Well: store.getState().feedbackReducer.doingGreat,
