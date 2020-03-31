@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import store from '../../../store/store'
 
 // docs: https://www.npmjs.com/package/qrcode.react
 
@@ -18,7 +17,7 @@ const QRcode = (props) => {
     console.log(url + rest_uid)
 
     return (<>  
-    <QRCode value={url + rest_uid} />,
+    <QRCode size={200} value={url + rest_uid} />,
     </>
     );
 }

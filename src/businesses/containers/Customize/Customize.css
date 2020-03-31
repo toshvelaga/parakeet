@@ -2,8 +2,20 @@
     border: 1px solid lightgray;
     background: whitesmoke;
     border-radius: 5px;
-    width: 40%;
+    width: 50%;
     display: inline-block;
     padding-top: 2rem;
     padding-bottom: 2rem;
+}
+
+@media only screen and (max-width: 700px) {
+    .outerDiv {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+    .outerDiv {
+    width: 30%;
+  }
 }
