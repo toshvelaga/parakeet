@@ -9,9 +9,6 @@ import firebase from '../../../firebase/fbConfig'
 let db = firebase.firestore();
 
 class Feed extends Component {
-    constructor(props) {
-        super(props)
-    }
     state = { 
         reviewData: []
      }
@@ -20,33 +17,13 @@ class Feed extends Component {
         const docRef = db.collection("users").doc(this.props.auth.uid).collection("customers").get()
         .then(querySnapshot => {
             querySnapshot.docs.map(doc => {
-                console.log(doc.data());
                 var joined = this.state.reviewData.concat(doc.data())
                 this.setState({reviewData: joined})
             });
         });
     }
 
-    reviewData = [
-        {
-            review: "Great service!",
-            rating: 4,
-            date: '3/20/20',
-            email: 'toshvelaga@gmail.com'
-        },
-        {
-            review: "The service could use improvement. I was very dissapointed.",
-            rating: 2,
-            date: '3/20/20',
-            email: 'igor@gmail.com'
-        }
-    ]
-
-    // result = Object.values(this.reviewData)
-
     render() { 
-        console.log(this.state.reviewData)
-        // console.log(this.result)
 
         const { auth } = this.props
 
@@ -70,5 +47,4 @@ const mapStateToProps = (state) => {
     }
 }
 
- 
 export default connect(mapStateToProps, null)(Feed);

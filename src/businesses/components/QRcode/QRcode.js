@@ -1,7 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import store from '../../../store/store'
+
 // docs: https://www.npmjs.com/package/qrcode.react
+
+// SO: https://stackoverflow.com/questions/50158623/make-generated-qr-code-downloadable-on-react-project
+
+// https://medium.com/@zaran.56/how-to-generate-and-download-a-qr-code-image-in-react-a3e924a672f5
 
 var QRCode = require('qrcode.react');
 

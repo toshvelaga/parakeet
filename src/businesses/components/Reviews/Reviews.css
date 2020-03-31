@@ -1,6 +1,7 @@
 .review {
   display: inline-block;
-  margin: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
   padding: 1.1rem;
   width: 60%;
   border-radius: 3px;
@@ -10,8 +11,14 @@
   color: #6c6b6b;
 }
 
+@media only screen and (max-width: 700px) {
+  .review {
+  width: 92%;
+  }
+}
+
 .top_review {
     display: flex;
     justify-content: space-between;
-  }
+}
 
