@@ -8,13 +8,17 @@ class Thanks extends Component {
     render() { 
         return (<>
             <ParakeetHeader />
+            <div style={{marginTop: '2rem', fontSize: '4rem'}}>🙌</div>
             <div style={{width: '80%', textAlign: "left", display: 'inline-block', marginBottom: '1rem'}}>
-            <h2 style={{marginTop: '3.5rem'}}>Thanks for your feedback!</h2>            <p style={{color: 'gray'}}>Please check your email for points earned</p>
-            
-            <p style={{color: 'gray'}}>Recommend this place to your friends and recieve a discount for your next meal!</p>
+                <h2 style={{marginTop: '0rem'}}>Thanks for your feedback!</h2>           
+                <p style={{color: 'gray'}}><span style={{fontSize: '1.5rem'}}>🍜</span> Please check your email for points earned. </p>
+                <p style={{color: 'gray'}}><span style={{fontSize: '1.5rem'}}>🍜</span> Earn points to recieve free food. </p>
+                <p style={{color: 'gray'}}><span style={{fontSize: '1.5rem'}}>🍜</span> Share Parakeet with friends. </p>
             </div>
 
-            <button className="emailButton">SHARE</button>
+            <a href='http://twitter.com/share?text=Try out Parakeet and get free food!&url=https://spot-f43fe.firebaseapp.com/&hashtags=parakeet,goodfood,freefood'>
+                <button className="emailButton">SHARE</button>
+            </a>
         </>);
     }
 }

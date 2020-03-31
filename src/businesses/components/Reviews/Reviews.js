@@ -10,7 +10,7 @@ const Reviews = (props) => {
        if (n < 4) {
            return <StarRateIcon style={{color: '#f40054', fontSize: '2rem'}}/>
        } else 
-       return <StarRateIcon style={{color: '#0378d8', fontSize: '2rem'}}/>
+       return <StarRateIcon style={{color: '#ffca2c', fontSize: '2rem'}}/>
    }
 
     return (
@@ -18,12 +18,12 @@ const Reviews = (props) => {
             <div className="top_row">
                 <span style={{float: 'left'}} className="rating">
                     {[...Array(props.n)].map((e, i) => <span key={i}>
-                        {Star(props.n)}
-                    </span>)}
+                        {Star(props.n)} 
+                    </span>)} 
                 </span>
                 <span style={{float: 'right'}} className="date">{props.date}</span>
             </div>
-            <p style={{marginTop:'3rem', textAlign: 'left'}}>{props.text} {"––"} {props.email} </p>
+            <p style={{marginTop:'3rem', textAlign: 'left'}}>{props.review} {"––"} {props.email} </p>
         </div>
         );
     }

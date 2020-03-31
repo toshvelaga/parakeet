@@ -1,0 +1,16 @@
+.SignUp {
+    width: 60%;
+    display: inline-block;
+}  
+
+@media only screen and (max-width: 700px) {
+    .SignUp {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+    .SignUp {
+    width: 40%;
+  }
+}

@@ -10,6 +10,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { Link } from "react-router-dom";
 import Header from '../../components/Header/Header';
 
+import './SignIn.css'
+
 class Signin extends Component {
   state = {
     email: '',
@@ -29,6 +31,7 @@ class Signin extends Component {
 
     const { authError, auth, classes } = this.props
     if (auth.uid) return <Redirect to='/Feed' />
+
     return (<>
       <Header />
       <div className="container">
@@ -45,8 +48,10 @@ class Signin extends Component {
             Sign in
           </Typography>
 
+          <div className="SignIn">
           <TextField 
-            style={{width: '50%', marginTop: '2rem'}}
+            className="SignIn"
+            style={{marginTop: '2rem'}}
             variant="outlined"
             margin="normal"
             required
@@ -60,20 +65,20 @@ class Signin extends Component {
           />
           <br></br>
           <TextField 
-            style={{width: '50%'}}
+            // style={{width: '50%'}}
             variant="outlined"
             margin="normal"
             required
             fullWidth
             id="password"
             label="Password"
+            type="password"
             name="password"
             onChange={this.handleChange}
           />
-          
           <div className="submit">
             <Button
-              style={{width: '50%', marginTop: '1rem', marginBottom: '2rem', color: 'white', backgroundColor: '#0378d8'}}
+              style={{marginTop: '1rem', marginBottom: '2rem', color: 'white', backgroundColor: '#0378d8'}}
               type="submit"
               fullWidth
               variant="contained"
@@ -88,6 +93,8 @@ class Signin extends Component {
               { authError ? <p>{authError}</p> : null}
             </div>
           </div>
+          </div>
+
         </form>
 
       </div>

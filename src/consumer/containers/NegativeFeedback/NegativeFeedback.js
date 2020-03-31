@@ -32,7 +32,7 @@ class Negativefeedback extends Component {
             review: store.getState().textareaReducer.textValue,
             Doing_Well: store.getState().feedbackReducer.doingGreat,
             rating: store.getState().ratingReducer.rating,
-            Date: today 
+            date: today 
         })
 
         this.props.history.push("/thanks")
