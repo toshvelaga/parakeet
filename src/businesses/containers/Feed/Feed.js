@@ -25,6 +25,7 @@ class Feed extends Component {
     render() { 
 
         const { auth } = this.props
+        console.log(auth)
 
         if (!auth.uid) return <Redirect to='/signin' />
         return (

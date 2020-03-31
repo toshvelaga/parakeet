@@ -51,6 +51,8 @@ export default class PieChartGreat extends React.Component {
 
         <Doughnut
           data={state}
+          width={'400rem'}
+          height={'300rem'}
           options={{
             title:{
               display:true,

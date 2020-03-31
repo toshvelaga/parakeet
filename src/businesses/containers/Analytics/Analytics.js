@@ -49,18 +49,18 @@ class Analytics extends Component {
         <>
             <Navbar />
             <h2 style={{marginTop: 0}}>Analytics</h2>
-            <div style={{display: 'inline-block', marginTop: '1rem'}}>
+            <div style={{display: 'inline-block', marginTop: '1rem', marginBottom: '5rem'}}>
                 <BarChart />
             </div>
 
-            <div style={{marginTop: '3rem'}}>
-                <div style={{marginRight: '5rem'}} className="reviewTotal">
+            
+                <div className="reviewTotal">
                     <PieChartGreat />
                 </div>
                 <div className="reviewTotal">
                     <PieChartBad />
                 </div>
-            </div>
+          
 
         </>);
     }

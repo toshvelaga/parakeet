@@ -34,6 +34,8 @@ export default class PieChartBad extends React.Component {
       <div>
         <Pie
           data={state}
+          width={'400rem'}
+          height={'300rem'}
           options={{
             title:{
               display:true,
