@@ -205,12 +205,7 @@ const Navbar = props => {
   );
 };
 
-<<<<<<< HEAD
 const mapStateToProps = state => {
-  console.log(state);
-=======
-const mapStateToProps = (state) => {
->>>>>>> develop
   return {
     auth: state.firebase.auth
   };
