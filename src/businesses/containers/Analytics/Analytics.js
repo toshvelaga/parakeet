@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import Navbar from '../../components/Navbar/Navbar'
-import StarRateIcon from '@material-ui/icons/StarRate';
-import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
-import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
+import React, { Component } from "react";
+import Navbar from "../../components/Navbar/Navbar";
+import StarRateIcon from "@material-ui/icons/StarRate";
+import ThumbUpAltOutlinedIcon from "@material-ui/icons/ThumbUpAltOutlined";
+import ThumbDownOutlinedIcon from "@material-ui/icons/ThumbDownOutlined";
 
-import './Analytics.css'
-import BarChart from '../BarChart/BarChart';
+import "./Analytics.css";
+import BarChart from "../BarChart/BarChart";
 
-import { Redirect } from 'react-router-dom'
-import { connect } from 'react-redux'
+import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 
 // todo: good reviews
 // todo: bad reviews
@@ -18,58 +18,31 @@ import { connect } from 'react-redux'
 // can use ChartJS: https://www.chartjs.org/docs/latest/charts/bar.html
 
 class Analytics extends Component {
-    constructor(props) {
-        super()
-    }
-    state = {  }
-    render() { 
-        const { auth } = this.props
-        console.log(auth)
+  constructor(props) {
+    super();
+  }
+  state = {};
+  render() {
+    const { auth } = this.props;
+    console.log(auth);
 
-        if (!auth.uid) return <Redirect to='/signin' />
+    if (!auth.uid) return <Redirect to="/signin" />;
 
-        return (
-        <>
-            <Navbar />
-            <h2 style={{marginTop: 0}}>Analytics</h2>
-
-            <div style={{marginTop: '3rem'}}>
-
-            <div style={{marginRight: '5rem'}} className="reviewTotal">
-                <div style={{float: 'left'}}>
-                    <StarRateIcon style={{fontSize: '5rem', color: '#0378d8'}} />
-                </div>
-                <div style={{float: 'right', fontSize: '1rem', marginRight: '1rem'}}>
-                    <p>4.5</p>
-                    <p>Average Rating</p>
-                </div>
-            </div>
-           
-            <div className="reviewTotal">
-                <div style={{float: 'left', width: '40%'}}>
-                    <ThumbUpAltOutlinedIcon style={{fontSize: '3rem', color: '#0378d8'}} />
-                    <ThumbDownOutlinedIcon style={{fontSize: '3rem', color: '#d8030d'}} />
-                </div>
-                <div style={{float: 'right', width: '40%', fontSize: '1rem', marginRight: '1rem'}}>
-                    <p>2</p>
-                    <p>Reviews</p>
-                </div>
-            </div>
-
-            </div>
-
-            <div style={{display: 'inline-block', marginTop: '5rem'}}>
-            <h2>Customer Feedback Votes</h2>
-            <BarChart />
-            </div>
-        </>);
-    }
+    return (
+      <>
+        <div class="analytics">
+          <Navbar />
+          Hello
+        </div>
+      </>
+    );
+  }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        auth: state.firebase.auth
-    }
-}
- 
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth
+  };
+};
+
 export default connect(mapStateToProps, null)(Analytics);
