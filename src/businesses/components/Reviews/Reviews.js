@@ -18,8 +18,8 @@ const Reviews = (props) => {
             <div className="top_row">
                 <span style={{float: 'left'}} className="rating">
                     {[...Array(props.n)].map((e, i) => <span key={i}>
-                        {Star(props.n)}
-                    </span>)}
+                        {Star(props.n)} 
+                    </span>)} 
                 </span>
                 <span style={{float: 'right'}} className="date">{props.date}</span>
             </div>
