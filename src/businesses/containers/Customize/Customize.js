@@ -3,7 +3,6 @@ import Navbar from '../../components/Navbar/Navbar'
 import QRcode from '../../components/QRcode/QRcode'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField';
-import SaveIcon from '@material-ui/icons/Save';
 
 import './Customize.css'
 import { Redirect } from 'react-router-dom'
@@ -26,11 +25,6 @@ class Customize extends Component {
         this.setState({[e.target.id]: e.target.value})
     }
 
-    // validateEmail = (email) => {
-    //     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    //     return re.test(String(email).toLowerCase());
-    // }
-
     onSubmit = () => {
         const email = this.state.managerEmail
 
@@ -52,18 +46,12 @@ class Customize extends Component {
 
     render() { 
         const { auth } = this.props
-        console.log(auth)
-
         if (!auth.uid) return <Redirect to='/signin' />
-
-        console.log(this.state.businessName)
-        console.log(this.state.managerEmail)
 
         return (
         <div>
             <Navbar />
             <h2>Customize</h2>
-
             <div className="outerDiv">
 
             <TextField
@@ -72,7 +60,7 @@ class Customize extends Component {
                 placeholder="Enter name of restaurant"
                 margin="dense"
                 size="small"
-                helperText="Will be used to generate custom QR code*"
+                helperText="Will be used to create awareness on twitter*"
                 fullWidth
                 margin="normal"
                 InputLabelProps={{
@@ -100,17 +88,14 @@ class Customize extends Component {
                 required
             />
 
-            <br></br><br></br>
-            <QRcode />
-            <br></br><br></br>
-
-            <Button variant="outlined" color="primary">Export QR Code</Button>
+            <div>
+                <QRcode />
+            </div>
 
             </div>        
 
             <div>            
-                {/* <Button style={{color: 'green', border: '1px solid green', width: '15%', marginTop: '2rem'}} variant="outlined" color="primary">Save</Button> */}
-                <Button onClick={this.onSubmit} style={{width: '20%', marginTop: '2rem', marginBottom: '2rem', color: 'white', backgroundColor: '#0378d8'}} variant="contained" color="primary" size="large" startIcon={<SaveIcon />}>
+                <Button className="outerDiv" onClick={this.onSubmit} style={{marginTop: '2rem', marginBottom: '2rem', color: 'white', backgroundColor: '#0378d8'}} variant="contained" color="primary" size="large" >
                     Save
                 </Button>
             </div>

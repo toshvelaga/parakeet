@@ -10,7 +10,7 @@
     border-radius: 5px;
 }
 
-input:focus { 
+.emailInput:focus { 
     outline: none !important;
     border: 2px #0378d8 solid;
 }

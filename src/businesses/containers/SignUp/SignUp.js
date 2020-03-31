@@ -13,6 +13,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 import { Link } from "react-router-dom";
 
+import './SignUp.css'
+
 class SignUp extends Component {
   state = {
     email: '',
@@ -38,7 +40,7 @@ class SignUp extends Component {
     return (<>
       <Header />
       <div className="container">
-        <form onSubmit={this.handleSubmit} style={{width: '60%', display: 'inline-block'}}>
+        <form onSubmit={this.handleSubmit} className="SignUp">
           <div style={{display: 'inline-block', marginTop: '2rem'}}>
             <Avatar style={{backgroundColor: '#dd004f', fontSize: '2rem'}}>
               <LockOutlinedIcon />
