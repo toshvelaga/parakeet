@@ -9,6 +9,7 @@ import BarChart from '../BarChart/BarChart';
 
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
+import firebase from '../../../firebase/fbConfig'
 
 // todo: good reviews
 // todo: bad reviews
@@ -17,14 +18,30 @@ import { connect } from 'react-redux'
 
 // can use ChartJS: https://www.chartjs.org/docs/latest/charts/bar.html
 
+let db = firebase.firestore();
+
 class Analytics extends Component {
     constructor(props) {
         super()
     }
-    state = {  }
+    state = { 
+        reviewData: []
+    }
+
+    componentDidMount() {
+        const docRef = db.collection("users").doc(this.props.auth.uid).collection("customers").get()
+        .then(querySnapshot => {
+            querySnapshot.docs.map(doc => {
+                var joined = this.state.reviewData.concat(doc.data())
+                this.setState({reviewData: joined})
+            });
+        });
+    }
+
     render() { 
         const { auth } = this.props
         console.log(auth)
+        console.log(this.state.reviewData)
 
         if (!auth.uid) return <Redirect to='/signin' />
 
