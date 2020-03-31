@@ -1,5 +1,55 @@
 .analytics {
   width: 100%;
   height: 100vh; /* todo make sure to get the back ground of this page gray */
-  background-color: #eeeeeee;
+  background-color: #eeeeee;
+  padding: 40px;
+  box-sizing: border-box;
+}
+.analytics-header {
+  text-align: left;
+  postion: rel;
+  position: relative;
+  top: -28px;
+  right: -10px;
+}
+.col {
+  flex: ;
+}
+html SCSSResult EDIT ON .flex-grid {
+  display: flex;
+}
+.flex-grid .col {
+  flex: 1;
+}
+.flex-grid-thirds {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-grid-thirds .col {
+  width: 32%;
+}
+
+@media (max-width: 400px) {
+  .flex-grid,
+  .flex-grid-thirds {
+    display: block;
+    .col {
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+}
+
+.flex-grid {
+  margin: 0 0 20px 0;
+}
+.col {
+  border: 1px solid;
+  margin: 0px 10px;
+  padding: 20px;
+}
+
+.review-badge {
+  color: white;
+  background-color: white;
 }

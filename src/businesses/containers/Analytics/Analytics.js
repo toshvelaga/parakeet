@@ -32,7 +32,25 @@ class Analytics extends Component {
       <>
         <div class="analytics">
           <Navbar />
-          Hello
+          <div class="analytics-header">
+            <h2>Analytics</h2>
+          </div>
+          <div class="analytics-container">
+            <div class="flex-grid">
+              <div class="col review-badge">
+                This little piggy went to market.
+              </div>
+              <div class="col review-badge">
+                This little piggy went to market.
+              </div>
+              <div class="col review-badge">
+                This little piggy went to market.
+              </div>
+              <div class="col review-badge">
+                This little piggy went to market.
+              </div>
+            </div>
+          </div>
         </div>
       </>
     );
