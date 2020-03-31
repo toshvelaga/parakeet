@@ -1,12 +1,12 @@
 .reviewTotal {
-    border: 1px rgb(175, 175, 175) solid;
+    border: 1px rgba(175, 175, 175, .5) solid;
     border-radius: 5px;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    width: 35%;
+    width: 40%;
     display: inline-block;
-    color: gray;
+    /* color: lightgray; */
     /* box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-    height: 25vh;
+    height: 35vh;
 }
 

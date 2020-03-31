@@ -3,17 +3,23 @@ import {Bar} from 'react-chartjs-2';
 
 // docs: https://www.chartjs.org/docs/latest/charts/bar.html
 // https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react
-
+// color-hex gradient examples: https://www.color-hex.com/color-palette/4699
 const Rating = {
   labels: ['5 Stars', '4 Stars', '3 Stars',
            '2 Stars', '1 Star'],
   datasets: [
     {
       label: 'Number of Reviews',
-      backgroundColor: 'rgba(75,192,192,1)',
-      borderColor: 'rgba(0,0,0,1)',
+      backgroundColor: [
+        'rgba(255,193,0,.6)',
+        'rgba(255,154,0,.45)',
+        'rgba(255,116,0,.3)',
+        'rgba(255,77,0,.25)',
+        'rgba(255,0,0,.2)',
+      ],
+      borderColor: 'rgba(0,0,0,.5)',
       borderWidth: 1,
-      data: [4, 5, 1, 2, 1]
+      data: [4, 10, 1, 2, 1]
     }
   ]
 }
@@ -25,7 +31,7 @@ export default class BarChart extends React.Component {
         <Bar
           data={Rating}
           width={'500rem'}
-          height={'300rem'}
+          height={'400rem'}
           options={{
             title:{
               display:true,
