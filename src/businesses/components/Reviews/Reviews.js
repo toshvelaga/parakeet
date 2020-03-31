@@ -23,7 +23,7 @@ const Reviews = (props) => {
                 </span>
                 <span style={{float: 'right'}} className="date">{props.date}</span>
             </div>
-            <p style={{marginTop:'3rem', textAlign: 'left'}}>{props.text} {"––"} {props.email} </p>
+            <p style={{marginTop:'3rem', textAlign: 'left'}}>{props.review} {"––"} {props.email} </p>
         </div>
         );
     }

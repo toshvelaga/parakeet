@@ -13,49 +13,40 @@ class Feed extends Component {
         super(props)
     }
     state = { 
-        reviewData: {}
+        reviewData: []
      }
 
     componentDidMount() {
         const docRef = db.collection("users").doc(this.props.auth.uid).collection("customers").get()
         .then(querySnapshot => {
-            querySnapshot.forEach(doc => {
+            querySnapshot.docs.map(doc => {
                 console.log(doc.data());
-                this.setState({reviewData: doc.data()})
+                var joined = this.state.reviewData.concat(doc.data())
+                this.setState({reviewData: joined})
             });
         });
-        // docRef.get().then(function(doc) {
-        //     if (doc.exists) {
-        //         console.log("Document data:", doc.data());
-        //     } else {
-        //         // doc.data() will be undefined in this case
-        //         console.log("No such document!");
-        //     }
-        // }).catch(function(error) {
-        //     console.log("Error getting document:", error);
-        // });
     }
 
-
-    reviewData = {
-        data1 : {
-            text: "Great service!",
+    reviewData = [
+        {
+            review: "Great service!",
             rating: 4,
             date: '3/20/20',
             email: 'toshvelaga@gmail.com'
         },
-        data2 : {
-            text: "The service could use improvement. I was very dissapointed.",
+        {
+            review: "The service could use improvement. I was very dissapointed.",
             rating: 2,
             date: '3/20/20',
             email: 'igor@gmail.com'
         }
-   }
+    ]
 
-    result = Object.values(this.reviewData)
+    // result = Object.values(this.reviewData)
 
     render() { 
         console.log(this.state.reviewData)
+        // console.log(this.result)
 
         const { auth } = this.props
 
@@ -65,8 +56,8 @@ class Feed extends Component {
             <Navbar />
             <h2 style={{marginTop: 0}}>Feed</h2>
 
-            {this.result.map(({text, rating, date, email, index}) => {
-                return (<Reviews key={index + email + text} text={text} n={rating} email={email} date={date} />
+            {this.state.reviewData.map(({review, rating, date, email, index}) => {
+                return (<Reviews key={index + email + review} review={review} n={rating} email={email} date={date} />
                 )
             })}
         </div>);
