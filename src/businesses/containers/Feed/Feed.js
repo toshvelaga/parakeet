@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Navbar from '../../components/Navbar/Navbar'
-import './Feed.css'
 import Reviews from '../../components/Reviews/Reviews'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'

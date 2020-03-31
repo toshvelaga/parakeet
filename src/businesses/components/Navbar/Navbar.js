@@ -89,7 +89,6 @@ const useStyles = makeStyles(theme => ({
 
 const Navbar = (props) => {
   const { auth } = props;
-  console.log(auth)
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -185,7 +184,6 @@ const Navbar = (props) => {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     auth: state.firebase.auth
   }

@@ -10,7 +10,7 @@ const Reviews = (props) => {
        if (n < 4) {
            return <StarRateIcon style={{color: '#f40054', fontSize: '2rem'}}/>
        } else 
-       return <StarRateIcon style={{color: '#0378d8', fontSize: '2rem'}}/>
+       return <StarRateIcon style={{color: '#ffca2c', fontSize: '2rem'}}/>
    }
 
     return (
