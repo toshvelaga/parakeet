@@ -1,30 +1,56 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {Pie, Doughnut} from 'react-chartjs-2';
+import firebase from '../../../firebase/fbConfig'
+import { connect } from 'react-redux'
 
-// blue hex gradient: https://www.color-hex.com/color/0378d8
+let db = firebase.firestore();
 
-const state = {
-  labels: ['Food', 'Service', 'Pricing',
-           'Ambience', 'Cleanliness', 'Plating', 'Other'],
-  datasets: [
-    {
-      label: 'Rainfall',
-      backgroundColor: [
-        '#fe6383',
-        '#ffcc56',
-        '#4ac0c0',
-        '#9966ff',
-        '#36a2eb',
-        '#ff9f40',
-        'lightgray'
-      ],
-      data: [6, 5, 8, 8, 5, 3, 3]
-    }
-  ]
-}
+class PieChartGreat extends Component {
+  state = {
+    Doing_Well : []
+  }
 
-export default class PieChartGreat extends React.Component {
+  componentDidMount() {
+    const docRef = db.collection("users").doc(this.props.auth.uid).collection("customers").get()
+    .then(querySnapshot => {
+        querySnapshot.docs.map(doc => {
+            var joined = this.state.Doing_Well.concat(doc.data().Doing_Well)
+            this.setState({Doing_Well: joined})
+        });
+    });
+  }
+
   render() {
+
+    console.log(this.state.Doing_Well)
+
+    const ArrDoing_Well = this.state.Doing_Well
+
+    function Count(feedback) {
+      return ArrDoing_Well.filter(x => x == feedback).length;
+    }
+
+    const labels = ['Food', 'Service', 'Pricing',
+    'Ambience', 'Cleanliness', 'Plating', 'Other']
+  
+    const rating = {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Rainfall',
+          backgroundColor: [
+            '#fe6383',
+            '#ffcc56',
+            '#4ac0c0',
+            '#9966ff',
+            '#36a2eb',
+            '#ff9f40',
+            'lightgray'
+          ],
+          data: labels.map(label => Count(label)),
+        }
+      ]
+    }
     return (
       <div>
         {/* <Pie
@@ -43,7 +69,7 @@ export default class PieChartGreat extends React.Component {
         /> */}
 
         <Doughnut
-          data={state}
+          data={rating}
           width={'400rem'}
           height={'300rem'}
           options={{
@@ -62,3 +88,11 @@ export default class PieChartGreat extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+      auth: state.firebase.auth
+  }
+}
+
+export default connect(mapStateToProps, null)(PieChartGreat)
