@@ -30,7 +30,7 @@ class Negativefeedback extends Component {
         ref.add({
             email: store.getState().emailReducer.emailValue,
             review: store.getState().textareaReducer.textValue,
-            Doing_Well: store.getState().feedbackReducer.doingGreat,
+            Doing_Bad: store.getState().feedbackReducer.doingBad,
             rating: store.getState().ratingReducer.rating,
             date: today 
         })
