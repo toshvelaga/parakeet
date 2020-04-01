@@ -49,7 +49,7 @@ export default class PieChartGreat extends React.Component {
           options={{
             title:{
               display:true,
-              text:'Doing Great Feedback',
+              text:'Areas That Are Excellent',
               fontSize:20
             },
             legend:{

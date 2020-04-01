@@ -49,7 +49,7 @@ export default class PieChartBad extends React.Component {
           options={{
             title:{
               display:true,
-              text:'Areas that need improvement',
+              text:'Areas That Need Improvement ',
               fontSize:20
             },
             legend:{
