@@ -3,12 +3,13 @@ import Navbar from '../../components/Navbar/Navbar'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import firebase from '../../../firebase/fbConfig'
-import PieChartGreat from '../PieChartGreat/PieChartGreat';
-import BarChart from '../BarChart/BarChart';
+import PieChartGreat from '../PieChartGreat/PieChartGreat'
+import BarChart from '../BarChart/BarChart'
+import PieChartBad from '../PieChartBad/PieChartBad'
+import Grid from '@material-ui/core/Grid'
 
 import './Analytics.css'
-import PieChartBad from '../PieChartBad/PieChartBad';
-import Grid from '@material-ui/core/Grid';
+
 
 let db = firebase.firestore();
 
@@ -18,7 +19,7 @@ class Analytics extends Component {
     }
 
     componentDidMount() {
-        
+
     }
 
     render() { 
