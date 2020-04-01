@@ -30,7 +30,6 @@ class SignUp extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state)
     this.props.signUp(this.state)
   }
 

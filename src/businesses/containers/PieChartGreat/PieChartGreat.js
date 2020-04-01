@@ -21,9 +21,6 @@ class PieChartGreat extends Component {
   }
 
   render() {
-
-    console.log(this.state.Doing_Well)
-
     const ArrDoing_Well = this.state.Doing_Well
 
     function Count(feedback) {
