@@ -14,14 +14,7 @@ const state = {
         '#9966ff',
         '#36a2eb',
         '#ff9f40',
-        'whitesmoke'
-      ],
-      hoverBackgroundColor: [
-      '#501800',
-      '#4B5000',
-      '#175000',
-      '#003350',
-      '#35014F'
+        'lightgray'
       ],
       data: [6, 5, 8, 8, 5, 3, 3]
     }
@@ -32,7 +25,7 @@ export default class PieChartBad extends React.Component {
   render() {
     return (
       <div>
-        <Pie
+        {/* <Pie
           data={state}
           width={'400rem'}
           height={'300rem'}
@@ -47,14 +40,16 @@ export default class PieChartBad extends React.Component {
               position:'right'
             }
           }}
-        />
+        /> */}
 
-        {/* <Doughnut
+        <Doughnut
           data={state}
+          width={'400rem'}
+          height={'300rem'}
           options={{
             title:{
               display:true,
-              text:'Doing Great Feedback',
+              text:'Areas that need improvement',
               fontSize:20
             },
             legend:{
@@ -62,7 +57,7 @@ export default class PieChartBad extends React.Component {
               position:'right'
             }
           }}
-        /> */}
+        />
       </div>
     );
   }
