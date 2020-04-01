@@ -13,27 +13,9 @@ import Grid from '@material-ui/core/Grid';
 let db = firebase.firestore();
 
 class Analytics extends Component {
-    constructor(props) {
-        super()
-    }
-    state = { 
-        reviewData: []
-    }
-
-    componentDidMount() {
-        const docRef = db.collection("users").doc(this.props.auth.uid).collection("customers").get()
-        .then(querySnapshot => {
-            querySnapshot.docs.map(doc => {
-                var joined = this.state.reviewData.concat(doc.data())
-                this.setState({reviewData: joined})
-            });
-        });
-    }
 
     render() { 
         const { auth } = this.props
-        console.log(auth)
-        console.log(this.state.reviewData)
 
         if (!auth.uid) return <Redirect to='/signin' />
 
