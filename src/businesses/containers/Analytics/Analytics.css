@@ -1,12 +1,17 @@
 .reviewTotal {
-    border: 1px rgb(175, 175, 175) solid;
+    border: 1px rgba(175, 175, 175, .5) solid;
     border-radius: 5px;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    width: 35%;
-    display: inline-block;
-    color: gray;
-    /* box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-    height: 25vh;
+    padding: 3rem;
+    margin-bottom: 3rem;
 }
 
+.barChart {
+    margin-top: 1rem; 
+    margin-bottom: 3rem
+}
+
+@media only screen and (max-width: 700px) {
+    .reviewTotal, .barChart {
+    width: 92%;
+    }
+  }

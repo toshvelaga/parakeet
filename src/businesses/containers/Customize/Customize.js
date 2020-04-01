@@ -57,15 +57,12 @@ class Customize extends Component {
             <TextField
                 id="businessName"
                 style={{ margin: '1rem', width: '80%' }}
-                placeholder="Enter name of restaurant"
+                label="Enter name of restaurant"
                 margin="dense"
                 size="small"
-                helperText="Will be used to create awareness on twitter*"
+                helperText="Will be used to create awareness on twitter"
                 fullWidth
                 margin="normal"
-                InputLabelProps={{
-                    shrink: true,
-                }}
                 variant="outlined"
                 onChange={this.changeHandler}
                 required
@@ -74,15 +71,12 @@ class Customize extends Component {
             <TextField
                 id="managerEmail"
                 style={{ margin: '1rem', width: '80%' }}
-                placeholder="Enter manager's email"
+                label="Enter manager's email"
                 margin="dense"
                 size="small"
-                helperText="Will recieve negative feedback*"
+                helperText="He/she recieve negative feedback"
                 fullWidth
                 margin="normal"
-                InputLabelProps={{
-                    shrink: true,
-                }}
                 variant="outlined"
                 onChange={this.changeHandler}
                 required

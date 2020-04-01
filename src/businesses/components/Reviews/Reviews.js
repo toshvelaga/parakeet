@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Reviews.css';
 import StarRateIcon from '@material-ui/icons/StarRate';
 
