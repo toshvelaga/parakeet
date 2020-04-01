@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
-import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
-import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import firebase from '../../../firebase/fbConfig'
@@ -10,13 +8,7 @@ import BarChart from '../BarChart/BarChart';
 
 import './Analytics.css'
 import PieChartBad from '../PieChartBad/PieChartBad';
-
-// todo: good reviews
-// todo: bad reviews
-// todo: most frequently selected items for improvement (bar chart)
-// todo: most frequently selected items that business is doing well in (bar chart)
-
-// can use ChartJS: https://www.chartjs.org/docs/latest/charts/bar.html
+import Grid from '@material-ui/core/Grid';
 
 let db = firebase.firestore();
 
@@ -48,20 +40,25 @@ class Analytics extends Component {
         return (
         <>
             <Navbar />
-            <h2 style={{marginTop: 0}}>Analytics</h2>
-            <div style={{display: 'inline-block', marginTop: '1rem', marginBottom: '5rem'}}>
-                <BarChart />
-            </div>
+                <h2 style={{marginTop: 0}}>Analytics</h2>
 
-            
+            <Grid container direction="column" justify="flex-start" alignItems="center">
+                <div className="barChart">
+                    <BarChart />
+                </div>
+            </Grid>
+
+            <Grid container direction="column" justify="flex-start" alignItems="center">
                 <div className="reviewTotal">
                     <PieChartGreat />
                 </div>
+            </Grid>
+
+            <Grid container direction="column" justify="flex-start" alignItems="center">
                 <div className="reviewTotal">
                     <PieChartBad />
                 </div>
-          
-
+            </Grid>
         </>);
     }
 }
