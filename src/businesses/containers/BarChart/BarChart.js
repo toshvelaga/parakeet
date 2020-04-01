@@ -25,7 +25,12 @@ class BarChart extends Component {
   }
 
   render() {
-    console.log(this.state.reviews)
+
+    const ArrRatings = this.state.reviews
+
+    function Count(n) {
+      return ArrRatings.filter(x => x == n).length;
+    }
 
     const Rating = {
       labels: ['5 Stars', '4 Stars', '3 Stars',
@@ -42,7 +47,7 @@ class BarChart extends Component {
           ],
           borderColor: 'rgba(0,0,0,.5)',
           borderWidth: 1,
-          data: [4, 10, 1, 2, 1]
+          data: [Count(1), Count(2), Count(3), Count(4), Count(5)]
         }
       ]
     }
