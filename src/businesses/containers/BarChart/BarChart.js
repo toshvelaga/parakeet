@@ -47,7 +47,7 @@ class BarChart extends Component {
           ],
           borderColor: 'rgba(0,0,0,.5)',
           borderWidth: 1,
-          data: [Count(1), Count(2), Count(3), Count(4), Count(5)]
+          data: [Count(5), Count(4), Count(3), Count(2), Count(1)]
         }
       ]
     }
