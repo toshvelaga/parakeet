@@ -14,14 +14,6 @@ import './Analytics.css'
 let db = firebase.firestore();
 
 class Analytics extends Component {
-    state = {
-        reviews: []
-    }
-
-    componentDidMount() {
-
-    }
-
     render() { 
         const { auth } = this.props
 
