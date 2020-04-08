@@ -10,23 +10,49 @@ import Grid from '@material-ui/core/Grid'
 
 import './Analytics.css'
 
-
 let db = firebase.firestore();
 
 class Analytics extends Component {
+    state = {
+        reviews: []
+    }
+
+    componentDidMount() {
+        const docRef = db.collection("users").doc(this.props.auth.uid).collection("customers").get()
+        .then(querySnapshot => {
+            querySnapshot.docs.map(doc => {
+                var joined = this.state.reviews.concat(doc.data().rating)
+                this.setState({reviews: joined})
+            });
+        });
+    }
+
     render() { 
         const { auth } = this.props
+        const ArrRatings = this.state.reviews
+        const num_total_review = ArrRatings.length
+
+        const average = ArrRatings.reduce( ( p, c ) => p + c, 0 ) / num_total_review;
+
+        function Count(n) {
+          return ArrRatings.filter(x => x == n).length;
+        }
 
         if (!auth.uid) return <Redirect to='/signin' />
 
         return (
         <>
             <Navbar />
-                <h2 style={{marginTop: 0}}>Analytics</h2>
+            
+            <h2 style={{marginTop: 0}}>Analytics</h2>
+            <div className="analytics_details">
+                <p>Number of Total Reviews: {num_total_review}</p>
+                <p>Average Rating: {average}</p>
+            </div>
 
             <Grid container direction="column" justify="flex-start" alignItems="center">
                 <div className="barChart">
-                    <BarChart />
+                    <BarChart data={[Count(5), Count(4), Count(3), Count(2), Count(1)]}/>
                 </div>
             </Grid>
 

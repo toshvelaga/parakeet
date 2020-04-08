@@ -1,36 +1,13 @@
 import React, {Component} from 'react';
 import {Bar} from 'react-chartjs-2';
-import firebase from '../../../firebase/fbConfig'
-import { connect } from 'react-redux'
 
 // docs: https://www.chartjs.org/docs/latest/charts/bar.html
 // https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react
 // color-hex gradient examples: https://www.color-hex.com/color-palette/4699
 
-let db = firebase.firestore();
-
 class BarChart extends Component {
-  state = {
-    reviews: []
-  }
-
-  componentDidMount() {
-      const docRef = db.collection("users").doc(this.props.auth.uid).collection("customers").get()
-      .then(querySnapshot => {
-          querySnapshot.docs.map(doc => {
-              var joined = this.state.reviews.concat(doc.data().rating)
-              this.setState({reviews: joined})
-          });
-      });
-  }
 
   render() {
-
-    const ArrRatings = this.state.reviews
-
-    function Count(n) {
-      return ArrRatings.filter(x => x == n).length;
-    }
 
     const Rating = {
       labels: ['5 Stars', '4 Stars', '3 Stars',
@@ -47,7 +24,7 @@ class BarChart extends Component {
           ],
           borderColor: 'rgba(0,0,0,.5)',
           borderWidth: 1,
-          data: [Count(5), Count(4), Count(3), Count(2), Count(1)]
+          data: this.props.data
         }
       ]
     }
@@ -61,8 +38,8 @@ class BarChart extends Component {
           options={{
             title:{
               display:true,
-              text:'Average Rating',
-              fontSize:20,
+              text:'Review Breakdown',
+              fontSize: 20,
             },
             legend:{
               display:true,
@@ -82,10 +59,4 @@ class BarChart extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-      auth: state.firebase.auth
-  }
-}
-
-export default connect(mapStateToProps, null)(BarChart);
+export default BarChart;
