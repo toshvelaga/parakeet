@@ -38,8 +38,8 @@ class BarChart extends Component {
           options={{
             title:{
               display:true,
-              text:'Average Rating',
-              fontSize:20,
+              text:'Review Breakdown',
+              fontSize: 20,
             },
             legend:{
               display:true,
