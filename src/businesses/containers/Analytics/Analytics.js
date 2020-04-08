@@ -14,6 +14,20 @@ import './Analytics.css'
 let db = firebase.firestore();
 
 class Analytics extends Component {
+    state = {
+        reviews: []
+    }
+
+    componentDidMount() {
+        const docRef = db.collection("users").doc(this.props.auth.uid).collection("customers").get()
+        .then(querySnapshot => {
+            querySnapshot.docs.map(doc => {
+                var joined = this.state.reviews.concat(doc.data().rating)
+                this.setState({reviews: joined})
+            });
+        });
+    }
+
     render() { 
         const { auth } = this.props
 
