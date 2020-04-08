@@ -30,6 +30,11 @@ class Analytics extends Component {
 
     render() { 
         const { auth } = this.props
+        const num_total_review = this.state.reviews.length
+        // let average = (array) => array.reduce((a, b) => a + b) / array.length;
+        
+        console.log(num_total_review)
+        // console.log(average(this.state.reviews))
 
         if (!auth.uid) return <Redirect to='/signin' />
 
@@ -37,6 +42,7 @@ class Analytics extends Component {
         <>
             <Navbar />
                 <h2 style={{marginTop: 0}}>Analytics</h2>
+                <p>Number of Total Reviews: {num_total_review}</p>
 
             <Grid container direction="column" justify="flex-start" alignItems="center">
                 <div className="barChart">
