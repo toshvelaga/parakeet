@@ -10,7 +10,6 @@ import Grid from '@material-ui/core/Grid'
 
 import './Analytics.css'
 
-
 let db = firebase.firestore();
 
 class Analytics extends Component {
@@ -30,11 +29,18 @@ class Analytics extends Component {
 
     render() { 
         const { auth } = this.props
-        const num_total_review = this.state.reviews.length
-        // let average = (array) => array.reduce((a, b) => a + b) / array.length;
-        
+        const ArrRatings = this.state.reviews
+        const num_total_review = ArrRatings.length
+        const average = arr => arr.reduce( ( p, c ) => p + c, 0 ) / arr.length;
+
+        function Count(n) {
+          return ArrRatings.filter(x => x == n).length;
+        }
+
         console.log(num_total_review)
         // console.log(average(this.state.reviews))
+
+        console.log(average(ArrRatings))
 
         if (!auth.uid) return <Redirect to='/signin' />
 
@@ -43,10 +49,11 @@ class Analytics extends Component {
             <Navbar />
                 <h2 style={{marginTop: 0}}>Analytics</h2>
                 <p>Number of Total Reviews: {num_total_review}</p>
+                <p>Average Rating: {average(ArrRatings)}</p>
 
             <Grid container direction="column" justify="flex-start" alignItems="center">
                 <div className="barChart">
-                    <BarChart />
+                    <BarChart data={[Count(5), Count(4), Count(3), Count(2), Count(1)]}/>
                 </div>
             </Grid>
 
