@@ -33,7 +33,7 @@ class Analytics extends Component {
         const num_total_review = ArrRatings.length
 
         const average = ArrRatings.reduce( ( p, c ) => p + c, 0 ) / num_total_review;
-
+        const averageRounded = Math.round(average * 10) / 10
         function Count(n) {
           return ArrRatings.filter(x => x == n).length;
         }
@@ -47,7 +47,7 @@ class Analytics extends Component {
             <h2 style={{marginTop: 0}}>Analytics</h2>
             <div className="analytics_details">
                 <p>Number of Total Reviews: {num_total_review}</p>
-                <p>Average Rating: {average}</p>
+                <p>Average Rating: {averageRounded}</p>
             </div>
 
             <Grid container direction="column" justify="flex-start" alignItems="center">
