@@ -12,6 +12,12 @@ https://xd.adobe.com/view/541548dd-2672-4e63-488b-a532dd783f2d-2224/
 
 https://trello.com/b/Izbdyppk/spot-mvp
 
+## Consumer Visuals
+
+## Business Visuals
+
+
+
 ## Setup Dev Environment
 
 ```npm init```
@@ -26,34 +32,16 @@ https://trello.com/b/Izbdyppk/spot-mvp
 
 ```npm run build && firebase serve``` to compile react files into src and public files into build and then serve to view changes
 
-## Project Firebase Console
+## Run Locally
 
-https://console.firebase.google.com/u/2/project/feedback-9ac15/overview
+```npm install``` to install node modules
 
-https://console.firebase.google.com/u/2/project/spot-f43fe/overview
-
-## Cloud Firestore
-
-Cloud Firestore for reading and writing data:
-
-https://firebase.google.com/docs/firestore/
-
-## Deployment
-
-```firebase use --add``` to add another project to web app
-
-```firebase use staging``` to use Spot environment
-
-```firebase use default``` to use feedback environment
+```npm start``` to run on localhost 
 
 ## Libraries
 
 QR Code: https://davidshimjs.github.io/qrcodejs/
 
-### Deployment
+## Project Status
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Development halted due to COVID-19. Feel free to use code for any commerical purposes. If you have any questions please email me at toshvelaga@gmail.com
