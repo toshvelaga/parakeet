@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ParakeetHeader from '../../components/ParakeetHeader/ParakeetHeader'
 import './Email.css'
 import { withRouter } from 'react-router-dom';
-import validateEmail from '../../../assets/emailValidation'
+import validateEmail from '../../../utils/emailValidation'
 import store from '../../../store/store'
 
 // firestore documentation: https://firebase.google.com/docs/firestore/query-data/get-data

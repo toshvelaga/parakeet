@@ -88,7 +88,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Navbar = (props) => {
-  const { auth } = props;
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
