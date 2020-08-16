@@ -14,6 +14,17 @@ https://trello.com/b/Izbdyppk/spot-mvp
 
 ## Consumer Visuals
 
+<span style="display:block" class="note">
+
+  <img src="https://parakeet-1.s3.amazonaws.com/consumer/email.png" height="300px">
+  <img src="https://parakeet-1.s3.amazonaws.com/consumer/stars.png" height="300px">
+  <img src="https://parakeet-1.s3.amazonaws.com/consumer/Screen+Shot+2020-08-15+at+6.53.53+PM.png" height="300px">
+  <img src="https://parakeet-1.s3.amazonaws.com/consumer/red1.png" height="300px">
+  <img src="https://parakeet-1.s3.amazonaws.com/consumer/praise.png" height="300px">
+
+</span>
+
+
 ## Business Visuals
 
 
