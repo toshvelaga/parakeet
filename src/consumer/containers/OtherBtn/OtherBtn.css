@@ -1,38 +1,38 @@
 .OtherBtn {
-    border: 1px #afafaf solid;
-    background: transparent;
-    width: 85%;
-    height: "25%";
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    color: #afafaf;
-    text-transform: uppercase;
-    margin-top: .8rem;
-    border-radius: 3px;
+	border: 1px #afafaf solid;
+	background: transparent;
+	width: 85%;
+	height: "25%";
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	color: #afafaf;
+	text-transform: uppercase;
+	margin-top: 0.8rem;
+	border-radius: 3px;
 }
 
 .blueOtherBtn {
-    border: 1px #afafaf solid;
-    background: #0378d8;
-    width: 85%;
-    height: "25%";
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    color: white;
-    text-transform: uppercase;
-    margin-top: .8rem;
-    border-radius: 3px;    
+	border: 1px #afafaf solid;
+	background: #0378d8;
+	width: 85%;
+	height: "25%";
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	color: white;
+	text-transform: uppercase;
+	margin-top: 0.8rem;
+	border-radius: 3px;
 }
 
 .redOtherBtn {
-    border: 1px #afafaf solid;
-    background: #f40054;
-    width: 85%;
-    height: "25%";
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    color: white;
-    text-transform: uppercase;
-    margin-top: .8rem;
-    border-radius: 3px;    
+	border: 1px #afafaf solid;
+	background: #f40054;
+	width: 85%;
+	height: "25%";
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	color: white;
+	text-transform: uppercase;
+	margin-top: 0.8rem;
+	border-radius: 3px;
 }

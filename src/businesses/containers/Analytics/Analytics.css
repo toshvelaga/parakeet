@@ -1,22 +1,23 @@
 .reviewTotal {
-    border: 1px rgba(175, 175, 175, .5) solid;
-    border-radius: 5px;
-    padding: 3rem;
-    margin-bottom: 3rem;
+	border: 1px rgba(175, 175, 175, 0.5) solid;
+	border-radius: 5px;
+	padding: 3rem;
+	margin-bottom: 3rem;
 }
 
 .barChart {
-    margin-top: 1rem; 
-    margin-bottom: 3rem
+	margin-top: 1rem;
+	margin-bottom: 3rem;
 }
 
 .analytics_details {
-    color: #666666;
-    font-size: 20px;
+	color: #666666;
+	font-size: 20px;
 }
 
 @media only screen and (max-width: 700px) {
-    .reviewTotal, .barChart {
-    width: 92%;
-    }
-  }
+	.reviewTotal,
+	.barChart {
+		width: 92%;
+	}
+}
