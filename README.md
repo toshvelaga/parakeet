@@ -1,6 +1,6 @@
 
 # Parakeet
-QR code app for users to leave reviews at restaurants and SMBS. Has a consumer side that is mobile first and allows the patrons to leave the reviews. Also has a business side where business owners can look at a dashboard of their reviews.
+QR code app for users to leave reviews at restaurants and SMBs. Has both a consumer side and business side. Consumer side is for customers to give th reviews. Business side is for store owners to collect and monitor reviews on a dashboard.
 
 ## Parakeet Summary
 https://docs.google.com/document/d/1sqc-CRj6KMgcFMMrjJoKsm28HoNYheImF92kH5gRjQs/edit?usp=sharing
@@ -24,10 +24,16 @@ https://trello.com/b/Izbdyppk/spot-mvp
 
 </span>
 
-
 ## Business Visuals
 
+<span style="display:block" class="note">
 
+  <img src="https://parakeet-1.s3.amazonaws.com/business/signup1.png" height="400px">
+  <img src="https://parakeet-1.s3.amazonaws.com/business/reviews1.png" height="400px">
+  <img src="https://parakeet-1.s3.amazonaws.com/business/charts1.png" height="400px">
+  <img src="https://parakeet-1.s3.amazonaws.com/business/customize1.png" height="400px">
+
+</span>
 
 ## Setup Dev Environment
 
