@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect, useRef } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Reviews from "../../components/Reviews/Reviews";
 import { Redirect } from "react-router-dom";
@@ -7,54 +8,52 @@ import firebase from "../../../firebase/fbConfig";
 
 let db = firebase.firestore();
 
-class Feed extends Component {
-	state = {
-		reviewData: [],
-	};
+const Feed = (props) => {
+  const { auth } = props;
+  const [reviewData, setreviewData] = useState([]);
 
-	componentDidMount() {
-		const docRef = db
-			.collection("users")
-			.doc(this.props.auth.uid)
-			.collection("customers")
-			.get()
-			.then((querySnapshot) => {
-				querySnapshot.docs.map((doc) => {
-					var joined = this.state.reviewData.concat(doc.data());
-					this.setState({ reviewData: joined });
-				});
-			});
-	}
+  const headerRef = useRef("");
 
-	render() {
-		const { auth } = this.props;
+  useEffect(() => {
+    const docRef = db
+      .collection("users")
+      .doc(props.auth.uid)
+      .collection("customers")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.docs.map((doc) => {
+          var joined = reviewData.concat(doc.data());
+          setreviewData(joined);
+        });
+      });
+  }, []);
 
-		if (!auth.uid) return <Redirect to="/signin" />;
-		return (
-			<div>
-				<Navbar />
-				<h2 style={{ marginTop: 0 }}>Feed</h2>
+  return (
+    <div>
+      <Navbar />
+      <h2 ref={headerRef} style={{ marginTop: 0 }}>
+        Feed
+      </h2>
 
-				{this.state.reviewData.map(({ review, rating, date, email, index }) => {
-					return (
-						<Reviews
-							key={index + email + review}
-							review={review}
-							n={rating}
-							email={email}
-							date={date}
-						/>
-					);
-				})}
-			</div>
-		);
-	}
-}
+      {reviewData.map(({ review, rating, date, email, index }) => {
+        return (
+          <Reviews
+            key={index + email + review}
+            review={review}
+            n={rating}
+            email={email}
+            date={date}
+          />
+        );
+      })}
+    </div>
+  );
+};
 
 const mapStateToProps = (state) => {
-	return {
-		auth: state.firebase.auth,
-	};
+  return {
+    auth: state.firebase.auth,
+  };
 };
 
 export default connect(mapStateToProps, null)(Feed);

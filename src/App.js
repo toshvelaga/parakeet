@@ -29,7 +29,6 @@ function App() {
           <Route path="/signup" component={SignUp} />
           <Route path="/signin" component={SignIn} />
           <Route path="/:uid/bad" component={Negativefeedback} />
-
           <Route path="/:uid/great" component={Greatfeedback} />
 
           <Route path="/:uid/rating">
