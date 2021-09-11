@@ -6,8 +6,6 @@ import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import firebase from "../../../firebase/fbConfig";
 
-let db = firebase.firestore();
-
 const Feed = (props) => {
   const { auth } = props;
   const [reviewData, setreviewData] = useState([]);
@@ -15,7 +13,8 @@ const Feed = (props) => {
   const headerRef = useRef("");
 
   useEffect(() => {
-    const docRef = db
+    const docRef = firebase
+      .firestore()
       .collection("users")
       .doc(props.auth.uid)
       .collection("customers")
