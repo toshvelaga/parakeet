@@ -22,57 +22,47 @@ import SignIn from "./businesses/containers/SignIn/SignIn";
 import SignUp from "./businesses/containers/SignUp/SignUp";
 
 function App() {
-	return (
-		<div className="App">
-			<Router>
-				<Switch>
-					<Route path="/signup">
-						<SignUp />
-					</Route>
+  return (
+    <div className="App">
+      <Router>
+        <Switch>
+          <Route path="/signup" component={SignUp} />
+          <Route path="/signin" component={SignIn} />
+          <Route path="/:uid/bad" component={Negativefeedback} />
 
-					<Route path="/signin">
-						<SignIn />
-					</Route>
+          <Route path="/:uid/great" component={Greatfeedback} />
 
-					<Route path="/:uid/bad">
-						<Negativefeedback />
-					</Route>
+          <Route path="/:uid/rating">
+            <Rating />
+          </Route>
 
-					<Route path="/:uid/great">
-						<Greatfeedback />
-					</Route>
+          <Route path="/thanks">
+            <Thanks />
+          </Route>
 
-					<Route path="/:uid/rating">
-						<Rating />
-					</Route>
+          <Route path="/analytics">
+            <Analytics />
+          </Route>
 
-					<Route path="/thanks">
-						<Thanks />
-					</Route>
+          <Route path="/feed">
+            <Feed />
+          </Route>
 
-					<Route path="/analytics">
-						<Analytics />
-					</Route>
+          <Route path="/customize">
+            <Customize />
+          </Route>
 
-					<Route path="/feed">
-						<Feed />
-					</Route>
+          <Route path="/:uid">
+            <Email />
+          </Route>
 
-					<Route path="/customize">
-						<Customize />
-					</Route>
-
-					<Route path="/:uid">
-						<Email />
-					</Route>
-
-					<Route path="/">
-						<Email />
-					</Route>
-				</Switch>
-			</Router>
-		</div>
-	);
+          <Route path="/">
+            <Email />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
