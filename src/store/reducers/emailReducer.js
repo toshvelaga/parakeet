@@ -1,19 +1,19 @@
-import { SUBMIT_EMAIL } from '../constants/action-types'
+import { SUBMIT_EMAIL } from "../constants/action-types";
 
 const initialState = {
-    emailValue: '',
+  emailValue: "",
 };
 
 const emailReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case SUBMIT_EMAIL:
-          return {
-              ...initialState, 
-              emailValue: action.text
-            };
-        default:
-          return state;
-      }
-}
+  switch (action.type) {
+    case SUBMIT_EMAIL:
+      return {
+        ...initialState,
+        emailValue: action.text,
+      };
+    default:
+      return state;
+  }
+};
 
-export default emailReducer
+export default emailReducer;

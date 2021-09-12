@@ -1,41 +1,42 @@
-import React from 'react';
-import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+import React from "react";
+import clsx from "clsx";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import Drawer from "@material-ui/core/Drawer";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import List from "@material-ui/core/List";
+import Typography from "@material-ui/core/Typography";
+import Divider from "@material-ui/core/Divider";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
 
-import FastfoodIcon from '@material-ui/icons/Fastfood';import TimelineOutlinedIcon from '@material-ui/icons/TimelineOutlined';
-import LocalDiningOutlinedIcon from '@material-ui/icons/LocalDiningOutlined';
-import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
+import FastfoodIcon from "@material-ui/icons/Fastfood";
+import TimelineOutlinedIcon from "@material-ui/icons/TimelineOutlined";
+import LocalDiningOutlinedIcon from "@material-ui/icons/LocalDiningOutlined";
+import ExitToAppOutlinedIcon from "@material-ui/icons/ExitToAppOutlined";
 
 import { Link } from "react-router-dom";
 
-import './Navbar.css'
+import "./Navbar.css";
 
 // import signout action and reducer //
-import { connect } from 'react-redux'
-import { signOut } from '../../../store/actions/actions'
+import { connect } from "react-redux";
+import { signOut } from "../../../store/actions/actions";
 
 const drawerWidth = 240;
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
+    display: "flex",
   },
   appBar: {
-    transition: theme.transitions.create(['margin', 'width'], {
+    transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
@@ -43,7 +44,7 @@ const useStyles = makeStyles(theme => ({
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
-    transition: theme.transitions.create(['margin', 'width'], {
+    transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
@@ -52,7 +53,7 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(2),
   },
   hide: {
-    display: 'none',
+    display: "none",
   },
   drawer: {
     width: drawerWidth,
@@ -62,24 +63,24 @@ const useStyles = makeStyles(theme => ({
     width: drawerWidth,
   },
   drawerHeader: {
-    display: 'flex',
-    alignItems: 'center',
+    display: "flex",
+    alignItems: "center",
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
+    justifyContent: "flex-end",
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
+    transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
     marginLeft: -drawerWidth,
   },
   contentShift: {
-    transition: theme.transitions.create('margin', {
+    transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
@@ -103,7 +104,8 @@ const Navbar = (props) => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar style={{ background: '#0378d8' }}
+      <AppBar
+        style={{ background: "#0378d8" }}
         position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
@@ -124,7 +126,7 @@ const Navbar = (props) => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer 
+      <Drawer
         className={classes.drawer}
         variant="persistent"
         anchor="left"
@@ -135,39 +137,60 @@ const Navbar = (props) => {
       >
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+            {theme.direction === "ltr" ? (
+              <ChevronLeftIcon />
+            ) : (
+              <ChevronRightIcon />
+            )}
           </IconButton>
         </div>
         <Divider />
         <List>
-          <Link to="Feed" style={{ textDecoration: 'none', color: 'gray' }}>
+          <Link to="Feed" style={{ textDecoration: "none", color: "gray" }}>
             <ListItem button key="Feed">
-              <ListItemIcon><FastfoodIcon /></ListItemIcon>
+              <ListItemIcon>
+                <FastfoodIcon />
+              </ListItemIcon>
               <ListItemText primary="Feed" />
-            </ListItem>  
-          </Link>    
-
-          <Link to="Analytics" style={{ textDecoration: 'none', color: 'gray' }}>
-            <ListItem button key="Analytics">
-              <ListItemIcon><TimelineOutlinedIcon /></ListItemIcon>
-              <ListItemText primary="Analytics" />
-            </ListItem>  
+            </ListItem>
           </Link>
 
-          <Link to="Customize" style={{ textDecoration: 'none', color: 'gray' }}>
+          <Link
+            to="Analytics"
+            style={{ textDecoration: "none", color: "gray" }}
+          >
+            <ListItem button key="Analytics">
+              <ListItemIcon>
+                <TimelineOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary="Analytics" />
+            </ListItem>
+          </Link>
+
+          <Link
+            to="Customize"
+            style={{ textDecoration: "none", color: "gray" }}
+          >
             <ListItem button key="Customize">
-              <ListItemIcon><LocalDiningOutlinedIcon /></ListItemIcon>
+              <ListItemIcon>
+                <LocalDiningOutlinedIcon />
+              </ListItemIcon>
               <ListItemText primary="Customize" />
-            </ListItem>  
-          </Link>      
+            </ListItem>
+          </Link>
 
-          <Link onClick={props.signOut} to="SignIn" style={{ textDecoration: 'none', color: 'gray' }}>
+          <Link
+            onClick={props.signOut}
+            to="SignIn"
+            style={{ textDecoration: "none", color: "gray" }}
+          >
             <ListItem button key="Logout">
-              <ListItemIcon><ExitToAppOutlinedIcon /></ListItemIcon>
+              <ListItemIcon>
+                <ExitToAppOutlinedIcon />
+              </ListItemIcon>
               <ListItemText primary="Logout" />
-            </ListItem>  
-          </Link>  
-
+            </ListItem>
+          </Link>
         </List>
       </Drawer>
       <main
@@ -176,22 +199,21 @@ const Navbar = (props) => {
         })}
       >
         <div className={classes.drawerHeader} />
-
       </main>
     </div>
   );
-}
+};
 
 const mapStateToProps = (state) => {
   return {
-    auth: state.firebase.auth
-  }
-}
+    auth: state.firebase.auth,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    signOut: () => dispatch(signOut())
-  }  
-}
+    signOut: () => dispatch(signOut()),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

@@ -15,73 +15,73 @@ let db = firebase.firestore();
 let today = new Date().toLocaleDateString();
 
 class Greatfeedback extends Component {
-	constructor(props) {
-		super(props);
-	}
+  constructor(props) {
+    super(props);
+  }
 
-	onBack = () => {
-		this.props.history.goBack();
-	};
+  onBack = () => {
+    this.props.history.goBack();
+  };
 
-	onSubmit = () => {
-		const ref = db
-			.collection("users")
-			.doc(this.props.match.params.uid)
-			.collection("customers");
-		ref.add({
-			email: store.getState().emailReducer.emailValue,
-			review: store.getState().textareaReducer.textValue,
-			Doing_Well: store.getState().feedbackReducer.doingGreat,
-			rating: store.getState().ratingReducer.rating,
-			date: today,
-		});
+  onSubmit = () => {
+    const ref = db
+      .collection("users")
+      .doc(this.props.match.params.uid)
+      .collection("customers");
+    ref.add({
+      email: store.getState().emailReducer.emailValue,
+      review: store.getState().textareaReducer.textValue,
+      Doing_Well: store.getState().feedbackReducer.doingGreat,
+      rating: store.getState().ratingReducer.rating,
+      date: today,
+    });
 
-		this.props.history.push("/thanks");
-	};
+    this.props.history.push("/thanks");
+  };
 
-	render() {
-		const outerDivStyle = { width: "85%", display: "inline-block" };
-		const innerDivStyle = { display: "flex", justifyContent: "space-between" };
+  render() {
+    const outerDivStyle = { width: "85%", display: "inline-block" };
+    const innerDivStyle = { display: "flex", justifyContent: "space-between" };
 
-		return (
-			<>
-				<ParakeetHeader />
-				<div style={{ width: "85%" }}>
-					<Greatmessage />
-				</div>
+    return (
+      <>
+        <ParakeetHeader />
+        <div style={{ width: "85%" }}>
+          <Greatmessage />
+        </div>
 
-				<div style={outerDivStyle}>
-					<div style={innerDivStyle}>
-						<FeedbackBtns name="Food" />
-						<FeedbackBtns name="Service" />
-					</div>
+        <div style={outerDivStyle}>
+          <div style={innerDivStyle}>
+            <FeedbackBtns name="Food" />
+            <FeedbackBtns name="Service" />
+          </div>
 
-					<div style={innerDivStyle}>
-						<FeedbackBtns name="Pricing" />
-						<FeedbackBtns name="Ambience" />
-					</div>
+          <div style={innerDivStyle}>
+            <FeedbackBtns name="Pricing" />
+            <FeedbackBtns name="Ambience" />
+          </div>
 
-					<div style={innerDivStyle}>
-						<FeedbackBtns name="Cleanliness" />
-						<FeedbackBtns name="Plating" />
-					</div>
-				</div>
+          <div style={innerDivStyle}>
+            <FeedbackBtns name="Cleanliness" />
+            <FeedbackBtns name="Plating" />
+          </div>
+        </div>
 
-				<Otherbtn />
+        <Otherbtn />
 
-				<div style={{ marginTop: "1rem" }}>
-					<Textarea label="We'd love to hear your feedback!" />
-				</div>
+        <div style={{ marginTop: "1rem" }}>
+          <Textarea label="We'd love to hear your feedback!" />
+        </div>
 
-				<div style={outerDivStyle}>
-					<div style={{ ...innerDivStyle, marginTop: "2rem" }}>
-						<NavButton name="BACK" click={this.onBack} />
-						<NavButton name="SUBMIT" click={this.onSubmit} />
-					</div>
-				</div>
-			</>
-		);
-	}
+        <div style={outerDivStyle}>
+          <div style={{ ...innerDivStyle, marginTop: "2rem" }}>
+            <NavButton name="BACK" click={this.onBack} />
+            <NavButton name="SUBMIT" click={this.onSubmit} />
+          </div>
+        </div>
+      </>
+    );
+  }
 }
 
 export default connect()(withRouter(Greatfeedback));
